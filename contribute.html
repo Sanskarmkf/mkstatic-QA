@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Organization</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Donation Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    
 </head>
 <body>
 
@@ -12,18 +13,19 @@
     <div class="top-bar">
         <div class="logo-text">
           <div class="logo">
-            <img src="{{ url_for('static', filename='logo1.png') }}" alt="Logo" width="100">
+            <img src="images/logo1.png" alt="Logo" width="100">
           </div>
           <span class="logo-text-content">SANSKAR</span>
         </div>
         <nav class="top-nav">
             <ul>
-              <li><a href="{{ url_for('home') }}">Home</a></li>
-              <li><a href="{{ url_for('work') }}">Our Work</a></li>
-              <li><a href="{{ url_for('testimonials') }}">Testimonials</a></li>
-              <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
-              <li><a href="{{ url_for('contribute') }}">Contribute</a></li>
-              <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="work.html">Our Work</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contribute.html">Contribute</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
                               
             </ul>
         </nav>
@@ -32,17 +34,17 @@
      <!-- Top Announcement Bar -->
      <div class="announcement-bar">
         <p>Become a part of the change – Join our mission and make a difference together!</p>
-        <a href="{{ url_for('contact') }}"><button class="join-btn">Join Now</button></a>
+        <a href="contact.html"><button class="join-btn">Join Now</button></a>
     </div>
     <div class="announcement-bar">
         <p>Become a part of the change – Join our mission and make a difference together!</p>
-        <a href="{{ url_for('contact') }}"><button class="join-btn">Join Now</button></a>
+        <a href="contact.html"><button class="join-btn">Join Now</button></a>
     </div>
     <div class="container">
     <div class="helping-hand">
         <h1> Donate Today</h1>
         <div class="donate-card">
-            <img src="{{ url_for('static', filename='QR CODE.jpg') }}" alt="QR Code for Donation" class="qr-code">
+            <img src="images/QR CODE.jpg" alt="QR Code for Donation" class="qr-code">
             <p class="scan-text">SCAN TO DONATE</p>
             <p class="help-text"></p>
             <p>UPI ID : shyamrdubey@oksbi</p>
@@ -51,26 +53,24 @@
     </div>
     <div class="contact-form">
         <h1>Fill Out Your Details After Donating</h1>
-        <form action="{{ url_for('process_payment') }}" method="post" enctype="multipart/form-data">
+        <form id="donationForm" enctype="multipart/form-data">
             <label for="name">Name:</label>
-            <input type="text" name="name" required>
-        
+            <input type="text" name="name" id="name" required>
+    
             <label for="email">Email:</label>
-            <input type="email" name="email" required>
-        
+            <input type="email" name="email" id="email" required>
+    
             <label for="phone">Phone:</label>
-            <input type="text" name="phone" required>
-
+            <input type="text" name="phone" id="phone" required>
+    
             <label for="address">Address:</label>
-<input type="text" name="address" id="address" required>
-
-        
+            <input type="text" name="address" id="address" required>
+    
             <label for="payment-screenshot">Upload Payment Screenshot:</label>
             <input type="file" name="payment-screenshot" id="payment-screenshot" accept="image/*" required>
-        
-            <button type="submit">Submit</button>
+    
+            <button type="button" onclick="saveFormDetails()">Submit</button>
         </form>
-        
     </div>
 </div>
 </div>
@@ -91,7 +91,7 @@
                   target="_blank" rel="noopener noreferrer">Instagram</a></li>
               <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank"
                   rel="noopener noreferrer">LinkedIn</a></li>
-              <li><a href="/contact">Contact Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
             </ul>
   
           </div>
@@ -488,3 +488,4 @@ footer a:hover {
   
 
 </style>
+
