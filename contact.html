@@ -64,7 +64,7 @@
         </div>
         <div class="contact-form">
             <h1>Contact Form</h1>
-            <form action="submit.html" method="post">
+            <form action="/submit" method="post">
             
                 <label for="name">Name:</label>
                 <input type="text" name="name" required>
@@ -79,6 +79,7 @@
                 <input type="text" name="address" required>
         
                 <label for="description">Description:</label>
+                <input type="hidden" name="description" value="Contact form submission">
                 <textarea name="description"></textarea>
         
                 <button type="submit">Submit</button>
