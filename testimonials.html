@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Organization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+
+    <div class="top-bar">
+        <div class="logo-text">
+          <div class="logo">
+            <img src="images\logo1.png" alt="Logo" width="100">
+          </div>
+          <span class="logo-text-content">SANSKAR</span>
+        </div>
+        <nav class="top-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html">Our Work</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contribute.html">Contribute</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <p>Become a part of the change – Join our mission and make a difference together!</p>
+        <a href="contact.html"><button class="join-btn">Join Now</button></a>
+    </div>
+
+    <section class="testimonials">
+        <h2 class="heading">Testimonials</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>
+                    "Wonderful, Madhav! Your dedication to serving society will surely lead to great success. Initiatives like these inspire future generations to carry forward the legacy built by you, Shubham Kokila, and the team. Proud of you all—Acharya students leading by example and making a difference!"</p>
+                <div class="testimonial-author">
+                    <img src="images\hod sir .png" alt="Puneet Dalmia">
+                    <div>
+<span>Dr. Ajith Padyana</span><br>
+<span>Professor at Acharya Institute of Technology</span></div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p> Working with SANSKAR, under the visionary leadership of Madhav and Shubham, has been an enriching experience. Their dedication and the team’s passion for making a difference have created an inspiring and collaborative environment. I’m truly grateful to have contributed to such impactful work. Thank you, for inspiring positive change!</p>
+                <div class="testimonial-author">
+                    <img src="images\gaurav testiminials.jpg" alt="Gaurav Naniwal">
+                    <span>Gaurav Nainwal</span>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </section>
+   <!----<section class="testimonials">
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>New India Conclave is a first of its kind initiative that recognizes young rural talent that is
+                    making a difference and contributing to nation building. We are delighted to partner with Y4D
+                    Foundation</p>
+                <div class="testimonial-author">
+                    <img src="{{ url_for('static', filename='hod sir .png') }}" alt="Puneet Dalmia">
+                    <span>Puneet Dalmia (Dalmia Group)</span>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p>I am solutions oriented person and is thus enthused to support a positive initiatives of Y4D
+                    Foundation. Y4D is young dynamic and enthusiastic team.</p>
+                <div class="testimonial-author">
+                    <img src="path/to/image2.jpg" alt="Akshay Kumar">
+                    <span>Akshay Kumar (Actor)</span>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>-->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h4>SANSKAR</h4>
+                <p>Together we can bring changes in the society,</p>
+                <p>also sometimes the small happiness is the key</p>
+                <p>to a reason for the bigger happiness.</p>
+            </div>
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/sanskar.mkf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-section contact">
+                <h4>Contact</h4>
+                <p>Phone: +917983923205</p>
+                <p>Email: <a href="mailto:sanskarmkf@gmail.com">sanskarmkf@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<style>
+    /* General Styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+
+    .top-bar {
+        position: fixed;
+        top: 0px;
+        /* Place it below the announcement bar */
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #AD88C6;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    /* Announcement Bar Section */
+    .announcement-bar {
+        background-color: orange;
+        /* IITM Red */
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 16px;
+        position: fixed;
+        width: 100%;
+        /* Ensure it spans full width */
+        top: 58px;
+        z-index: 1001;
+    }
+
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #ffffff;
+        /* White Background */
+        color: #333;
+        /* Dark Gray Text */
+    }
+
+
+
+    .join-btn {
+        background-color: #ffffff;
+        /* White */
+        color: #b7282e;
+        /* Red Text */
+        border: 1px solid #b7282e;
+        padding: 6px 15px;
+        border-radius: 5px;
+        position: absolute;
+        right: 20px;
+        top: 4px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .join-btn:hover {
+        background-color: #b7282e;
+        color: #fff;
+    }
+    
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    /* Dark Gray */
+    padding: 20px 40px;
+  }
+
+  .logo-text {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 65px;
+    /* Adjust the size of the logo */
+    margin-top: -15px;
+    /* Move the logo slightly up */
+    padding: 8px;
+    /* Adjust padding around the logo */
+    margin-left: -30px;
+  }
+
+  .logo-text-content {
+    color: white;
+    font-size: 30px;
+    /* Adjust font size for text */
+    font-weight: bold;
+    margin-left: -1px;
+    /* Space between the logo and the text */
+    font-family: Arial, sans-serif;
+    /* Optional: Choose a font */
+    margin-top: -20px;
+    font-family: 'Playfair Display', serif; /* A popular serif font */
+  }
+
+  .top-bar .logo img {
+    width: 55px;
+    /* Increase the width of the logo */
+    margin-top: -20px;
+    /* Move the logo slightly up */
+    padding: 8px;
+    /* Adjust padding around the logo */
+    margin-left: -30px;
+  }
+
+
+    .top-nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    .top-nav ul li {
+        margin-left: 30px;
+    }
+
+    .top-nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .top-nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .testimonials {
+        text-align: center;
+        padding: 50px;
+        background-color: #f9f9f9;
+        position: relative;
+    }
+
+    .heading {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #333;
+        margin-top: 60px;
+        position: relative;
+        display: inline-block;
+        padding: 0 20px;
+        transition: color 0.3s ease, transform 0.3s ease;
+        font-family: 'Playfair Display', serif; /* A popular serif font */
+    }
+
+    .heading::before,
+    .heading::after {
+        content: "";
+        width: 30px;
+        height: 2px;
+        background-color: #f77e23;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .heading::before {
+        left: -40px;
+    }
+
+    .heading::after {
+        right: -40px;
+    }
+
+    .heading:hover {
+        color: #f77e23;
+        transform: scale(1.05);
+    }
+
+    .testimonial-container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 40px;
+        height: 300px;
+    }
+
+    .testimonial {
+        background-color: #fff;
+        padding: 20px;
+        width: 45%;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .testimonial p {
+        font-size: 1.1em;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Centers content horizontally */
+        gap: 10px;
+        font-size: 0.9em;
+        color: #666;
+    }
+
+    .testimonial-author img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    footer {
+        background-color: #333333;
+        /* Dark Gray */
+        color: white;
+        padding: 40px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        /* Prevent padding from affecting the layout */
+        text-align: center;
+        /* Center text on smaller screens */
+        border-top: 5px solid coral;
+        /* Add a decorative border to the top */
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        /* Align items at the top for consistency */
+        flex-wrap: wrap;
+        gap: 30px;
+        /* More space between sections */
+    }
+
+    .footer-section {
+        flex: 1 1 25%;
+        /* Sections will take 25% of the space on larger screens */
+        min-width: 200px;
+        /* Ensure sections don’t shrink too much on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .footer-section h4 {
+        color: coral;
+        /* Stand out with a vibrant color */
+        margin-bottom: 15px;
+        font-size: 1.4em;
+        /* Slightly larger font size for better readability */
+        text-transform: uppercase;
+        /* Add a professional touch */
+    }
+
+    .footer-section p,
+    .footer-section a {
+        color: #ccc;
+        /* Softer white for better contrast */
+        text-decoration: none;
+        line-height: 1.8;
+        /* More spacing for readability */
+        font-size: 0.95em;
+        /* Ensure smaller text doesn’t dominate */
+    }
+
+    .footer-section a:hover {
+        color: coral;
+        /* Make hover color consistent */
+        text-decoration: underline;
+        /* Add hover underline for clarity */
+    }
+
+    .footer-section ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        /* Standardize spacing for lists */
+    }
+
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+        color: #ddd;
+        text-decoration: none;
+    }
+
+    .footer-section ul li a:hover {
+        color: coral;
+    }
+
+    footer a {
+        transition: color 0.3s ease;
+        /* Smooth hover effect */
+    }
+
+    footer a:hover {
+        color: coral;
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            /* Stack sections vertically on smaller screens */
+            text-align: center;
+        }
+
+        .footer-section {
+            flex: 1 1 100%;
+            /* Ensure sections take full width */
+        }
+    }
+</style>
