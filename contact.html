@@ -551,13 +551,19 @@ footer a:hover {
     }
 }
 @media (max-width: 768px) {  /* Mobile view */
-    .our-contact {
-        order: 1; /* Moves "Our Contact" to the top */
+    .container {  
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .contact-info {
+        order: 1; /* Moves "Our Contacts" to the top */
     }
 
     .contact-form {
-        order: 2; /* Moves "Contact Form" below */
+        order: 2; /* Moves Contact Form below */
     }
 }
+
 
 </style>
