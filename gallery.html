@@ -914,18 +914,78 @@
 
   footer a:hover {
     color: coral;
-  }
 
-  @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+    /* Footer Styling */
     .footer-content {
-      flex-direction: column;
-      /* Stack sections vertically on smaller screens */
-      text-align: center;
+        flex-direction: column;
+        text-align: center;
     }
 
     .footer-section {
-      flex: 1 1 100%;
-      /* Ensure sections take full width */
+        flex: 1 1 100%;
+    }
+
+    /* Gallery Filter Adjustments */
+    .gallery-filter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .gallery-filter .list {
+        font-size: 14px;
+        padding: 8px 12px;
+        white-space: nowrap;
+    }
+
+    /* Gallery Image Adjustments */
+    .gallery-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .gallery-container img {
+        width: 100%;
+        height: 250px; /* Ensures all images have the same height */
+        object-fit: contain; /* Keeps the full image visible */
+        display: block;
+        margin: auto; /* Centers the image inside its container */
+        background-color: white; /* Ensures a white frame is present */
+        padding: 10px; /* Adds spacing around the image */
+        border-radius: 8px; /* Optional: Rounded corners for a smoother look */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Move Gallery Heading Slightly Down */
+    .gallery-heading {
+        margin-top: 20px; /* Adjust the value as needed */
+        text-align: center;
+    }
+
+    /* Move "Join Now" Button Slightly Down */
+    .announcement-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .announcement-bar p {
+        margin-bottom: 10px; /* Creates space between text and button */
+    }
+
+    .join-btn {
+        margin-top: 30px; /* Moves the button slightly down */
+
     }
   }
 </style>
