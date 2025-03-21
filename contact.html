@@ -554,6 +554,7 @@ footer a:hover {
     .container {  
         display: flex;
         flex-direction: column; /* Stack elements vertically */
+        width: 100%; /* Ensure container takes full width */
     }
 
     .contact-info {
@@ -562,19 +563,22 @@ footer a:hover {
 
     .contact-form {
         order: 2; /* Moves Contact Form below */
+        width: 100%; /* Ensures contact form takes full width */
     }
 
     .contact-form input[type="text"],
     .contact-form input[type="email"],
     .contact-form textarea {
-        width: 100%; /* Makes the input fields take full width */
-        height: 50px; /* Increases input height */
-        padding: 10px;
+        width: 100% !important; /* Forces full width */
+        max-width: 100% !important; /* Ensures no restriction */
+        height: 55px; /* Adjusts input height */
+        padding: 12px;
         font-size: 16px;
+        box-sizing: border-box; /* Ensures padding doesn't affect width */
     }
 
     .contact-form textarea {
-        height: 150px; /* Increases the height of the textarea */
+        height: 160px; /* Increases the height of the textarea */
     }
 }
 
