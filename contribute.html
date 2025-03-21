@@ -470,7 +470,6 @@ footer a {
 footer a:hover {
     color: coral;
 }
-
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -478,32 +477,33 @@ footer a:hover {
     }
 
     .helping-hand {
-        order: 1; /* QR scanner comes first */
+        order: 1;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centers all content */
+        align-items: center;
         height: auto;
-        margin-top: 100px; /* Moves the entire section down */
+        margin-top: 100px;
         width: 100%;
     }
 
     .helping-hand h1 {
-        margin-bottom: 20px; /* Adds spacing between heading and donate card */
-        padding-top: 20px; /* Moves "Donate Today" slightly down */
+        font-size: 2.2em; /* Increased font size */
+        margin-bottom: 20px;
+        padding-top: 20px;
         text-align: center;
         width: 100%;
-        font-size: 1.8em; /* Ensures visibility */
+        margin-left: 20px; /* Move text slightly to the right */
     }
 
     .donate-card {
         width: 90%;
         margin: 0 auto;
         display: flex;
-        justify-content: center; /* Ensures card is centered */
+        justify-content: center;
     }
 
     .contact-form {
-        order: 2; /* Form comes below */
+        order: 2;
         width: 90%;
         margin-top: 30px;
     }
