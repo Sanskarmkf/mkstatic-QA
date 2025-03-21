@@ -839,6 +839,29 @@ footer a:hover {
         flex: 1 1 100%; /* Ensure sections take full width */
     }
 }
+@media (max-width: 768px) {  /* Mobile view */
+    .gallery-filter {
+        display: flex;
+        flex-wrap: wrap;  /* Allows items to wrap in multiple lines */
+        justify-content: center; /* Centers the items */
+        gap: 8px; /* Space between filters */
+        padding: 10px;
+        text-align: center;
+    }
+
+    .gallery-filter .list {
+        font-size: 14px; /* Adjust text size */
+        padding: 8px 12px;
+        white-space: nowrap; /* Prevents text from breaking */
+    }
+}
+@media (max-width: 768px) {  
+    .gallery-container img {
+        width: 100%; /* Ensures full width */
+        height: auto; /* Maintains aspect ratio */
+        object-fit: contain; /* Ensures full image is visible */
+    }
+}
 
 </style>
 <script>
