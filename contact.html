@@ -564,22 +564,17 @@ footer a:hover {
         order: 2; /* Moves Contact Form below */
     }
 
-    /* Increase the size of input fields and textarea */
-    .contact-form input,
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
     .contact-form textarea {
-        width: 100%;  /* Full width */
-        font-size: 16px;  /* Bigger text */
-        padding: 12px;  /* More spacing inside */
-        border-radius: 8px;  /* Slightly rounded corners */
-        border: 1px solid #ccc; /* Soft border */
+        width: 100%; /* Makes the input fields take full width */
+        height: 50px; /* Increases input height */
+        padding: 10px;
+        font-size: 16px;
     }
 
     .contact-form textarea {
-        width: 100%;  /* Make textarea full width */
-        height: 200px;  /* Increased height */
-        min-height: 200px; /* Ensure it doesn't shrink */
-        max-height: 300px; /* Set a max limit */
-        resize: vertical; /* Allow resizing */
+        height: 150px; /* Increases the height of the textarea */
     }
 }
 
