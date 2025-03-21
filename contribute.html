@@ -472,15 +472,29 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column; /* Stack sections vertically on smaller screens */
-        text-align: center;
+    .container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .footer-section {
-        flex: 1 1 100%; /* Ensure sections take full width */
+    .helping-hand {
+        order: 1; /* QR scanner comes first */
+        align-items: center;
+        height: auto;
+    }
+
+    .donate-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .contact-form {
+        order: 2; /* Form comes below */
+        width: 90%;
+        margin-top: 30px;
     }
 }
+
 
 
 /* Icons */
