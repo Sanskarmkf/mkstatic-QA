@@ -1,151 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./toggle.js"></script>
 </head>
+
 <body>
- <!-- Top Bar Section -->
- <div class="top-bar">
-  <div class="logo-text">
+  <!-- Top Bar Section -->
+  <div class="top-bar">
+    <div class="logo-text">
       <div class="logo">
-          <img src="images\logo1.png" alt="Logo" width="100">
+        <img src="images\logo1.png" alt="Logo" width="100">
       </div>
       <span class="logo-text-content">SANSKAR</span>
-  </div>
-<nav class="top-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="work.html">Our Work</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contribute.html">Contribute</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      
-        
-    </ul>
-</nav>
-</div>
-
-<!-- Top Announcement Bar -->
-<div class="announcement-bar">
-<p>Become a part of the change – Join our mission and make a difference together!</p>
-<a href="contact.html"><button class="join-btn">Join Now</button></a>
-</div>
-
-<!--===NGO-Gallery-Section==================================================-->
-<section id="ngo-gallery" class="gallery-section">
-  <!-- Decorative Half-Circles -->
-  <div class="gallery-corner tl"></div>
-  <div class="gallery-corner tr"></div>
-  <div class="gallery-corner bl"></div>
-  <div class="gallery-corner br"></div>
-<!--heading-->  
-<div class="gallery-heading">
-  
-  <h3>GALLERY</h3>
-</div>
-<!--filter-->  
-<ul class="gallery-filter">
-  <li class="list gallery-filter-active" data-filter="all">All</li>
-  <li class="list" data-filter="education">Education</li>
-  
-  <li class="list" data-filter="old-age">Old Age</li>
-  <li class="list" data-filter="children">Children</li>
-  <li class="list" data-filter="street-dogs">Street Dogs</li>
-  <li class="list" data-filter="food">Food</li>
-  <li class="list" data-filter="labour">Labourers</li>
-  </ul>
-<!--container-->  
-<div class="gallery-container">
-
-  <div class="gallery-box happy-faces">
-    <img src="images\20th oct3.JPG" alt="happy faces">
-    
-  </div>
-
- 
-  <!--1: Old age-->
-  <div class="gallery-box old-age">
-    <img src="images\old age1.JPG" alt="old age">
-    
-  </div>
-  <!--1: Old age-->
-  <div class="gallery-box old-age">
-    <img src="images\old age2.JPG" alt="old age">
-    
-  </div>
-  <!--1: Old age-->
-  <div class="gallery-box old-age">
-    <img src="images\old age3.JPG" alt="old age">
-    
-  </div>
-  <!--1: Old age-->
-  <div class="gallery-box old-age">
-    <img src="images\old age4.JPG" alt="old age">
-    
-  </div>
-    
-  <!--Children-->
-  <div class="gallery-box children">
-    <img src="images\2oth oct2.JPG" alt="children">
-    
-  </div>
-  <div class="gallery-box children">
-    <img src="images\haldwani1.jpg" alt="children">
-    
-  </div>
-  <!--Children-->
-  <div class="gallery-box children">
-    <img src="images\haldwani6.jpg" alt="children">
-    
-  </div>
-  <!--Children-->
-  <div class="gallery-box children">
-    <img src="images\haldwani8.jpg" alt="children">
-    
-  </div>
-  <!--Children-->
-  <div class="gallery-box children">
-    <img src="images\haldwani11.jpg" alt="children">
-    
-  </div>
-  <!--Children-->
-  <div class="gallery-box children">
-    <img src="images\children4.jpg" alt="children">
-    
-  </div>
-  
-  <!--Children-->
-  <div class="gallery-box children">
-    <img src="images\children6.jpg" alt="children">
-    
-  </div>
-  
-  <!--Children-->
-  <div class="gallery-box children">
-    <img src="images\children9.jpg" alt="children">
-    
-  </div>
-  <!--Children-->
-  <div class="gallery-box children">
-    <img src="images\children10.jpg" alt="children">
-    
-  </div>
-  <!--Children-->
-  <div class="gallery-box children">
-    <img src="images\haldwani.jpg" alt="children">
-    
-  </div>
-  <!--2: Street Dogs-->
-  <div class="gallery-box street-dogs">
-    <img src="images\dog1.JPG" alt="Street Dogs">
-  </div>
-
-    <div class="gallery-box street-dogs">
-      <img src="images\dog1.JPG" alt="Street Dogs">
     </div>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <nav class="top-nav" aria-label="Main Navigation">
+      <ul>
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <p>Become a part of the change – Join our mission and make a difference together!</p>
+    <a href="contact.html"><button class="join-btn">Join Now</button></a>
+  </div>
+
+  <!--===NGO-Gallery-Section==================================================-->
+  <section id="ngo-gallery" class="gallery-section">
+    <!-- Decorative Half-Circles -->
+    <div class="gallery-corner tl"></div>
+    <div class="gallery-corner tr"></div>
+    <div class="gallery-corner bl"></div>
+    <div class="gallery-corner br"></div>
+    <!--heading-->
+    <div class="gallery-heading">
+
+      <h3>GALLERY</h3>
+    </div>
+    <!--filter-->
+    <ul class="gallery-filter">
+      <li class="list gallery-filter-active" data-filter="all">All</li>
+      <li class="list" data-filter="education">Education</li>
+
+      <li class="list" data-filter="old-age">Old Age</li>
+      <li class="list" data-filter="children">Children</li>
+      <li class="list" data-filter="street-dogs">Street Dogs</li>
+      <li class="list" data-filter="food">Food</li>
+      <li class="list" data-filter="labour">Labourers</li>
+    </ul>
+    <!--container-->
+    <div class="gallery-container">
+
+      <div class="gallery-box happy-faces">
+        <img src="images\20th oct3.JPG" alt="happy faces">
+
+      </div>
+
+
+      <!--1: Old age-->
+      <div class="gallery-box old-age">
+        <img src="images\old age1.JPG" alt="old age">
+
+      </div>
+      <!--1: Old age-->
+      <div class="gallery-box old-age">
+        <img src="images\old age2.JPG" alt="old age">
+
+      </div>
+      <!--1: Old age-->
+      <div class="gallery-box old-age">
+        <img src="images\old age3.JPG" alt="old age">
+
+      </div>
+      <!--1: Old age-->
+      <div class="gallery-box old-age">
+        <img src="images\old age4.JPG" alt="old age">
+
+      </div>
+
+      <!--Children-->
+      <div class="gallery-box children">
+        <img src="images\2oth oct2.JPG" alt="children">
+
+      </div>
+      <div class="gallery-box children">
+        <img src="images\haldwani1.jpg" alt="children">
+
+      </div>
+      <!--Children-->
+      <div class="gallery-box children">
+        <img src="images\haldwani6.jpg" alt="children">
+
+      </div>
+      <!--Children-->
+      <div class="gallery-box children">
+        <img src="images\haldwani8.jpg" alt="children">
+
+      </div>
+      <!--Children-->
+      <div class="gallery-box children">
+        <img src="images\haldwani11.jpg" alt="children">
+
+      </div>
+      <!--Children-->
+      <div class="gallery-box children">
+        <img src="images\children4.jpg" alt="children">
+
+      </div>
+
+      <!--Children-->
+      <div class="gallery-box children">
+        <img src="images\children6.jpg" alt="children">
+
+      </div>
+
+      <!--Children-->
+      <div class="gallery-box children">
+        <img src="images\children9.jpg" alt="children">
+
+      </div>
+      <!--Children-->
+      <div class="gallery-box children">
+        <img src="images\children10.jpg" alt="children">
+
+      </div>
+      <!--Children-->
+      <div class="gallery-box children">
+        <img src="images\haldwani.jpg" alt="children">
+
+      </div>
+      <!--2: Street Dogs-->
+      <div class="gallery-box street-dogs">
+        <img src="images\dog1.JPG" alt="Street Dogs">
+      </div>
+
+      <div class="gallery-box street-dogs">
+        <img src="images\dog1.JPG" alt="Street Dogs">
+      </div>
 
       <div class="gallery-box street-dogs">
         <img src="images\dog2.JPG" alt="Street Dogs">
@@ -154,341 +162,346 @@
       <div class="gallery-box street-dogs">
         <img src="images\dog3.JPG" alt="Street Dogs">
       </div>
-       
-        <div class="gallery-box street-dogs">
-          <img src="images\dog4.JPG" alt="Street Dogs">
-        </div>
 
-          <div class="gallery-box street-dogs">
-            <img src="images\dog5.JPG" alt="Street Dogs">
-          </div>
+      <div class="gallery-box street-dogs">
+        <img src="images\dog4.JPG" alt="Street Dogs">
+      </div>
 
-          <div class="gallery-box street-dogs">
-            <img src="images\dog10.JPG" alt="Street Dogs">
-          </div>
+      <div class="gallery-box street-dogs">
+        <img src="images\dog5.JPG" alt="Street Dogs">
+      </div>
 
-          <div class="gallery-box street-dogs">
-            <img src="images\dog7.JPG" alt="Street Dogs">
-          </div>
-          <div class="gallery-box street-dogs">
-            <img src="images\dog8.JPG" alt="Street Dogs">
-          </div>
-          <div class="gallery-box street-dogs">
-            <img src="images\dog9.JPG" alt="Street Dogs">
-          </div>
-    
-  
-  <!--3: Food Distribution-->
-  <div class="gallery-box food">
-    <img src="images\breeze foundation .JPG" alt="Food Distribution">
-    
-  </div>
-  <div class="gallery-box food">
-    <img src="images\breeze foundation 2.JPG" alt="Food Distribution">
-    
-  </div>
-  <div class="gallery-box food">
-    <img src="images\breeze foundation 3.JPG" alt="Food Distribution">
-    
-  </div>
-  <div class="gallery-box food">
-    <img src="images\breeze foundation 4.JPG" alt="Food Distribution">
-    
-  </div>
-  <div class="gallery-box food">
-    <img src="images\breeze foundation 5.JPG" alt="Food Distribution">
-    
-  </div>
-  <div class="gallery-box food">
-    <img src="images\breeze foundation 6.JPG" alt="Food Distribution">
-    
-  </div>
-  <div class="gallery-box food">
-    <img src="images\haldwani6.jpg" alt="Food Distribution">
-    
-  </div>
-  <div class="gallery-box food">
-    <img src="images\haldwani7.jpg" alt="Food Distribution">
-    
-  </div>
-  <div class="gallery-box food">
-    <img src="images\haldwani8.jpg" alt="Food Distribution">
-    
-  </div>
-  <div class="gallery-box food">
-    <img src="images\haldwani10.jpg" alt="Food Distribution">
-    
-  </div>
-  <div class="gallery-box food">
-    <img src="images\haldwani9.jpg" alt="Food Distribution">
-    
-  </div>
+      <div class="gallery-box street-dogs">
+        <img src="images\dog10.JPG" alt="Street Dogs">
+      </div>
 
-  <!--4: Education Drive-->
-  
-  <div class="gallery-box education">
-    
-    <img src="images\haldwani1.jpg" alt="Education Drive">
-    
-  </div>
-  <div class="gallery-box education">
-    
-    <img src="images\haldwani3.jpg" alt="Education Drive">
-    
-  </div>
-  <div class="gallery-box education">
-    
-    <img src="images\haldwani4.jpg" alt="Education Drive">
-    
-  </div>
-  <div class="gallery-box education">
-    
-    <img src="images\haldwani5.jpg" alt="Education Drive">
-    
-  </div>
-  
-  <div class="gallery-box education">
-    
-    <img src="images\children7.JPG" alt="Education Drive">
-    
-  </div>
-  <div class="gallery-box education">
-    
-    <img src="images\children8.JPG" alt="Education Drive">
-    
-  </div>
-  <div class="gallery-box education">
-    <img src="images\children11.JPG" alt="education">
-    
-  </div>
-  <div class="gallery-box education">
-    
-    <img src="images\breeze foundation 1.JPG" alt="Education Drive">
-    
-  </div>
+      <div class="gallery-box street-dogs">
+        <img src="images\dog7.JPG" alt="Street Dogs">
+      </div>
+      <div class="gallery-box street-dogs">
+        <img src="images\dog8.JPG" alt="Street Dogs">
+      </div>
+      <div class="gallery-box street-dogs">
+        <img src="images\dog9.JPG" alt="Street Dogs">
+      </div>
 
-   <!--4: Education Drive-->
-  
-   <div class="gallery-box education">
-    
-    <img src="images\brzee1.JPG" alt="Education Drive">
-    
-  </div>
 
-   <!--4: Education Drive-->
-  
-   <div class="gallery-box education">
-    
-    <img src="images\brzee2.JPG" alt="Education Drive">
-    
-  </div>
+      <!--3: Food Distribution-->
+      <div class="gallery-box food">
+        <img src="images\breeze foundation .JPG" alt="Food Distribution">
 
-   <!--4: Education Drive-->
-  
-   <div class="gallery-box education">
-    <img src="images\brzee3.JPG" alt="Education Drive">
-  </div>
+      </div>
+      <div class="gallery-box food">
+        <img src="images\breeze foundation 2.JPG" alt="Food Distribution">
 
-   <!--4: Education Drive-->
-  
-   <div class="gallery-box education">
-    <img src="images\brzee4.JPG" alt="Education Drive">
-  </div>
+      </div>
+      <div class="gallery-box food">
+        <img src="images\breeze foundation 3.JPG" alt="Food Distribution">
 
-    <!--4: Education Drive-->
-  
-    <div class="gallery-box education">
-      <img src="images\brzee5.JPG" alt="Education Drive">
-    </div>
+      </div>
+      <div class="gallery-box food">
+        <img src="images\breeze foundation 4.JPG" alt="Food Distribution">
+
+      </div>
+      <div class="gallery-box food">
+        <img src="images\breeze foundation 5.JPG" alt="Food Distribution">
+
+      </div>
+      <div class="gallery-box food">
+        <img src="images\breeze foundation 6.JPG" alt="Food Distribution">
+
+      </div>
+      <div class="gallery-box food">
+        <img src="images\haldwani6.jpg" alt="Food Distribution">
+
+      </div>
+      <div class="gallery-box food">
+        <img src="images\haldwani7.jpg" alt="Food Distribution">
+
+      </div>
+      <div class="gallery-box food">
+        <img src="images\haldwani8.jpg" alt="Food Distribution">
+
+      </div>
+      <div class="gallery-box food">
+        <img src="images\haldwani10.jpg" alt="Food Distribution">
+
+      </div>
+      <div class="gallery-box food">
+        <img src="images\haldwani9.jpg" alt="Food Distribution">
+
+      </div>
 
       <!--4: Education Drive-->
-  
-   <div class="gallery-box education">
-    <img src="images\brzee6.JPG" alt="Education Drive">
-  </div>
 
-    <!--4: Education Drive-->
-  
-    <div class="gallery-box education">
-      <img src="images\brzee8.JPG" alt="Education Drive">
-    </div>
+      <div class="gallery-box education">
+
+        <img src="images\haldwani1.jpg" alt="Education Drive">
+
+      </div>
+      <div class="gallery-box education">
+
+        <img src="images\haldwani3.jpg" alt="Education Drive">
+
+      </div>
+      <div class="gallery-box education">
+
+        <img src="images\haldwani4.jpg" alt="Education Drive">
+
+      </div>
+      <div class="gallery-box education">
+
+        <img src="images\haldwani5.jpg" alt="Education Drive">
+
+      </div>
+
+      <div class="gallery-box education">
+
+        <img src="images\children7.JPG" alt="Education Drive">
+
+      </div>
+      <div class="gallery-box education">
+
+        <img src="images\children8.JPG" alt="Education Drive">
+
+      </div>
+      <div class="gallery-box education">
+        <img src="images\children11.JPG" alt="education">
+
+      </div>
+      <div class="gallery-box education">
+
+        <img src="images\breeze foundation 1.JPG" alt="Education Drive">
+
+      </div>
 
       <!--4: Education Drive-->
-  
-   <div class="gallery-box education">
-    <img src="images\brzee10.JPG" alt="Education Drive">
-  </div>
 
-    <!--4: Education Drive-->
-  
-    <div class="gallery-box education">
-      <img src="images\brzee11.JPG" alt="Education Drive">
-    </div>
+      <div class="gallery-box education">
+
+        <img src="images\brzee1.JPG" alt="Education Drive">
+
+      </div>
 
       <!--4: Education Drive-->
-  
-   <div class="gallery-box education">
-    <img src="images\brzee12.JPG" alt="Education Drive">
-  </div>
 
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day (acharya)4.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)2 .jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)2.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)3.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)4.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)5.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)6.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)7.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)8.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)9.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)10.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)11.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)12.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)13.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)14.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
-      <img src="images\labour day(acharya)15.jpg" alt="Labour">
-      
-    </div>
-    <!--Labour-->
-  
-    <div class="gallery-box labour">
-    
+      <div class="gallery-box education">
+
+        <img src="images\brzee2.JPG" alt="Education Drive">
+
+      </div>
+
+      <!--4: Education Drive-->
+
+      <div class="gallery-box education">
+        <img src="images\brzee3.JPG" alt="Education Drive">
+      </div>
+
+      <!--4: Education Drive-->
+
+      <div class="gallery-box education">
+        <img src="images\brzee4.JPG" alt="Education Drive">
+      </div>
+
+      <!--4: Education Drive-->
+
+      <div class="gallery-box education">
+        <img src="images\brzee5.JPG" alt="Education Drive">
+      </div>
+
+      <!--4: Education Drive-->
+
+      <div class="gallery-box education">
+        <img src="images\brzee6.JPG" alt="Education Drive">
+      </div>
+
+      <!--4: Education Drive-->
+
+      <div class="gallery-box education">
+        <img src="images\brzee8.JPG" alt="Education Drive">
+      </div>
+
+      <!--4: Education Drive-->
+
+      <div class="gallery-box education">
+        <img src="images\brzee10.JPG" alt="Education Drive">
+      </div>
+
+      <!--4: Education Drive-->
+
+      <div class="gallery-box education">
+        <img src="images\brzee11.JPG" alt="Education Drive">
+      </div>
+
+      <!--4: Education Drive-->
+
+      <div class="gallery-box education">
+        <img src="images\brzee12.JPG" alt="Education Drive">
+      </div>
+
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day (acharya)4.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)2 .jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)2.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)3.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)4.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)5.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)6.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)7.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)8.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)9.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)10.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)11.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)12.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)13.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)14.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
+        <img src="images\labour day(acharya)15.jpg" alt="Labour">
+
+      </div>
+      <!--Labour-->
+
+      <div class="gallery-box labour">
+
         <img src="images\labour day(acharya)16.jpg" alt="Labour">
 
-      
-    </div>
- 
-</div>
-</section>
-<footer>
-  <div class="footer-content">
-    <div class="footer-section about">
-      <h4>SANSKAR</h4>
-      <p>Together we can bring changes in the society,</p>
-<p>also sometimes the small happiness is the key</p>
-<p>to a reason for the bigger happiness.</p>
+
       </div>
-    <div class="footer-section links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a
-            href="https://www.instagram.com/sanskar.mkf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank"
-            rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-      </ul>
 
     </div>
-    <div class="footer-section contact">
-      <h4>Contact</h4>
-      <p>Phone: +917983923205</p>
-      <p>Email: <a href="mailto:sanskarmkf@gmail.com">sanskarmkf@gmail.com</a></p>
+  </section>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h4>SANSKAR</h4>
+        <p>Together we can bring changes in the society,</p>
+        <p>also sometimes the small happiness is the key</p>
+        <p>to a reason for the bigger happiness.</p>
+      </div>
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/sanskar.mkf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank"
+              rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+
+      </div>
+      <div class="footer-section contact">
+        <h4>Contact</h4>
+        <p>Phone: +917983923205</p>
+        <p>Email: <a href="mailto:sanskarmkf@gmail.com">sanskarmkf@gmail.com</a></p>
+      </div>
     </div>
-  </div>
-</footer>
-</section>
+  </footer>
+  </section>
+  <script src="./toggle.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
 
 
 
-  <style>
-    .top-bar {
+<style>
+  .top-bar {
     position: fixed;
-    top: 0px; /* Place it below the announcement bar */
+    top: 0px;
+    /* Place it below the announcement bar */
     left: 0;
     width: 100%;
     z-index: 1000;
@@ -497,351 +510,426 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-}
+  }
+
   /* Announcement Bar Section */
   .announcement-bar {
-    background-color: orange; /* IITM Red */
+    background-color: orange;
+    /* IITM Red */
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 8px;
     font-size: 16px;
     position: fixed;
-    width: 100%; /* Ensure it spans full width */
-    top: 58px; 
+    width: 100%;
+    /* Ensure it spans full width */
+    top: 58px;
     z-index: 1001;
-    }
-    /* Gallery Title Styling */
-    .gallery-heading h3 { 
-  font-size: 4em;
+  }
+
+  /* Gallery Title Styling */
+  .gallery-heading h3 {
+    font-size: 4em;
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
     color: #333;
     /* Lighten text slightly */
-}
-.gallery-filter {
+  }
+
+  .gallery-filter {
     display: flex;
     justify-content: center;
     list-style: none;
     padding: 0;
     margin-bottom: 20px;
-}
+  }
 
-/* Breadcrumb Styling */
-.breadcrumb {
+  /* Breadcrumb Styling */
+  .breadcrumb {
     font-size: 1em;
     color: #f1f1f1;
     margin-top: 10px;
-}
+  }
 
-.breadcrumb a {
-    color:white;
+  .breadcrumb a {
+    color: white;
     text-decoration: none;
-}
+  }
 
-.breadcrumb a:hover {
+  .breadcrumb a:hover {
     text-decoration: underline;
-}
+  }
 
-.breadcrumb span {
+  .breadcrumb span {
     margin: 0 5px;
     color: #ddd;
-}
+  }
 
 
-/* Breadcrumb Styling */
-    
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  /* Breadcrumb Styling */
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #ffffff; /* White Background */
-  color: #333; /* Dark Gray Text */
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    /* White Background */
+    color: #333;
+    /* Dark Gray Text */
+  }
 
 
-.join-btn {
-  background-color: #ffffff; 
-  color: #b7282e; 
-  border: 1px solid #b7282e;
-  padding: 8px 15px;
-  border-radius: 5px;
-  position: absolute;
-  right: 20px;
-  top: 2px;
-  cursor: pointer;
-  font-weight: bold;
- 
-}
+  .join-btn {
+    background-color: #ffffff;
+    /* White */
+    color: #b7282e;
+    /* Red Text */
+    border: 1px solid #b7282e;
+    padding: 6px 15px;
+    border-radius: 5px;
+    position: relative;
+    right: 10px;
+    top: 1px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
 
-.join-btn:hover {
-  background-color: #b7282e;
-  color: #fff;
-}
+  .join-btn:hover {
+    background-color: #b7282e;
+    color: #fff;
+  }
 
-/* Top Bar Section */
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333333; /* Dark Gray */
-  padding: 20px 40px;
-}
-.logo-text {
+  /* Top Bar Section */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    /* Dark Gray */
+    padding: 20px 40px;
+  }
+
+  .logo-text {
     display: flex;
     align-items: center;
-}
+  }
 
-.logo img {
-    width: 65px;      /* Adjust the size of the logo */
-    margin-top: -15px; /* Move the logo slightly up */
-    padding: 8px;     /* Adjust padding around the logo */
+  .logo img {
+    width: 65px;
+    /* Adjust the size of the logo */
+    margin-top: -15px;
+    /* Move the logo slightly up */
+    padding: 8px;
+    /* Adjust padding around the logo */
     margin-left: -30px;
-}
+  }
 
-.logo-text-content {
+  .logo-text-content {
     color: white;
-    font-size: 30px; /* Adjust font size for text */
+    font-size: 30px;
+    /* Adjust font size for text */
     font-weight: bold;
-    margin-left: 1px; /* Space between the logo and the text */
-    font-family: Arial, sans-serif; /* Optional: Choose a font */
+    margin-left: 1px;
+    /* Space between the logo and the text */
+    font-family: Arial, sans-serif;
+    /* Optional: Choose a font */
     margin-top: -20px;
-    font-family: 'Playfair Display', serif; /* A popular serif font */
-}
+    font-family: 'Playfair Display', serif;
+    /* A popular serif font */
+  }
 
-.top-bar .logo img {
-    width: 55px;      /* Increase the width of the logo */
-    margin-top: -20px; /* Move the logo slightly up */
-    padding: 8px;     /* Adjust padding around the logo */
+  .top-bar .logo img {
+    width: 55px;
+    /* Increase the width of the logo */
+    margin-top: -20px;
+    /* Move the logo slightly up */
+    padding: 8px;
+    /* Adjust padding around the logo */
     margin-left: -30px;
-}
+  }
 
-.top-nav ul {
-  list-style: none;
-  display: flex;
-}
+  .top-nav ul {
+    list-style: none;
+    display: flex;
+  }
 
-.top-nav ul li {
-  margin-left: 30px;
-}
+  .top-nav ul li {
+    margin-left: 30px;
+  }
 
-.top-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-}
+  .top-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
 
 
-   /* Gallery Section */
-   #ngo-gallery {
-  margin-top: 80px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-  border-radius: 20px; /* Rounds the corners */
-box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3); /* Adds the shadow */
+  /* Gallery Section */
+  #ngo-gallery {
+    margin-top: 80px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 20px;
+    /* Rounds the corners */
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+    /* Adds the shadow */
 
-}
+  }
 
-.gallery-heading {
-  margin-bottom: 30px;
-  font-family: 'Playfair Display', serif; /* A popular serif font */
-}
+  .gallery-heading {
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+    /* A popular serif font */
+  }
 
-.gallery-filter {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  gap: 10px;
-}
+  .gallery-filter {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    gap: 10px;
+  }
 
-.gallery-filter .list {
-  padding: 10px 16px;
-  cursor: pointer;
-}
+  .gallery-filter .list {
+    padding: 10px 16px;
+    cursor: pointer;
+  }
 
-.gallery-filter-active {
-  background-color: #007bff;
-  color: #fff;
-}
+  .gallery-filter-active {
+    background-color: #007bff;
+    color: #fff;
+  }
 
-/* Container for Gallery - Aligns and spaces images */
-.gallery-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center alignment */
-  gap: 30px; /* Spacing between gallery boxes */
-  padding: 20px;
-}
+  /* Container for Gallery - Aligns and spaces images */
+  .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center alignment */
+    gap: 30px;
+    /* Spacing between gallery boxes */
+    padding: 20px;
+  }
 
-/* Gallery Box Styling */
-.gallery-box {
-  width: 400px; /* Larger width for each box */
-  height: 400px; /* Larger height for each box */
-  overflow: hidden; /* Crop overflowed content */
-  position: relative;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for box */
-  transition: transform 0.3s; /* Smooth hover effect */
-}
+  /* Gallery Box Styling */
+  .gallery-box {
+    width: 400px;
+    /* Larger width for each box */
+    height: 400px;
+    /* Larger height for each box */
+    overflow: hidden;
+    /* Crop overflowed content */
+    position: relative;
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Shadow for box */
+    transition: transform 0.3s;
+    /* Smooth hover effect */
+  }
 
-/* Image Styling */
-.gallery-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures images cover the box area without distortion */
-  border-radius: 10px; /* Aligns with box corners */
-}
+  /* Image Styling */
+  .gallery-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures images cover the box area without distortion */
+    border-radius: 10px;
+    /* Aligns with box corners */
+  }
 
-/* Optional: Hover Effect for Gallery Box */
-.gallery-box:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
-}
-/* Styling for the gallery section */
-/* Styling for the gallery section */
-.gallery-section {
-  position: relative;
-  background-color: #f5f5f5; /* Background for the section */
-  border-radius: 20px; /* Rounded corners for the section */
-  padding: 40px; /* Space around the content */
-  width: 85%;
-  margin: 40px auto; /* Center the section */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a shadow */
-  overflow: hidden; /* Ensures circles stay within the section */
-}
+  /* Optional: Hover Effect for Gallery Box */
+  .gallery-box:hover {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+  }
 
-/* Common style for all decorative quarter-circles */
-.gallery-corner {
-  position: absolute;
-  width: 130px; /* Diameter of the quarter-circle */
-  height: 130px; /* Equal to width for perfect quarter-circle */
-  background-color: rgba(200, 200, 200, 0.4); /* Light grey with transparency */
-  border-radius: 0 100px 0 0; /* Makes the shape a quarter-circle */
-  z-index: 1; /* Ensure it is below content but visible */
-}
+  /* Styling for the gallery section */
+  /* Styling for the gallery section */
+  .gallery-section {
+    position: relative;
+    background-color: #f5f5f5;
+    /* Background for the section */
+    border-radius: 20px;
+    /* Rounded corners for the section */
+    padding: 40px;
+    /* Space around the content */
+    width: 85%;
+    margin: 40px auto;
+    /* Center the section */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Add a shadow */
+    overflow: hidden;
+    /* Ensures circles stay within the section */
+  }
 
-/* Top-left corner */
-.gallery-corner.tl {
-  top: 0; /* Align to the top */
-  left: 0; /* Align to the left */
-  transform: rotate(90deg); /* No rotation needed */
-}
+  /* Common style for all decorative quarter-circles */
+  .gallery-corner {
+    position: absolute;
+    width: 130px;
+    /* Diameter of the quarter-circle */
+    height: 130px;
+    /* Equal to width for perfect quarter-circle */
+    background-color: rgba(200, 200, 200, 0.4);
+    /* Light grey with transparency */
+    border-radius: 0 100px 0 0;
+    /* Makes the shape a quarter-circle */
+    z-index: 1;
+    /* Ensure it is below content but visible */
+  }
 
-/* Top-right corner */
-.gallery-corner.tr {
-  top: 0; /* Align to the top */
-  right: 0; /* Align to the right */
-  transform: rotate(180deg); /* Rotate to fit the corner */
-}
+  /* Top-left corner */
+  .gallery-corner.tl {
+    top: 0;
+    /* Align to the top */
+    left: 0;
+    /* Align to the left */
+    transform: rotate(90deg);
+    /* No rotation needed */
+  }
 
-/* Bottom-left corner */
-.gallery-corner.bl {
-  bottom: 0; /* Align to the bottom */
-  left: 0; /* Align to the left */
-  transform: rotate(360deg); /* Rotate to fit the corner */
-}
+  /* Top-right corner */
+  .gallery-corner.tr {
+    top: 0;
+    /* Align to the top */
+    right: 0;
+    /* Align to the right */
+    transform: rotate(180deg);
+    /* Rotate to fit the corner */
+  }
 
-/* Bottom-right corner */
-.gallery-corner.br {
-  bottom: 0; /* Align to the bottom */
-  right: 0; /* Align to the right */
-  transform: rotate(270deg); /* Rotate to fit the corner */
-}
+  /* Bottom-left corner */
+  .gallery-corner.bl {
+    bottom: 0;
+    /* Align to the bottom */
+    left: 0;
+    /* Align to the left */
+    transform: rotate(360deg);
+    /* Rotate to fit the corner */
+  }
 
-.gallery-box img:hover {
-  transform: scale(1.1); /* Zoom effect on hover */
-}
+  /* Bottom-right corner */
+  .gallery-corner.br {
+    bottom: 0;
+    /* Align to the bottom */
+    right: 0;
+    /* Align to the right */
+    transform: rotate(270deg);
+    /* Rotate to fit the corner */
+  }
 
-/* Footer */
-footer {
-    background-color: #333333; /* Dark Gray */
+  .gallery-box img:hover {
+    transform: scale(1.1);
+    /* Zoom effect on hover */
+  }
+
+  /* Footer */
+  footer {
+    background-color: #333333;
+    /* Dark Gray */
     color: white;
     padding: 40px 20px;
     width: 100%;
-    box-sizing: border-box; /* Prevent padding from affecting the layout */
-    text-align: center; /* Center text on smaller screens */
-    border-top: 5px solid coral; /* Add a decorative border to the top */
-}
+    box-sizing: border-box;
+    /* Prevent padding from affecting the layout */
+    text-align: center;
+    /* Center text on smaller screens */
+    border-top: 5px solid coral;
+    /* Add a decorative border to the top */
+  }
 
-.footer-content {
+  .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Align items at the top for consistency */
     flex-wrap: wrap;
-    gap: 30px; /* More space between sections */
-}
+  }
 
-.footer-section {
-    flex: 1 1 25%; /* Sections will take 25% of the space on larger screens */
-    min-width: 200px; /* Ensure sections don’t shrink too much on smaller screens */
+  .footer-section {
+    flex: 1 1 25%;
+    /* Sections will take 25% of the space on larger screens */
+    min-width: 200px;
+    /* Ensure sections don’t shrink too much on smaller screens */
     margin-bottom: 20px;
-}
+  }
 
-.footer-section h4 {
-    color: coral; /* Stand out with a vibrant color */
+  .footer-section h4 {
+    color: coral;
+    /* Stand out with a vibrant color */
     margin-bottom: 15px;
-    font-size: 1.4em; /* Slightly larger font size for better readability */
-    text-transform: uppercase; /* Add a professional touch */
-}
+    font-size: 1.4em;
+    /* Slightly larger font size for better readability */
+    text-transform: uppercase;
+    /* Add a professional touch */
+  }
 
-.footer-section p,
-.footer-section a {
-    color: #ccc; /* Softer white for better contrast */
+  .footer-section p,
+  .footer-section a {
+    color: #ccc;
+    /* Softer white for better contrast */
     text-decoration: none;
-    line-height: 1.8; /* More spacing for readability */
-    font-size: 0.95em; /* Ensure smaller text doesn’t dominate */
-}
+    line-height: 1.8;
+    /* More spacing for readability */
+    font-size: 0.95em;
+    /* Ensure smaller text doesn’t dominate */
+  }
 
-.footer-section a:hover {
-    color: coral; /* Make hover color consistent */
-    text-decoration: underline; /* Add hover underline for clarity */
-}
+  .footer-section a:hover {
+    color: coral;
+    /* Make hover color consistent */
+    text-decoration: underline;
+    /* Add hover underline for clarity */
+  }
 
-.footer-section ul {
+  .footer-section ul {
     list-style-type: none;
     padding: 0;
-    margin: 0; /* Standardize spacing for lists */
-}
+    margin: 0;
+    /* Standardize spacing for lists */
+  }
 
-.footer-section ul li {
+  .footer-section ul li {
     margin-bottom: 10px;
-}
+  }
 
-.footer-section ul li a {
+  .footer-section ul li a {
     color: #ddd;
     text-decoration: none;
-}
+  }
 
-.footer-section ul li a:hover {
+  .footer-section ul li a:hover {
     color: coral;
-}
+  }
 
-footer a {
-    transition: color 0.3s ease; /* Smooth hover effect */
-}
+  footer a {
+    transition: color 0.3s ease;
+    /* Smooth hover effect */
+  }
 
-footer a:hover {
+  footer a:hover {
     color: coral;
-}
+  }
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .footer-content {
-        flex-direction: column; /* Stack sections vertically on smaller screens */
-        text-align: center;
+      flex-direction: column;
+      /* Stack sections vertically on smaller screens */
+      text-align: center;
     }
 
     .footer-section {
-        flex: 1 1 100%; /* Ensure sections take full width */
+      flex: 1 1 100%;
+      /* Ensure sections take full width */
     }
-}
-
+  }
 </style>
-<script>
+<!-- <script>
 const filterItems = document.querySelectorAll('.gallery-filter .list');
 const galleryBoxes = document.querySelectorAll('.gallery-box');
 filterItems.forEach(item => {
@@ -866,5 +954,4 @@ filterItems.forEach(item => {
         });
     });
 });
-</script>
- 
+</script> -->

@@ -26,13 +26,13 @@
     </button>
     <nav class="top-nav" aria-label="Main Navigation">
       <ul>
-        
-<li><a href="index.html">Home</a></li>
-<li><a href="work.html">Our Work</a></li>
-<li><a href="testimonials.html">Testimonials</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contribute.html">Contribute</a></li>
-<li><a href="contact.html">Contact</a></li>
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="contact.html">Contact</a></li>
 
       </ul>
     </nav>
@@ -60,24 +60,24 @@
       <div class="slide">
         <img src="images\breeze foundation 1.JPG" alt="Image2">
 
-     
-      </div>
-    <!-- Slide 3 -->
-    <div class="slide">
-      <img src="images\brzee13.JPG" alt="Image3">
 
-     
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="images\brzee13.JPG" alt="Image3">
+
+
       </div>
     </div>
   </div>
-  <button class="prev"><</button>
-  <button class="next">></button>
+  <button class="prev"></button>
+  <button class="next"></button>
   </div>
   <section class="sanskar-statement">
     <h2 class="sanskar-heading">SANSKAR</h2>
 
     <p class="sanskar-description">
-      Sanskar is a charitable group driven by compassionate individuals aiming to aid those in need. We extend a helping
+      Sanskar is a charitable group driven by compassionate individuals aiming to aid those in need.We extend a helping
       hand with vital necessities such as food, clothing, education, books, and medicine, fostering equality and easing
       the burdens of those facing urgent hardships, promoting fairness and supporting honest workers along the way.
     </p>
@@ -187,51 +187,51 @@
       </div>
       <div class="video-container">
         <!-- Custom Thumbnail -->
-<!-- Custom Thumbnail -->
-<div class="video-thumbnail">
-  <a href="https://www.youtube.com/watch?v=hIJ0mAD5V_o" target="_blank">
-      <img src="images\labour day(acharya)13.jpg" alt="Video Thumbnail">
-      <div class="youtube-icon"></div>
-  </a>
-</div>
-
+        <!-- Custom Thumbnail -->
+        <div class="video-thumbnail">
+          <a href="https://www.youtube.com/watch?v=hIJ0mAD5V_o" target="_blank">
+            <img src="images\labour day(acharya)13.jpg" alt="Video Thumbnail">
+            <div class="youtube-icon"></div>
+          </a>
         </div>
 
+      </div>
 
+
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h4>SANSKAR</h4>
+        <p>Together we can bring changes in the society,
+          also sometimes the small happiness is the key
+          to a reason for the bigger happiness.</p>
+      </div>
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/sanskar.mkf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank"
+              rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+
+      </div>
+      <div class="footer-section contact">
+        <h4>Contact</h4>
+        <p>Phone: +919818885691</p>
+        <p>Email: <a href="mailto:sanskarmkf@gmail.com">sanskarmkf@gmail.com</a></p>
       </div>
     </div>
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section about">
-          <h4>SANSKAR</h4>
-          <p>Together we can bring changes in the society,</p>
-          <p>also sometimes the small happiness is the key</p>
-          <p>to a reason for the bigger happiness.</p>
-        </div>
-        <div class="footer-section links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="https://www.instagram.com/sanskar.mkf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank"
-                rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-          </ul>
-
-        </div>
-        <div class="footer-section contact">
-          <h4>Contact</h4>
-          <p>Phone: +919818885691</p>
-          <p>Email: <a href="mailto:sanskarmkf@gmail.com">sanskarmkf@gmail.com</a></p>
-        </div>
-      </div>
-    </footer>
-    </section>
+  </footer>
+  </section>
 
 
 
-
-    <script src="script.js"></script>
+  <script src="./toggle.js"></script>
+  <script src="./script.js"></script>
 
 
 </body>
@@ -239,11 +239,20 @@
 </html>
 <style>
   /* General Styling */
-  body {
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+  }
+
+  /* body {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #f0f0f0;
-  }
+  } */
 
   .top-bar {
     position: fixed;
@@ -256,7 +265,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    /* padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+
   }
 
   .slider-container {
@@ -296,7 +309,7 @@
     display: block;
     margin: 0 auto;
     overflow: hidden;
-    object-fit: cover;
+    object-fit: fill;
     opacity: 1.0;
     /* Add this to make the image semi-transparent */
   }
@@ -318,7 +331,7 @@
     color: #333;
     margin-top: 100px;
     text-align: center;
-    font-style:italic;
+    font-style: italic;
   }
 
 
@@ -340,7 +353,7 @@
     margin: 0 auto;
     white-space: pre-line;
     /* Allows for line breaks */
-    
+
   }
 
 
@@ -353,7 +366,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color : rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     border: none;
     color: white;
     padding: 10px;
@@ -413,11 +426,12 @@
     border: 1px solid #b7282e;
     padding: 6px 15px;
     border-radius: 5px;
-    position: absolute;
-    right: 20px;
-    top: 4px;
+    position: relative;
+    right: auto;
+    top: auto;
     cursor: pointer;
     font-weight: bold;
+    transition: all 0.3s ease-in-out;
   }
 
   .join-btn:hover {
@@ -534,14 +548,14 @@
     border: 0;
     z-index: 1001;
   }
-  
+
   .hamburger-box {
     width: 30px;
     height: 24px;
     display: inline-block;
     position: relative;
   }
-  
+
   .hamburger-inner {
     width: 100%;
     height: 3px;
@@ -552,7 +566,7 @@
     transform: translateY(-50%);
     transition: background-color 0.2s ease;
   }
-  
+
   .hamburger-inner::before,
   .hamburger-inner::after {
     content: '';
@@ -563,25 +577,25 @@
     left: 0;
     transition: transform 0.2s ease;
   }
-  
+
   .hamburger-inner::before {
     top: -8px;
   }
-  
+
   .hamburger-inner::after {
     top: 8px;
   }
-  
+
   .top-nav ul {
     list-style: none;
     display: flex;
   }
-  
+
   @media (max-width: 768px) {
     .hamburger {
       display: block;
     }
-    
+
     .top-nav {
       position: fixed;
       top: 0;
@@ -592,16 +606,16 @@
       transition: right 0.3s ease;
       padding-top: 80px;
     }
-    
+
     .top-nav.active {
       right: 0;
     }
-    
+
     .top-nav ul {
       flex-direction: column;
       padding: 20px;
     }
-    
+
     .top-nav ul li {
       margin: 15px 0;
     }
@@ -1193,7 +1207,7 @@
 
   .ourachievements {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     /* Space between achievements */
     padding: 20px;
     color: #000;
@@ -1218,31 +1232,53 @@
 
   .achievement-card {
     display: flex;
-    /* Make card a flex container */
+    flex-direction: row;
+    /* Default: side by side */
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    /* Slightly increased shadow */
     width: 100%;
-    /* Full width */
-    height: 300px;
-    /* Increased height */
+    height: auto;
+    /* Allow height to adjust dynamically */
     transition: transform 0.3s ease;
-    overflow: hidden;
+    overflow: visible;
     margin-bottom: 0;
+    align-items: center;
+    gap: 20px;
+    /* Space between elements */
+    padding: 20px;
   }
 
   .achievement-image {
-    flex: 0 0 600px;
-    /* Increase width for image */
+    flex: 0 0 auto;
+    /* Allows it to shrink on smaller screens */
+    width: 100%;
+    /* Ensures responsiveness */
+    max-width: 600px;
+    /* Maintains original size on larger screens */
     margin-right: 20px;
   }
+
+
+  @media (max-width: 768px) {
+
+    /* Adjusts for mobile */
+    .achievement-image {
+      flex: 0 0 100%;
+      /* Makes the image responsive */
+      max-width: 100%;
+      /* Ensures it doesn't overflow */
+      margin-right: 0;
+      /* Removes extra margin */
+    }
+  }
+
 
   .achievement-image img {
     width: 100%;
     height: 100%;
     /* Set height to fill container */
-    object-fit: cover;
+    object-fit: fill;
     border-radius: 20px 20px 20px 20px;
     /* Rounded corners for the left side */
   }
@@ -1260,6 +1296,29 @@
     color: #020202;
     /* Darker grey color for the paragraph */
     margin: 20px;
+  }
+
+
+  @media (max-width: 768px) {
+    .achievement-card {
+      flex-direction: column;
+      /* Stack elements vertically */
+      align-items: center;
+      /* Center align content */
+    }
+
+    .achievement-image {
+      max-width: 100%;
+      /* Ensure the image takes full width */
+      margin-right: 0;
+      /* Remove side margin */
+    }
+
+    .achievement-info {
+      padding: 15px;
+      text-align: Ju;
+      /* Center align text */
+    }
   }
 
 
@@ -1476,13 +1535,7 @@
 
 
 
-  /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
-    .info-row {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
+
 
   /* General Styles */
   /* General Styles */
@@ -1505,10 +1558,10 @@
   .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     /* Align items at the top for consistency */
     flex-wrap: wrap;
-    gap: 30px;
+    /* gap: 30px; */
     /* More space between sections */
   }
 
@@ -1583,43 +1636,5 @@
       /* Stack sections vertically on smaller screens */
       text-align: center;
     }
-
-    .footer-section {
-      flex: 1 1 100%;
-      /* Ensure sections take full width */
-    }
   }
 </style>
-<script>
-  // Mobile menu toggle
-  const hamburger = document.querySelector('.hamburger');
-  const nav = document.querySelector('.top-nav');
-  
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    nav.classList.toggle('active');
-    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-    hamburger.setAttribute('aria-expanded', !expanded);
-  });
-
-  let currentIndex = 0;
-
-
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
-
-  document.querySelector('.next').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateSlider();
-  });
-
-  document.querySelector('.prev').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateSlider();
-  });
-
-  function updateSlider() {
-    const offset = -currentIndex * 100;
-    document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
-  }
-</script>
