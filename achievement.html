@@ -81,7 +81,7 @@
     /* Ensure the PDF container is responsive and well-positioned */
      /* Ensure the PDF container is responsive and well-positioned */
      .pdf {
-            width: 300%;
+            width: 100%;
             aspect-ratio: 4 / 3;
         }
         .pdf,
@@ -91,59 +91,59 @@
             margin: 0;
             padding: 0;
         }
-       h1,
+       /* h1,
         h3 {
             text-align: center;
         }
     
         h1 {
             color: green;
-        }
+        } */
     /* Reset default margins and paddings for body and html */
-    html,
+    /* html,
     body {
         height: auto;
         margin: 0;
         padding: 0;
-        background-color: #f9f9f9; /* Light background for better contrast */
-        font-family: Arial, sans-serif; /* Standard font for readability */
-        color: #333; /* Neutral text color */
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif; 
+        color: #333;
     }
-    
+     */
     /* Style headings */
-    h1,
+    /* h1,
     h3 {
         text-align: center;
-        margin: 0 0 20px; /* Add consistent spacing below headings */
+        margin: 0 0 20px;
     }
     
-    /* Add emphasis to h1 */
+   
     h1 {
         color: green;
-        font-size: 2.5rem; /* Larger font size for hierarchy */
-        font-weight: bold; /* Bold for better emphasis */
+        font-size: 2.5rem;
+        font-weight: bold; 
     }
     
-    /* Style h3 for consistency */
+    
     h3 {
         color: #666;
         font-size: 1.5rem;
-        font-weight: normal; /* Normal weight for better contrast with h1 */
+        font-weight: normal; 
     }
-    
+     */
     
     /* Reset default margins and paddings for body and html */
     .pdf-container {
         margin-top: -350px; /* Adjust the value to move the container up */
         padding: 0;
-        width: 500%; /* Ensure it spans the container width */
+        width: 100%; /* Ensure it spans the container width */
         display: flex;
         justify-content: center; /* Centers the iframe horizontally */
     }
     
     .pdf-container iframe {
         border: none; /* Removes the border for a clean look */
-        width: 80%; /* Adjust width as needed */
+        width: 100%; /* Adjust width as needed */
         height: 500px; /* Set a suitable height */
     }
     
@@ -336,7 +336,8 @@
     </style>
     
                   
-    <style>* {
+    <style>
+    * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -362,11 +363,11 @@
     .container {
         display: flex;
         width: 80%;
-        max-width: 1200px;
+        max-width: 100px;
         overflow: hidden;
     }
     
-    /* Left Slide */
+    /* Left Slide
     .slide-left {
         flex: 1;
         display: flex;
@@ -384,27 +385,27 @@
     }
     
     /* Right Slide */
-    .slide-right {
+    /* .slide-right {
         flex: 1;
         padding: 50px;
         background-color: #ffffff;
         transform: translateX(100%);
         animation: slideInRight 1s forwards;
         border-radius: 8px;
-    }
+    } */ 
     
     
     /* Slide In Animations */
-    @keyframes slideInLeft {
+    /* @keyframes slideInLeft {
         from {
             transform: translateX(-100%);
         }
         to {
             transform: translateX(0);
         }
-    }
+    } */
     
-    @keyframes slideInRight {
+    /* @keyframes slideInRight {
         from {
             transform: translateX(100%);
         }
@@ -412,7 +413,7 @@
             transform: translateX(0);
         }
     }
-    
+     */
       /* Footer */
     
       footer {
@@ -432,11 +433,8 @@
       .footer-content {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        /* Align items at the top for consistency */
         flex-wrap: wrap;
-        gap: 30px;
-        /* More space between sections */
+        
       }
     
       .footer-section {

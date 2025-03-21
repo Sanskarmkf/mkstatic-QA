@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation Form</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
-    
+
 </head>
+
 <body>
 
-   
+
     <div class="top-bar">
         <div class="logo-text">
-          <div class="logo">
-            <img src="images/logo1.png" alt="Logo" width="100">
-          </div>
-          <span class="logo-text-content">SANSKAR</span>
+            <div class="logo">
+                <img src="images/logo1.png" alt="Logo" width="100">
+            </div>
+            <span class="logo-text-content">SANSKAR</span>
         </div>
         <nav class="top-nav">
             <ul>
@@ -25,14 +27,14 @@
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contribute.html">Contribute</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                
-                              
+
+
             </ul>
         </nav>
     </div>
 
-     <!-- Top Announcement Bar -->
-     <div class="announcement-bar">
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
         <p>Become a part of the change – Join our mission and make a difference together!</p>
         <a href="contact.html"><button class="join-btn">Join Now</button></a>
     </div>
@@ -41,111 +43,119 @@
         <a href="contact.html"><button class="join-btn">Join Now</button></a>
     </div>
     <div class="container">
-    <div class="helping-hand">
-        <h1> Donate Today</h1>
-        <div class="donate-card">
-            <img src="images/QR CODE.jpg" alt="QR Code for Donation" class="qr-code">
-            <p class="scan-text">SCAN TO DONATE</p>
-            <p class="help-text"></p>
-            <p>UPI ID : shyamrdubey@oksbi</p>
-            <div class="underline"></div>
-        </div>
-    </div>
-    <div class="contact-form">
-        <h1>Fill Out Your Details After Donating</h1>
-        <form id="donationForm" enctype="multipart/form-data">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" required>
-    
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required>
-    
-            <label for="phone">Phone:</label>
-            <input type="text" name="phone" id="phone" required>
-    
-            <label for="address">Address:</label>
-            <input type="text" name="address" id="address" required>
-    
-            <label for="payment-screenshot">Upload Payment Screenshot:</label>
-            <input type="file" name="payment-screenshot" id="payment-screenshot" accept="image/*" required>
-    
-            <button type="button" onclick="saveFormDetails()">Submit</button>
-        </form>
-    </div>
-</div>
-</div>
-     <!-- Footer Section -->
-     <footer>
-        <div class="footer-content">
-          <div class="footer-section about">
-            <h4>SANSKAR</h4>
-            <p>Together we can bring changes in the society,</p>
-      <p>also sometimes the small happiness is the key</p>
-      <p>to a reason for the bigger happiness.</p>
+        <div class="helping-hand">
+            <h1> Donate Today</h1>
+            <div class="donate-card">
+                <img src="images/QR CODE.jpg" alt="QR Code for Donation" class="qr-code">
+                <p class="scan-text">SCAN TO DONATE</p>
+                <p class="help-text"></p>
+                <p>UPI ID : shyamrdubey@oksbi</p>
+                <div class="underline"></div>
             </div>
-          <div class="footer-section links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a
-                  href="https://www.instagram.com/sanskar.mkf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                  target="_blank" rel="noopener noreferrer">Instagram</a></li>
-              <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank"
-                  rel="noopener noreferrer">LinkedIn</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-  
-          </div>
-          <div class="footer-section contact">
-            <h4>Contact</h4>
-            <p>Phone: +917983923205</p>
-            <p>Email: <a href="mailto:sanskarmkf@gmail.com">sanskarmkf@gmail.com</a></p>
-          </div>
         </div>
-      </footer>
-    
-  <style>
+        <div class="contact-form">
+            <h1>Fill Out Your Details After Donating</h1>
+            <form id="donationForm" enctype="multipart/form-data">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="text" name="phone" id="phone" required>
+
+                <label for="address">Address:</label>
+                <input type="text" name="address" id="address" required>
+
+                <label for="payment-screenshot">Upload Payment Screenshot:</label>
+                <input type="file" name="payment-screenshot" id="payment-screenshot" accept="image/*" required>
+
+                <button type="button" onclick="saveFormDetails()">Submit</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h4>SANSKAR</h4>
+                <p>Together we can bring changes in the society,
+                    also sometimes the small happiness is the key
+                    to a reason for the bigger happiness.</p>
+            </div>
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/sanskar.mkf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-section contact">
+                <h4>Contact</h4>
+                <p>Phone: +917983923205</p>
+                <p>Email: <a href="mailto:sanskarmkf@gmail.com">sanskarmkf@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
         /* General Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f0f0f0;
-            }
-            
-         
-            
-            body {
+        }
+
+
+
+        body {
             font-family: 'Arial', sans-serif;
-            background-color: #ffffff; /* White Background */
-            color: #333; /* Dark Gray Text */
-            }
-            
-            .top-bar {
-    position: fixed;
-    top: 0px; /* Place it below the announcement bar */
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #AD88C6;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-}
-  /* Announcement Bar Section */
-  .announcement-bar {
-    background-color: orange; /* IITM Red */
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 16px;
-    position: fixed;
-    width: 100%; /* Ensure it spans full width */
-    top: 58px; 
-    z-index: 1001;
-    }
-            .join-btn {
-            background-color: #ffffff; /* White */
-            color: #b7282e; /* Red Text */
+            background-color: #ffffff;
+            /* White Background */
+            color: #333;
+            /* Dark Gray Text */
+        }
+
+        .top-bar {
+            position: fixed;
+            top: 0px;
+            /* Place it below the announcement bar */
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #AD88C6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        /* Announcement Bar Section */
+        .announcement-bar {
+            background-color: orange;
+            /* IITM Red */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            position: fixed;
+            width: 100%;
+            /* Ensure it spans full width */
+            top: 58px;
+            z-index: 1001;
+        }
+
+        .join-btn {
+            background-color: #ffffff;
+            /* White */
+            color: #b7282e;
+            /* Red Text */
             border: 1px solid #b7282e;
             padding: 6px 15px;
             border-radius: 5px;
@@ -154,65 +164,69 @@
             top: 4px;
             cursor: pointer;
             font-weight: bold;
-            }
-            
-            .join-btn:hover {
+        }
+
+        .join-btn:hover {
             background-color: #b7282e;
             color: #fff;
-            }
-            .top-bar {
+        }
+
+        .top-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #333333; /* Dark Gray */
+            background-color: #333333;
+            /* Dark Gray */
             padding: 20px 40px;
         }
+
         .top-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #333333;
-        /* Dark Gray */
-        padding: 20px 40px;
-      }
-    
-      .logo-text {
-        display: flex;
-        align-items: center;
-      }
-    
-      .logo img {
-        width: 65px;
-        /* Adjust the size of the logo */
-        margin-top: -15px;
-        /* Move the logo slightly up */
-        padding: 8px;
-        /* Adjust padding around the logo */
-        margin-left: -30px;
-      }
-    
-      .logo-text-content {
-        color: white;
-        font-size: 30px;
-        /* Adjust font size for text */
-        font-weight: bold;
-        margin-left: -1px;
-        /* Space between the logo and the text */
-        font-family: Arial, sans-serif;
-        /* Optional: Choose a font */
-        margin-top: -20px;
-        font-family: 'Playfair Display', serif; /* A popular serif font */
-      }
-    
-      .top-bar .logo img {
-        width: 55px;
-        /* Increase the width of the logo */
-        margin-top: -20px;
-        /* Move the logo slightly up */
-        padding: 8px;
-        /* Adjust padding around the logo */
-        margin-left: -30px;
-      }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333333;
+            /* Dark Gray */
+            padding: 20px 40px;
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 65px;
+            /* Adjust the size of the logo */
+            margin-top: -15px;
+            /* Move the logo slightly up */
+            padding: 8px;
+            /* Adjust padding around the logo */
+            margin-left: -30px;
+        }
+
+        .logo-text-content {
+            color: white;
+            font-size: 30px;
+            /* Adjust font size for text */
+            font-weight: bold;
+            margin-left: -1px;
+            /* Space between the logo and the text */
+            font-family: Arial, sans-serif;
+            /* Optional: Choose a font */
+            margin-top: -20px;
+            font-family: 'Playfair Display', serif;
+            /* A popular serif font */
+        }
+
+        .top-bar .logo img {
+            width: 55px;
+            /* Increase the width of the logo */
+            margin-top: -20px;
+            /* Move the logo slightly up */
+            padding: 8px;
+            /* Adjust padding around the logo */
+            margin-left: -30px;
+        }
 
         .top-nav ul {
             list-style: none;
@@ -232,7 +246,9 @@
         .top-nav ul li a:hover {
             text-decoration: underline;
         }
+
         * {
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -413,9 +429,7 @@ footer {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Align items at the top for consistency */
     flex-wrap: wrap;
-    gap: 30px; /* More space between sections */
 }
 
 .footer-section {
@@ -527,11 +541,4 @@ footer a:hover {
 
 }
 
-
-
-/* Icons */
-
-  
-
 </style>
-
