@@ -830,6 +830,7 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
+    /* Footer Styling */
     .footer-content {
         flex-direction: column; /* Stack sections vertically on smaller screens */
         text-align: center;
@@ -838,8 +839,8 @@ footer a:hover {
     .footer-section {
         flex: 1 1 100%; /* Ensure sections take full width */
     }
-}
-@media (max-width: 768px) {  /* Mobile view */
+
+    /* Gallery Filter Adjustments */
     .gallery-filter {
         display: flex;
         flex-wrap: wrap;  /* Allows items to wrap in multiple lines */
@@ -854,14 +855,15 @@ footer a:hover {
         padding: 8px 12px;
         white-space: nowrap; /* Prevents text from breaking */
     }
-}
-@media (max-width: 768px) {  
+
+    /* Gallery Image Adjustments */
     .gallery-container img {
         width: 100%; /* Ensures full width */
         height: auto; /* Maintains aspect ratio */
         object-fit: contain; /* Ensures full image is visible */
     }
 }
+
 
 </style>
 <script>
