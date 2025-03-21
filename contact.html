@@ -550,18 +550,27 @@ footer a:hover {
         flex: 1 1 100%; /* Ensure sections take full width */
     }
 }
-@media (max-width: 768px) {  /* Mobile view */
-    .container {  
-        display: flex;
-        flex-direction: column; /* Stack elements vertically */
-    }
-
-    .contact-info {
-        order: 1; /* Moves "Our Contacts" to the top */
+@media (max-width: 768px) {  
+    /* Move Our Contact up and Contact Form down */
+    .our-contact {
+        order: 1;
     }
 
     .contact-form {
-        order: 2; /* Moves Contact Form below */
+        order: 2;
+    }
+
+    /* Increase input field sizes */
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;  /* Full width */
+        height: 50px;  /* Increased height */
+        font-size: 16px;  /* Bigger text */
+        padding: 12px;  /* More spacing */
+    }
+
+    .contact-form textarea {
+        height: 120px;  /* Taller textarea */
     }
 }
 
