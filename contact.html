@@ -550,15 +550,22 @@ footer a:hover {
         flex: 1 1 100%; /* Ensure sections take full width */
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 768px) {  /* Adjustments for mobile screens */
+    .contact-container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+    }
+
     .our-contact {
-        font-size: 14px; /* Adjust font size */
-        margin-left: 10px; /* Move slightly to the right */
+        order: 1; /* Moves "Our Contact" to the top */
+        font-size: 0.9em; /* Makes text smaller */
+        margin-left: 10px; /* Moves slightly to the right */
     }
 
     .contact-form {
-        font-size: 14px; /* Adjust font size */
-        margin-right: 10px; /* Move slightly to the left */
+        order: 2; /* Moves Contact Form below */
+        font-size: 0.9em; /* Makes text smaller */
+        margin-right: 10px; /* Moves slightly to the left */
     }
 }
 
