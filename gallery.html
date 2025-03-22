@@ -24,6 +24,14 @@
     </button>
     <nav class="top-nav" aria-label="Main Navigation">
       <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul>
 
         <li><a href="index.html">Home</a></li>
         <li><a href="work.html">Our Work</a></li>
@@ -43,7 +51,7 @@
   </div>
 
   <!--===NGO-Gallery-Section==================================================-->
-  <section id="ngo-gallery" class="gallery-section">
+  <section id="ngo-gallery" class="gallery-section" >
     <!-- Decorative Half-Circles -->
     <div class="gallery-corner tl"></div>
     <div class="gallery-corner tr"></div>
@@ -339,20 +347,9 @@
         <img src="images\brzee12.JPG" alt="Education Drive">
       </div>
 
+      
       <!--Labour-->
 
-      <div class="gallery-box labour">
-
-        <img src="images\labour day (acharya)4.jpg" alt="Labour">
-
-      </div>
-      <!--Labour-->
-
-      <div class="gallery-box labour">
-
-        <img src="images\labour day(acharya)2 .jpg" alt="Labour">
-
-      </div>
       <!--Labour-->
 
       <div class="gallery-box labour">
@@ -460,6 +457,7 @@
 
       </div>
 
+
     </div>
   </section>
   <footer>
@@ -525,10 +523,12 @@
     /* Ensure it spans full width */
     top: 58px;
     z-index: 1001;
+    
   }
 
   /* Gallery Title Styling */
   .gallery-heading h3 {
+    margin-top: 80px;
     font-size: 4em;
     font-weight: bold;
     text-align: center;
@@ -603,6 +603,51 @@
   .join-btn:hover {
     background-color: #b7282e;
     color: #fff;
+  }
+  .hamburger {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    z-index: 1001;
+  }
+
+  .hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.2s ease;
+  }
+
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before {
+    top: -8px;
+  }
+
+  .hamburger-inner::after {
+    top: 8px;
   }
 
   /* Top Bar Section */
@@ -990,28 +1035,30 @@
   }
 </style>
 <script>
-  const filterItems = document.querySelectorAll('.gallery-filter .list');
-  const galleryBoxes = document.querySelectorAll('.gallery-box');
-  filterItems.forEach(item => {
-      item.addEventListener('click', function() {
-          // Remove active class from all filter items
-          filterItems.forEach(i => i.classList.remove('gallery-filter-active'));
-  
-          // Add active class to the selected filter item
-          this.classList.add('gallery-filter-active');
-  
-          // Get the filter category from the data attribute
-          const filterValue = this.getAttribute('data-filter');
-  
-          // Show/Hide gallery boxes based on the selected filter
-          galleryBoxes.forEach(box => {
-              // Use "flex" instead of "block" if flexbox layout is applied
-              if (filterValue === 'all' || box.classList.contains(filterValue)) {
-                  box.style.display = 'flex'; // or 'block' if you're not using flexbox
-              } else {
-                  box.style.display = 'none';
-              }
-          });
-      });
-  });
-  </script> 
+
+const filterItems = document.querySelectorAll('.gallery-filter .list');
+const galleryBoxes = document.querySelectorAll('.gallery-box');
+filterItems.forEach(item => {
+    item.addEventListener('click', function() {
+        // Remove active class from all filter items
+        filterItems.forEach(i => i.classList.remove('gallery-filter-active'));
+
+        // Add active class to the selected filter item
+        this.classList.add('gallery-filter-active');
+
+        // Get the filter category from the data attribute
+        const filterValue = this.getAttribute('data-filter');
+
+        // Show/Hide gallery boxes based on the selected filter
+        galleryBoxes.forEach(box => {
+            // Use "flex" instead of "block" if flexbox layout is applied
+            if (filterValue === 'all' || box.classList.contains(filterValue)) {
+                box.style.display = 'flex'; // or 'block' if you're not using flexbox
+            } else {
+                box.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+
