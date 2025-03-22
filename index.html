@@ -309,7 +309,7 @@
     display: block;
     margin: 0 auto;
     overflow: hidden;
-    object-fit: fill;
+    object-fit: cover;
     opacity: 1.0;
     /* Add this to make the image semi-transparent */
   }
@@ -405,17 +405,34 @@
 
   /* Announcement Bar Section */
   .announcement-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: orange;
     /* IITM Red */
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 8px;
     font-size: 16px;
     position: fixed;
     width: 100%;
     /* Ensure it spans full width */
     top: 58px;
     z-index: 1001;
+  }
+
+  .announcement-bar p {
+      flex: 3; 
+      margin: 0;
+      text-align: center;
+      font-size: 16px;
+  }
+
+  @media (max-width: 600px) {
+      .announcement-bar {
+          flex-direction: column;
+          text-align: center;
+      }
   }
 
   .join-btn {
@@ -439,17 +456,15 @@
     color: #fff;
   }
 
-  .impact-section {
+  /* .impact-section {
     text-align: center;
     background-color: #f8f8f8;
-    /* Optional: Background color for the section */
     padding: 50px 0;
   }
 
   .impact-section h2 {
     font-size: 36px;
     color: #000;
-    /* Adjust the color as needed */
     margin-bottom: 30px;
     font-weight: bold;
   }
@@ -458,28 +473,23 @@
     display: flex;
     justify-content: center;
     gap: 10px;
-    /* Adjust gap between the boxes */
     flex-wrap: wrap;
-    /* Allows the items to wrap on smaller screens */
   }
 
   .impact-box {
     width: 200px;
-    /* Adjust box width */
     text-align: center;
   }
 
   .impact-box h3 {
     font-size: 48px;
     color: #7fd320;
-    /* Green color as in the image */
     margin: 0;
   }
 
   .impact-title {
     font-size: 24px;
     color: #f4f6f3;
-    /* Green color as in the image */
     margin: 10px 0;
     font-weight: bold;
   }
@@ -487,9 +497,8 @@
   .impact-box p {
     font-size: 14px;
     color: #000;
-    /* Adjust text color as needed */
     margin: 5px 0;
-  }
+  } */
 
   /* Top Bar Section */
 
@@ -1558,17 +1567,13 @@
   .footer-content {
     display: flex;
     justify-content: space-between;
-    /* align-items: flex-start; */
-    /* Align items at the top for consistency */
     flex-wrap: wrap;
-    /* gap: 30px; */
-    /* More space between sections */
   }
 
   .footer-section {
     flex: 1 1 25%;
     /* Sections will take 25% of the space on larger screens */
-    min-width: 200px;
+    /* min-width: 200px; */
     /* Ensure sections don’t shrink too much on smaller screens */
     margin-bottom: 20px;
   }
