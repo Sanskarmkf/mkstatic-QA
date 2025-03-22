@@ -38,10 +38,7 @@
         <p>Become a part of the change – Join our mission and make a difference together!</p>
         <a href="contact.html"><button class="join-btn">Join Now</button></a>
     </div>
-    <div class="announcement-bar">
-        <p>Become a part of the change – Join our mission and make a difference together!</p>
-        <a href="contact.html"><button class="join-btn">Join Now</button></a>
-    </div>
+
     <div class="container">
         <div class="helping-hand">
             <h1> Donate Today</h1>
@@ -248,297 +245,332 @@
         }
 
         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        body,
+        html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
 
-body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-}
+        .helping-hand {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+            background-color: white;
+            /* Navy blue background */
+            color: black;
+            height: 155vh;
+            text-align: center;
 
-.helping-hand {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    background-color:white; /* Navy blue background */
-    color: black;
-    height: 155vh;
-    text-align: center;
 
-    
-}
+        }
 
-.helping-hand h1 {
-    font-size: 50px;
-    color :#333333;
-    font-weight: bold;
-    text-align: left;
-    margin-left: 90px;
-    font-family: 'Playfair Display', serif; /* A popular serif font */
-}
+        .helping-hand h1 {
+            font-size: 50px;
+            color: #333333;
+            font-weight: bold;
+            text-align: left;
+            margin-left: 90px;
+            font-family: 'Playfair Display', serif;
+            /* A popular serif font */
+        }
 
-.donate-card {
-    background-color: lightsalmon; 
-    padding: 50px;
-    border-radius: 15px;
-    width: 550px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 25px;
-    align-items: center;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    margin-top: 43px;
-}
+        .donate-card {
+            background-color: lightsalmon;
+            padding: 50px;
+            border-radius: 15px;
+            width: 550px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 25px;
+            align-items: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 43px;
+        }
 
-.qr-code {
-    width: 300px;
-    height: 280px;
-    background-color: white; /* Placeholder for QR code */
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+        .qr-code {
+            width: 300px;
+            height: 280px;
+            background-color: white;
+            /* Placeholder for QR code */
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
 
-.scan-text {
-    font-size: 1.3em;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #ffffff
-}
+        .scan-text {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #ffffff
+        }
 
-.help-text {
-    font-size: 2em;
-    margin-top: 10px;
-    color:black;
-    text-align: center;
-    font-weight: bold;
-}
+        .help-text {
+            font-size: 2em;
+            margin-top: 10px;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+        }
 
-.underline {
-    width: 50px;
-    height: 4px;
-    background-color:grey; /* Teal color for the underline */
-    margin-top: 10px;
-    border-radius: 2px;
-}
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;;
-    
-}
+        .underline {
+            width: 50px;
+            height: 4px;
+            background-color: grey;
+            /* Teal color for the underline */
+            margin-top: 10px;
+            border-radius: 2px;
+        }
 
-.contact-info {
-    width: 45%;
-    margin-top: 50px;
-    padding: 20px;
-}
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            ;
 
-.contact-info h2 {
-    font-size: 24px;
-    margin-top:50px
-}
+        }
 
-.contact-details {
-    display: flex;
-    flex-direction: column;
-}
+        .contact-info {
+            width: 45%;
+            margin-top: 50px;
+            padding: 20px;
+        }
 
-.contact-item {
-    margin-bottom: 20px;
-}
+        .contact-info h2 {
+            font-size: 24px;
+            margin-top: 50px
+        }
 
-.contact-item i {
-    font-size: 24px;
-    margin-right: 10px;
-    color: #007bff;
-}
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+        }
 
-.contact-item h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
+        .contact-item {
+            margin-bottom: 20px;
+        }
 
-.contact-item p {
-    font-size: 16px;
-}
+        .contact-item i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #007bff;
+        }
 
-.contact-form {
-    width: 45%;
-    margin-top: 120px;
-    padding:40px
-}
-.contact-form h1 {
-    margin-bottom: 22px; /* Adjust the value as needed */
-    font-size: 40px; 
-    font-family: 'Playfair Display', serif; /* A popular serif font */
-}
+        .contact-item h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
 
-.contact-form h2 {
-    font-size: 100px;
-    margin-bottom: 20px;
-}
+        .contact-item p {
+            font-size: 16px;
+        }
 
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-}
+        .contact-form {
+            width: 45%;
+            margin-top: 120px;
+            padding: 40px
+        }
 
-.contact-form input, 
-.contact-form textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-}
+        .contact-form h1 {
+            margin-bottom: 22px;
+            /* Adjust the value as needed */
+            font-size: 40px;
+            font-family: 'Playfair Display', serif;
+            /* A popular serif font */
+        }
 
-.contact-form button {
-    padding: 10px;
-    background-color: hsl(27, 100%, 50%);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
+        .contact-form h2 {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
 
-.contact-form button:hover {
-    background-color: rgb(255, 119, 0);
-}
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
 
-footer {
-    background-color: #333333; /* Dark Gray */
-    color: white;
-    padding: 40px 20px;
-    width: 100%;
-    box-sizing: border-box; /* Prevent padding from affecting the layout */
-    text-align: center; /* Center text on smaller screens */
-    border-top: 5px solid coral; /* Add a decorative border to the top */
-}
+        .contact-form input,
+        .contact-form textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+        .contact-form button {
+            padding: 10px;
+            background-color: hsl(27, 100%, 50%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-.footer-section {
-    flex: 1 1 25%; /* Sections will take 25% of the space on larger screens */
-    min-width: 200px; /* Ensure sections don’t shrink too much on smaller screens */
-    margin-bottom: 20px;
-}
+        .contact-form button:hover {
+            background-color: rgb(255, 119, 0);
+        }
 
-.footer-section h4 {
-    color: coral; /* Stand out with a vibrant color */
-    margin-bottom: 15px;
-    font-size: 1.4em; /* Slightly larger font size for better readability */
-    text-transform: uppercase; /* Add a professional touch */
-}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-.footer-section p,
-.footer-section a {
-    color: #ccc; /* Softer white for better contrast */
-    text-decoration: none;
-    line-height: 1.8; /* More spacing for readability */
-    font-size: 0.95em; /* Ensure smaller text doesn’t dominate */
-}
+        footer {
+            background-color: #333333;
+            /* Dark Gray */
+            color: white;
+            padding: 40px 20px;
+            width: 100%;
+            box-sizing: border-box;
+            /* Prevent padding from affecting the layout */
+            text-align: center;
+            /* Center text on smaller screens */
+            border-top: 5px solid coral;
+            /* Add a decorative border to the top */
+        }
 
-.footer-section a:hover {
-    color: coral; /* Make hover color consistent */
-    text-decoration: underline; /* Add hover underline for clarity */
-}
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
 
-.footer-section ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0; /* Standardize spacing for lists */
-}
+        .footer-section {
+            flex: 1 1 25%;
+            /* Sections will take 25% of the space on larger screens */
+            /* min-width: 200px; */
+            /* Ensure sections don’t shrink too much on smaller screens */
+            margin-bottom: 20px;
+        }
 
-.footer-section ul li {
-    margin-bottom: 10px;
-}
+        .footer-section h4 {
+            color: coral;
+            /* Stand out with a vibrant color */
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            /* Slightly larger font size for better readability */
+            text-transform: uppercase;
+            /* Add a professional touch */
+        }
 
-.footer-section ul li a {
-    color: #ddd;
-    text-decoration: none;
-}
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            /* Softer white for better contrast */
+            text-decoration: none;
+            line-height: 1.8;
+            /* More spacing for readability */
+            font-size: 0.95em;
+            /* Ensure smaller text doesn’t dominate */
+        }
 
-.footer-section ul li a:hover {
-    color: coral;
-}
+        .footer-section a:hover {
+            color: coral;
+            /* Make hover color consistent */
+            text-decoration: underline;
+            /* Add hover underline for clarity */
+        }
 
-footer a {
-    transition: color 0.3s ease; /* Smooth hover effect */
-}
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            /* Standardize spacing for lists */
+        }
 
-footer a:hover {
-    color: coral;
-}
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            color: coral;
+        }
+
+        footer a {
+            transition: color 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        footer a:hover {
+            color: coral;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+      flex-direction: column;
+      /* Stack sections vertically on smaller screens */
+      text-align: center;
     }
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
 
-    .helping-hand {
-        order: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        margin-top: 100px;
-        width: 100%;
-    }
+            .helping-hand {
+                order: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                margin-top: 100px;
+                width: 100%;
+            }
 
-    .helping-hand h1 {
-        font-size: 3.5em; /* Increased font size */
-        margin-bottom: 20px;
-        padding-top: 20px;
-        text-align: center;
-        width: 100%;
-        margin-left: 50px; /* Move text slightly to the right */
-    }
+            .helping-hand h1 {
+                font-size: 3.5em;
+                /* Increased font size */
+                margin-bottom: 20px;
+                padding-top: 20px;
+                text-align: center;
+                width: 100%;
+                margin-left: 50px;
+                /* Move text slightly to the right */
+            }
 
-    .donate-card {
-        width: 90%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-    }
+            .donate-card {
+                width: 90%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+            }
 
-    .contact-form {
-        order: 2;
-        width: 90%;
-        margin-top: 30px;
-    }
-    
-    /* Move "Join Now" Button Slightly Down */
-    .announcement-bar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 10px;
-    }
+            .contact-form {
+                order: 2;
+                width: 90%;
+                margin-top: 30px;
+            }
 
-    .announcement-bar p {
-        margin-bottom: 10px; /* Creates space between text and button */
-    }
+            /* Move "Join Now" Button Slightly Down */
+            .announcement-bar {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 10px;
+            }
 
-    .join-btn {
-        margin-top: 12px; /* Moves the button slightly down */
-    }
+            .announcement-bar p {
+                margin-bottom: 10px;
+                /* Creates space between text and button */
+            }
 
-}
+            .join-btn {
+                margin-top: 12px;
+                /* Moves the button slightly down */
+            }
 
-</style>
+        }
+    </style>
