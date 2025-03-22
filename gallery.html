@@ -989,29 +989,29 @@
     }
   }
 </style>
-<!-- <script>
-const filterItems = document.querySelectorAll('.gallery-filter .list');
-const galleryBoxes = document.querySelectorAll('.gallery-box');
-filterItems.forEach(item => {
-    item.addEventListener('click', function() {
-        // Remove active class from all filter items
-        filterItems.forEach(i => i.classList.remove('gallery-filter-active'));
-
-        // Add active class to the selected filter item
-        this.classList.add('gallery-filter-active');
-
-        // Get the filter category from the data attribute
-        const filterValue = this.getAttribute('data-filter');
-
-        // Show/Hide gallery boxes based on the selected filter
-        galleryBoxes.forEach(box => {
-            // Use "flex" instead of "block" if flexbox layout is applied
-            if (filterValue === 'all' || box.classList.contains(filterValue)) {
-                box.style.display = 'flex'; // or 'block' if you're not using flexbox
-            } else {
-                box.style.display = 'none';
-            }
-        });
-    });
-});
-</script> -->
+<script>
+  const filterItems = document.querySelectorAll('.gallery-filter .list');
+  const galleryBoxes = document.querySelectorAll('.gallery-box');
+  filterItems.forEach(item => {
+      item.addEventListener('click', function() {
+          // Remove active class from all filter items
+          filterItems.forEach(i => i.classList.remove('gallery-filter-active'));
+  
+          // Add active class to the selected filter item
+          this.classList.add('gallery-filter-active');
+  
+          // Get the filter category from the data attribute
+          const filterValue = this.getAttribute('data-filter');
+  
+          // Show/Hide gallery boxes based on the selected filter
+          galleryBoxes.forEach(box => {
+              // Use "flex" instead of "block" if flexbox layout is applied
+              if (filterValue === 'all' || box.classList.contains(filterValue)) {
+                  box.style.display = 'flex'; // or 'block' if you're not using flexbox
+              } else {
+                  box.style.display = 'none';
+              }
+          });
+      });
+  });
+  </script> 
