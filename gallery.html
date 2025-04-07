@@ -6,6 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="./toggle.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.top-nav');
+
+    hamburger.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        const isExpanded = navMenu.classList.contains('active');
+        hamburger.setAttribute('aria-expanded', isExpanded);
+    });
+});
+  </script>
 </head>
 
 <body>
@@ -24,7 +36,6 @@
     </button>
     <nav class="top-nav" aria-label="Main Navigation">
       <ul>
-
         <li><a href="index.html">Home</a></li>
         <li><a href="work.html">Our Work</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
@@ -35,7 +46,7 @@
       </ul>
     </nav>
   </div>
-
+<!-- TESTING THE CODE -->
   <!-- Top Announcement Bar -->
   <div class="announcement-bar">
     <p>Become a part of the change – Join our mission and make a difference together!</p>
