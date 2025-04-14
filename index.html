@@ -1642,4 +1642,41 @@
       text-align: center;
     }
   }
+  @media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .video-container {
+        order: -1; /* Moves the image above the text */
+    }
+
+    .description {
+        width: 90%; /* Allow the text to cover most of the area */
+        max-width: 600px; /* Prevent it from being too wide on larger devices */
+        padding: 10px;
+        display: block; /* Ensures normal block behavior */
+        text-align: justify; /* Justifies text for better readability */
+    }
+}
+@media (max-width: 768px) {
+    .ourachievements {
+        font-family: 'Poppins', sans-serif; /* Match "Programs" font */
+        font-size: 40px; /* Adjust size */
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px; /* Adjust spacing */
+ 
+      }
+      .top-nav {
+  margin-top: 60px; /* Adjust this value to push it down as needed */
+  /* or use padding-top instead */
+}
+
+}
+
+
 </style>
