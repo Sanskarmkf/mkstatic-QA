@@ -24,14 +24,17 @@
     </button>
     <nav class="top-nav" aria-label="Main Navigation">
       <ul>
+
+        
         <li><a href="index.html">Home</a></li>
         <li><a href="work.html">Our Work</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contribute.html">Contribute</a></li>
         <li><a href="contact.html">Contact</a></li>
-      </ul>
+        
 
+      </ul>
     </nav>
   </div>
 
@@ -42,7 +45,7 @@
   </div>
 
   <!--===NGO-Gallery-Section==================================================-->
-  <section id="ngo-gallery" class="gallery-section" >
+  <section id="ngo-gallery" class="gallery-section">
     <!-- Decorative Half-Circles -->
     <div class="gallery-corner tl"></div>
     <div class="gallery-corner tr"></div>
@@ -120,19 +123,15 @@
       </div>
       <!--Children-->
       <div class="gallery-box children">
-        <img src="images\children4.jpg" alt="children">
+        <img src="images\IMG_3919.JPG" alt="children">
 
       </div>
 
-      <!--Children-->
-      <div class="gallery-box children">
-        <img src="images\children6.jpg" alt="children">
-
-      </div>
+      
 
       <!--Children-->
       <div class="gallery-box children">
-        <img src="images\children9.jpg" alt="children">
+        <img src="images\IMG_3985.JPG" alt="children">
 
       </div>
       <!--Children-->
@@ -150,9 +149,7 @@
         <img src="images\dog1.JPG" alt="Street Dogs">
       </div>
 
-      <div class="gallery-box street-dogs">
-        <img src="images\dog1.JPG" alt="Street Dogs">
-      </div>
+      
 
       <div class="gallery-box street-dogs">
         <img src="images\dog2.JPG" alt="Street Dogs">
@@ -240,7 +237,7 @@
       </div>
       <div class="gallery-box education">
 
-        <img src="images\haldwani3.jpg" alt="Education Drive">
+        <img src="images\haldwani6.jpg" alt="Education Drive">
 
       </div>
       <div class="gallery-box education">
@@ -256,12 +253,12 @@
 
       <div class="gallery-box education">
 
-        <img src="images\children7.JPG" alt="Education Drive">
+        <img src="images\child 9.JPG" alt="Education Drive">
 
       </div>
       <div class="gallery-box education">
 
-        <img src="images\children8.JPG" alt="Education Drive">
+        <img src="images\child 81.JPG" alt="Education Drive">
 
       </div>
       <div class="gallery-box education">
@@ -293,13 +290,13 @@
       <!--4: Education Drive-->
 
       <div class="gallery-box education">
-        <img src="images\brzee3.JPG" alt="Education Drive">
+        <img src="images\Brzee20.jpg" alt="Education Drive">
       </div>
 
       <!--4: Education Drive-->
 
       <div class="gallery-box education">
-        <img src="images\brzee4.JPG" alt="Education Drive">
+        <img src="images\brzee2.JPG" alt="Education Drive">
       </div>
 
       <!--4: Education Drive-->
@@ -323,7 +320,7 @@
       <!--4: Education Drive-->
 
       <div class="gallery-box education">
-        <img src="images\brzee10.JPG" alt="Education Drive">
+        <img src="images\brze10.JPG" alt="Education Drive">
       </div>
 
       <!--4: Education Drive-->
@@ -339,8 +336,8 @@
       </div>
 
       
-      <!--Labour-->
 
+     
       <!--Labour-->
 
       <div class="gallery-box labour">
@@ -448,7 +445,6 @@
 
       </div>
 
-
     </div>
   </section>
   <footer>
@@ -477,9 +473,10 @@
       </div>
     </div>
   </footer>
-  </section>
   <script src="./toggle.js"></script>
-  <script src="./script.js"></script>
+  </section>
+
+  
 </body>
 
 </html>
@@ -514,12 +511,10 @@
     /* Ensure it spans full width */
     top: 58px;
     z-index: 1001;
-    
   }
 
   /* Gallery Title Styling */
   .gallery-heading h3 {
-    margin-top: 80px;
     font-size: 4em;
     font-weight: bold;
     text-align: center;
@@ -575,71 +570,21 @@
   }
 
 
-  .join-btn {
-    background-color: #ffffff;
-    /* White */
-    color: #b7282e;
-    /* Red Text */
+ .join-btn {
+    background-color: #ffffff; /* White */
+    color: #b7282e; /* Red Text */
     border: 1px solid #b7282e;
     padding: 6px 15px;
     border-radius: 5px;
-    position: relative;
-    right: 10px;
-    top: 1px;
+    position: absolute;
+    right: 20px;
+    top: 4px;
     cursor: pointer;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .join-btn:hover {
+}
+.join-btn:hover {
     background-color: #b7282e;
-    color: #fff;
-  }
-  .hamburger {
-    display: none;
-    padding: 10px;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    z-index: 1001;
-  }
-
-  .hamburger-box {
-    width: 30px;
-    height: 24px;
-    display: inline-block;
-    position: relative;
-  }
-
-  .hamburger-inner {
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: background-color 0.2s ease;
-  }
-
-  .hamburger-inner::before,
-  .hamburger-inner::after {
-    content: '';
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    position: absolute;
-    left: 0;
-    transition: transform 0.2s ease;
-  }
-
-  .hamburger-inner::before {
-    top: -8px;
-  }
-
-  .hamburger-inner::after {
-    top: 8px;
-  }
+    color: #fff;}
 
   /* Top Bar Section */
   .top-bar {
@@ -1015,41 +960,229 @@
         padding: 10px;
     }
 
-    .announcement-bar p {
-        margin-bottom: 10px; /* Creates space between text and button */
-    }
+  
 
     .join-btn {
-        margin-top: 30px; /* Moves the button slightly down */
+    background-color: #ffffff;
+    /* White */
+    color: #b7282e;
+    /* Red Text */
+    border: 1px solid #b7282e;
+    padding: 6px 15px;
+    border-radius: 5px;
+    position: relative;
+    right: auto;
+    top: auto;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
 
+  .join-btn:hover {
+    background-color: #b7282e;
+    color: #fff;
+  }
+  .gallery-heading {
+  margin-top: 90px;  /* adjust this value as needed */
+  text-align: center;
+}
+  }
+  
+  .hamburger {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    z-index: 1001;
+  }
+
+  .hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.2s ease;
+  }
+
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before {
+    top: -8px;
+  }
+
+  .hamburger-inner::after {
+    top: 8px;
+  }
+
+  .top-nav ul {
+    list-style: none;
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 250px;
+      background-color: #333;
+      transition: right 0.3s ease;
+      padding-top: 80px;
+    }
+
+    .top-nav.active {
+      right: 0;
+    }
+
+    .top-nav ul {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .top-nav ul li {
+      margin: 15px 0;
     }
   }
+
+  /* Hamburger Menu Styles */
+  .hamburger {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+  }
+
+  .hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before {
+    top: -8px;
+  }
+
+  .hamburger-inner::after {
+    top: 8px;
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+    .top-nav {
+      margin-top: 60px;}
+    .top-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 250px;
+      background-color: #333;
+      flex-direction: column;
+      padding-top: 80px;
+      transition: right 0.3s ease;
+    }
+
+    .top-nav.active {
+      right: 0;
+    }
+
+    .top-nav ul {
+      flex-direction: column;
+    }
+
+    .top-nav ul li {
+      margin: 15px 0;
+    }
+  }
+
+  .top-nav ul li {
+    margin-left: 30px;
+  }
+
+  .top-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+ 
 </style>
+<script src="./toggle.js"></script>
 <script>
-
-const filterItems = document.querySelectorAll('.gallery-filter .list');
-const galleryBoxes = document.querySelectorAll('.gallery-box');
-filterItems.forEach(item => {
-    item.addEventListener('click', function() {
-        // Remove active class from all filter items
-        filterItems.forEach(i => i.classList.remove('gallery-filter-active'));
-
-        // Add active class to the selected filter item
-        this.classList.add('gallery-filter-active');
-
-        // Get the filter category from the data attribute
-        const filterValue = this.getAttribute('data-filter');
-
-        // Show/Hide gallery boxes based on the selected filter
-        galleryBoxes.forEach(box => {
-            // Use "flex" instead of "block" if flexbox layout is applied
-            if (filterValue === 'all' || box.classList.contains(filterValue)) {
-                box.style.display = 'flex'; // or 'block' if you're not using flexbox
-            } else {
-                box.style.display = 'none';
-            }
-        });
-    });
-});
-</script>
-
+  const filterItems = document.querySelectorAll('.gallery-filter .list');
+  const galleryBoxes = document.querySelectorAll('.gallery-box');
+  filterItems.forEach(item => {
+      item.addEventListener('click', function() {
+          // Remove active class from all filter items
+          filterItems.forEach(i => i.classList.remove('gallery-filter-active'));
+  
+          // Add active class to the selected filter item
+          this.classList.add('gallery-filter-active');
+  
+          // Get the filter category from the data attribute
+          const filterValue = this.getAttribute('data-filter');
+  
+          // Show/Hide gallery boxes based on the selected filter
+          galleryBoxes.forEach(box => {
+              // Use "flex" instead of "block" if flexbox layout is applied
+              if (filterValue === 'all' || box.classList.contains(filterValue)) {
+                  box.style.display = 'flex'; // or 'block' if you're not using flexbox
+              } else {
+                  box.style.display = 'none';
+              }
+          });
+      });
+  });
+  </script> 
