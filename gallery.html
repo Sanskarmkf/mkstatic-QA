@@ -6,18 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="./toggle.js"></script>
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.top-nav');
-
-    hamburger.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        const isExpanded = navMenu.classList.contains('active');
-        hamburger.setAttribute('aria-expanded', isExpanded);
-    });
-});
-  </script>
 </head>
 
 <body>
@@ -36,17 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
     </button>
     <nav class="top-nav" aria-label="Main Navigation">
       <ul>
+
+        
         <li><a href="index.html">Home</a></li>
         <li><a href="work.html">Our Work</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contribute.html">Contribute</a></li>
         <li><a href="contact.html">Contact</a></li>
+        
 
       </ul>
     </nav>
   </div>
-<!-- TESTING THE CODE -->
+
   <!-- Top Announcement Bar -->
   <div class="announcement-bar">
     <p>Become a part of the change – Join our mission and make a difference together!</p>
@@ -499,9 +490,10 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </footer>
-  </section>
   <script src="./toggle.js"></script>
-  <script src="./script.js"></script>
+  </section>
+
+  
 </body>
 
 </html>
@@ -990,16 +982,206 @@ document.addEventListener('DOMContentLoaded', function() {
         padding: 10px;
     }
 
-    .announcement-bar p {
-        margin-bottom: 10px; /* Creates space between text and button */
-    }
+  
 
     .join-btn {
-        margin-top: 30px; /* Moves the button slightly down */
+    background-color: #ffffff;
+    /* White */
+    color: #b7282e;
+    /* Red Text */
+    border: 1px solid #b7282e;
+    padding: 6px 15px;
+    border-radius: 5px;
+    position: relative;
+    right: auto;
+    top: auto;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
 
+  .join-btn:hover {
+    background-color: #b7282e;
+    color: #fff;
+  }
+  .gallery-heading {
+  margin-top: 90px;  /* adjust this value as needed */
+  text-align: center;
+}
+  }
+  
+  .hamburger {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    z-index: 1001;
+  }
+
+  .hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.2s ease;
+  }
+
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before {
+    top: -8px;
+  }
+
+  .hamburger-inner::after {
+    top: 8px;
+  }
+
+  .top-nav ul {
+    list-style: none;
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 250px;
+      background-color: #333;
+      transition: right 0.3s ease;
+      padding-top: 80px;
+    }
+
+    .top-nav.active {
+      right: 0;
+    }
+
+    .top-nav ul {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .top-nav ul li {
+      margin: 15px 0;
     }
   }
+
+  /* Hamburger Menu Styles */
+  .hamburger {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+  }
+
+  .hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before {
+    top: -8px;
+  }
+
+  .hamburger-inner::after {
+    top: 8px;
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 250px;
+      background-color: #333;
+      flex-direction: column;
+      padding-top: 80px;
+      transition: right 0.3s ease;
+    }
+
+    .top-nav.active {
+      right: 0;
+    }
+
+    .top-nav ul {
+      flex-direction: column;
+    }
+
+    .top-nav ul li {
+      margin: 15px 0;
+    }
+  }
+
+  .top-nav ul li {
+    margin-left: 30px;
+  }
+
+  .top-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .top-nav {
+    margin-top: 60px;}
 </style>
+<script src="./toggle.js"></script>
 <script>
   const filterItems = document.querySelectorAll('.gallery-filter .list');
   const galleryBoxes = document.querySelectorAll('.gallery-box');
