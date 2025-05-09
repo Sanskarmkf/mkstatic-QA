@@ -1,0 +1,42 @@
+name: Require PR Approval
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  require-approval:
+    name: Check PR Approval
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for PR approvals
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request;
+
+            // Fetch reviews for the PR
+            const { data: reviews } = await github.rest.pulls.listReviews({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+            });
+
+            // Filter unique APPROVED reviews (per user)
+            const approvals = new Map();
+            for (const review of reviews) {
+              if (review.state === "APPROVED") {
+                approvals.set(review.user.login, true);
+              }
+            }
+
+            const approvalCount = approvals.size;
+            console.log(`Total approvals: ${approvalCount}`);
+
+            if (approvalCount < 1) {
+              core.setFailed(`This pull request requires at least 1 approval before merging.`);
+            } else {
+              console.log("Sufficient approvals found. ✅");
+            }
