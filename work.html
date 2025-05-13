@@ -331,20 +331,16 @@
 
   /* our-work section */
   .hero {
-    position: relative;
-    width: 100%;
-    min-height: 80vh; /* Makes it flexible */
-    background-image: url("images\haldwani2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Optional for a parallax effect */
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding: 20px;
-    overflow: hidden; /* Prevents content overflow */
+  position: relative;
+  width: 100%;
+  height: 650px;
+  background-image: url("images/haldwani2.jpg"); 
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
 }
+
 
 /* Grey Overlay */
 .hero::before {
@@ -355,17 +351,17 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6); /* Ensures transparency */
-    z-index: 0;
+    z-index: 1;
 }
 
 .hero-content {
-    max-width: 90%;
-    width: 600px; /* Prevents content from exceeding width */
-    position: relative;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    z-index: 2;
+  max-width: 600px;
+  position: relative;
+  color: #fff;
+  text-align: left;
+  padding: 20px;
+  z-index: 2;
+  margin-left: 50px;
 }
 
 /* Responsive Typography */
