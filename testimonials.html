@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Organization</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 
 <body>
@@ -14,10 +14,11 @@
 
     <div class="top-bar">
         <div class="logo-text">
-            <div class="logo">
-                <img src="images\logo1.png" alt="Logo" width="100">
-            </div>
-            <span class="logo-text-content">SANSKAR</span>
+          <div class="logo">
+           <a href="index.html" style="text-decoration: none; color: inherit;"><img src="images\logo1.png" alt="Logo" width="100"></a> 
+          </div>
+          <span class="logo-text-content"><a href="index.html" style="text-decoration: none; color: inherit;">SANSKAR</a>
+          </span>
         </div>
         <button class="hamburger" aria-label="Menu" aria-expanded="false">
             <span class="hamburger-box">
@@ -663,4 +664,16 @@
   margin-top: 60px;}
 
     }
+    /* Hide hamburger by default (large screens) */
+.hamburger {
+  display: none;
+}
+
+/* Show hamburger on smaller screens (e.g., width <= 768px) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
 </style>
