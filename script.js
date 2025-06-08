@@ -1,4 +1,4 @@
-// import * as XLSX from 'xlsx';
+import * as XLSX from 'xlsx';
 function saveFormDetails() {
     // Get form values
     let name = document.getElementById("name").value;
