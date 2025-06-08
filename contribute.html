@@ -59,7 +59,7 @@
         </div>
         <div class="contact-form">
             <h1>Fill Out Your Details After Donating</h1>
-            <form id="donationForm" enctype="multipart/form-data">
+            <form action="https://script.google.com/macros/s/AKfycbzxUin8iBg_KaaA8LFTvRDGWftWPRu6lDr3JtkeNYK0YVQHD2ACtAU-lxInLXrhIdgT/exec" id="donationForm" enctype="multipart/form-data" method="post">
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" required>
 
@@ -75,7 +75,7 @@
                 <label for="payment-screenshot">Upload Payment Screenshot:</label>
                 <input type="file" name="payment-screenshot" id="payment-screenshot" accept="image/*" required>
 
-                <button type="button" onclick="saveFormDetails()">Submit</button>
+                <button type="submit" >Submit</button>
             </form>
         </div>
     </div>
