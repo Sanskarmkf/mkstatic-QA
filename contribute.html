@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation Form</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
 
@@ -30,10 +31,11 @@
       
               <li><a href="index.html">Home</a></li>
               <li><a href="work.html">Our Work</a></li>
+               <li><a href="blog.html">Blogs</a></li>
               <li><a href="testimonials.html">Testimonials</a></li>
               <li><a href="gallery.html">Gallery</a></li>
               <li><a href="contribute.html">Contribute</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              
       
             </ul>
           </nav>
@@ -45,7 +47,6 @@
         <p>Become a part of the change – Join our mission and make a difference together!</p>
         <a href="contact.html"><button class="join-btn">Join Now</button></a>
     </div>
-
     <div class="container">
         <div class="helping-hand">
             <h1> Donate Today</h1>
@@ -57,29 +58,34 @@
                 <div class="underline"></div>
             </div>
         </div>
-        <div class="contact-form">
-            <h1>Fill Out Your Details After Donating</h1>
-            <form id="donationForm" enctype="multipart/form-data">
-                <label for="name">Name:</label>
-                <input type="text" name="name" id="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" required>
-
-                <label for="phone">Phone:</label>
-                <input type="text" name="phone" id="phone" required>
-
-                <label for="address">Address:</label>
-                <input type="text" name="address" id="address" required>
-
-                <label for="payment-screenshot">Upload Payment Screenshot:</label>
-                <input type="file" name="payment-screenshot" id="payment-screenshot" accept="image/*" required>
-
-                <button type="button" onclick="saveFormDetails()">Submit</button>
-            </form>
+ <div class="page-container">
+        <div class="contact-info">
+            <h2>Our Contacts</h2>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/sanskar.mkf" target="_blank">Follow us on Instagram</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank">Connect with us on LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+917983923205</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>sanskarmkf@gmail.com</p>
+                </div>
+            </div>
         </div>
     </div>
-    </div>
+    
+    
+          
+        
+    
     <!-- Footer Section -->
     <footer>
         <div class="footer-content">
@@ -92,6 +98,8 @@
             <div class="footer-section links">
                 <h4>Quick Links</h4>
                 <ul>
+                       <li><a href="https://medium.com/@sanskarmkf/bab8038c7df1" target="_blank"
+              rel="noopener noreferrer">Blogs</a></li>
                     <li><a href="https://www.instagram.com/sanskar.mkf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                             target="_blank" rel="noopener noreferrer">Instagram</a></li>
                     <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank"
@@ -110,6 +118,7 @@
     <script src="./toggle.js"></script>
 
     <style>
+        
         /* General Styling */
         body {
             font-family: Arial, sans-serif;
@@ -261,173 +270,6 @@
         body,
         html {
             height: 100%;
-            font-family: Arial, sans-serif;
-        }
-
-        .helping-hand {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            justify-content: center;
-            background-color: white;
-            /* Navy blue background */
-            color: black;
-            height: 155vh;
-            text-align: center;
-
-
-        }
-
-        .helping-hand h1 {
-            font-size: 50px;
-            color: #333333;
-            font-weight: bold;
-            text-align: left;
-            margin-left: 90px;
-            font-family: 'Playfair Display', serif;
-            /* A popular serif font */
-        }
-
-        .donate-card {
-            background-color: lightsalmon;
-            padding: 50px;
-            border-radius: 15px;
-            width: 550px;
-            height: 500px;
-            display: flex;
-            flex-direction: column;
-            margin-left: 25px;
-            align-items: center;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-            margin-top: 43px;
-        }
-
-        .qr-code {
-            width: 300px;
-            height: 280px;
-            background-color: white;
-            /* Placeholder for QR code */
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .scan-text {
-            font-size: 1.3em;
-            font-weight: bold;
-            margin-top: 10px;
-            color: #ffffff
-        }
-
-        .help-text {
-            font-size: 2em;
-            margin-top: 10px;
-            color: black;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .underline {
-            width: 50px;
-            height: 4px;
-            background-color: grey;
-            /* Teal color for the underline */
-            margin-top: 10px;
-            border-radius: 2px;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            ;
-
-        }
-
-        .contact-info {
-            width: 45%;
-            margin-top: 50px;
-            padding: 20px;
-        }
-
-        .contact-info h2 {
-            font-size: 24px;
-            margin-top: 50px
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-item {
-            margin-bottom: 20px;
-        }
-
-        .contact-item i {
-            font-size: 24px;
-            margin-right: 10px;
-            color: #007bff;
-        }
-
-        .contact-item h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .contact-item p {
-            font-size: 16px;
-        }
-
-        .contact-form {
-            width: 45%;
-            margin-top: 120px;
-            padding: 40px
-        }
-
-        .contact-form h1 {
-            margin-bottom: 22px;
-            /* Adjust the value as needed */
-            font-size: 40px;
-            font-family: 'Playfair Display', serif;
-            /* A popular serif font */
-        }
-
-        .contact-form h2 {
-            font-size: 100px;
-            margin-bottom: 20px;
-        }
-
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            margin-bottom: 15px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        .contact-form button {
-            padding: 10px;
-            background-color: hsl(27, 100%, 50%);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .contact-form button:hover {
-            background-color: rgb(255, 119, 0);
-        }
-
-        body {
-            margin: 0;
             font-family: Arial, sans-serif;
         }
 
@@ -784,5 +626,231 @@
     display: block;
   }
 }
+.contact-info {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-info h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+}
+
+.contact-item i {
+    font-size: 28px;
+}
+
+/* Optional: Color customization for specific icons */
+.contact-item .fa-instagram {
+    color: #E4405F;
+}
+
+.contact-item .fa-linkedin {
+    color: #0077B5;
+}
+
+.contact-item .fa-phone,
+.contact-item .fa-envelope {
+    color: #007BFF;
+}
+
+.contact-item a,
+.contact-item p {
+    margin: 0;
+    text-decoration: none;
+    color: #000;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+ 
+        
+        
+        .helping-hand {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+            background-color: white;
+            /* Navy blue background */
+            color: black;
+            height: 155vh;
+            text-align: center;
+
+
+        }
+
+        .helping-hand h1 {
+            font-size: 50px;
+            color: #333333;
+            font-weight: bold;
+            text-align: left;
+            margin-left: 90px;
+            font-family: 'Playfair Display', serif;
+            /* A popular serif font */
+        }
+
+        .donate-card {
+            background-color: lightsalmon;
+            padding: 50px;
+            border-radius: 15px;
+            width: 550px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 25px;
+            align-items: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 43px;
+        }
+
+        .qr-code {
+            width: 300px;
+            height: 280px;
+            background-color: white;
+            /* Placeholder for QR code */
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .scan-text {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #ffffff
+        }
+
+        .help-text {
+            font-size: 2em;
+            margin-top: 10px;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .underline {
+            width: 50px;
+            height: 4px;
+            background-color:white;
+            /* Teal color for the underline */
+            margin-top: 10px;
+            border-radius: 2px;
+        }
+
+        
+
+        .contact-info {
+            width: 45%;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .contact-info h2 {
+            font-size: 24px;
+            margin-top: 50px
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+        }
+           body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .page-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 40px;
+      gap: 40px;
+    }
+
+   .page-container {
+  display: flex;
+  flex-direction: row-reverse; /* Puts contact-info on the right side */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 400px;
+  background-color: #f9f9f9;
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.contact-item i {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.contact-item a,
+.contact-item p {
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+}
+
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.helping-hand {
+  flex: 1;
+}
+
+.contact-info {
+  flex: 1;
+  margin-left: 40px;
+}
+
+    </style>
 
     </style>

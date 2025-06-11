@@ -32,10 +32,11 @@
 
         <li><a href="index.html">Home</a></li>
         <li><a href="work.html">Our Work</a></li>
+        <li><a href="blog.html">Blogs</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contribute.html">Contribute</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        
 
       </ul>
     </nav>
@@ -164,23 +165,25 @@
 
     <!-- Achievement 1 -->
     <div class="achievement-card">
-      <div class="achievement-image">
-        <img src="images\haldwani11.jpg" alt="Achievement 1">
-      </div>
-      <div class="achievement-info">
-        <h3>A NEW BEGINNING| EDUCATIONAL DRIVE IN HALDWANI
-        </h3>
-        <p class="achievement-date">Sep. 15th</p>
-        <p class="achievement-description">Sanskar, a student-led initiative, uplifts communities across India through
-          education, medical aid, and member contributions. Projects like MKOnlineClasses and the Data Science Club
-          provide essential resources to underprivileged children, fostering positive change and spreading hope.</p>
-        <div class="achievement-meta">
-          <!-- <span class="comments">21 <i class="fa fa-comment"></i></span> -->
-          <a href="achievement.html" class="learn-more">View More...</a>
-
-        </div>
-      </div>
+  <div class="achievement-image">
+    <img src="images\haldwani11.jpg" alt="Achievement 1">
+  </div>
+  <div class="achievement-info">
+    <h3>A NEW BEGINNING | EDUCATIONAL DRIVE IN HALDWANI</h3>
+    <p class="achievement-date">Sep. 15th</p>
+    <p class="achievement-description">
+      Sanskar, a student-led initiative, uplifts communities across India through
+      education, medical aid, and member contributions. Projects like MKOnlineClasses
+      and the Data Science Club provide essential resources to underprivileged
+      children, fostering positive change and spreading hope.
+    </p>
+    <div class="achievement-meta">
+      <a href="achievement.html" class="learn-more">View More...</a>
+      <a href="blog.html" class="view-more-blogs">View More Blogs</a>
     </div>
+  </div>
+</div>
+
     <div class="container">
       <div class="description">
         <p>We have distributed necessities refreshment and education to early nearly 100 people Heart Will
@@ -214,6 +217,8 @@
       <div class="footer-section links">
         <h4>Quick Links</h4>
         <ul>
+           <li><a href="https://medium.com/@sanskarmkf/bab8038c7df1" target="_blank"
+              rel="noopener noreferrer">Blogs</a></li>
           <li><a href="https://www.instagram.com/sanskar.mkf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank" rel="noopener noreferrer">Instagram</a></li>
           <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank"
@@ -224,7 +229,7 @@
       </div>
       <div class="footer-section contact">
         <h4>Contact</h4>
-        <p>Phone: +919818885691</p>
+        <p>Phone: +917983923205</p>
         <p>Email: <a href="mailto:sanskarmkf@gmail.com">sanskarmkf@gmail.com</a></p>
       </div>
     </div>
@@ -641,7 +646,7 @@
     /* Space between the logo and the text */
     font-family: Arial, sans-serif;
     /* Optional: Choose a font */
-    margin-top: -20px;
+    margin-top: -40px;
     
   }
 
@@ -1804,8 +1809,32 @@
   font-size: 30px;
   font-weight: bold;
   font-family: 'Playfair Display', serif; /* Consistent font */
-  margin-top: -5px; /* Fine-tune vertical alignment */
+  margin-top: -18px; /* Fine-tune vertical alignment */
   text-decoration: none !important; /* Remove underline */
+  margin-left: -10px;
 }
+.achievement-meta {
+  display: flex;
+  gap: 213px;
+  margin-top: 10px;
+}
+
+.view-more-blogs {
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: rgb(230, 59, 59); /* green */
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+@media (max-width: 600px) {
+  .achievement-meta {
+    gap: 8px; /* Reduced gap for mobile */
+    flex-direction: column; /* Optional: stack buttons vertically */
+  }
+}
+
+
 
 </style>

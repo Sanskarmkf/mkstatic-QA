@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Organization</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+
+
+
+    <div class="top-bar">
+        <div class="logo-text">
+          <div class="logo">
+           <a href="index.html" style="text-decoration: none; color: inherit;"><img src="images\logo1.png" alt="Logo" width="100"></a> 
+          </div>
+          <span class="logo-text-content"><a href="index.html" style="text-decoration: none; color: inherit;">SANSKAR</a>
+          </span>
+        </div>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+          <nav class="top-nav" aria-label="Main Navigation">
+            <ul>
+      
+              <li><a href="index.html">Home</a></li>
+              <li><a href="work.html">Our Work</a></li>
+               <li><a href="blog.html">Blogs</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contribute.html">Contribute</a></li>
+             
+      
+            </ul>
+          </nav>
+        </div>
+      
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <p>Become a part of the change – Join our mission and make a difference together!</p>
+        <a href="contact.html"><button class="join-btn">Join Now</button></a>
+    </div>
+    <div class="blog-card">
+  <div class="blog-image">
+    <img src="images\haldwani11.jpg" alt="Achievement 1">
+  </div>
+  <div class="blog-text">
+    <h2>A NEW BEGINNING | EDUCATIONAL DRIVE IN HALDWANI</h2>
+    <p class="date">Sep. 15th</p>
+    <p>On November 20, 2023, the Sanskar Foundation took a heartfelt step to change that with their Educational Support Drive in Government Primary School, Nawar Khera, Haldwani, Nainital, Uttarakhand. They provided necessary study materials and enjoyed a day with the cheerful kids. This initiative was not just about handing out supplies, it was about giving children the resources they need for a quality education that can change belief in themselves and strive for a better future.
+    </p>
+    <a href="https://medium.com/@sanskarmkf/educational-drive-in-haldwani-sanskar-6989e9bb8248" class="read-more">View More...</a>
+   
+  </div>
+</div>
+  <div class="blog-card1">
+  <div class="blog-image">
+    <img src="images\labour day(acharya)13.jpg" alt="labour day" />
+  </div>
+  <div class="blog-text">
+    <h2>From Sweat to Success: Recognizing the Invisible Workforce, The Labour’s Day</h2>
+    <p class="date">Sep. 15th</p>
+    <p>
+     Labour Day is a moment to honor the dedication, hard work, and efforts of workers who keep institutions running smoothly. We all see clean hallways, neatly trimmed shrubs, clear windows, and beautifully kept gardens in our colleges…Who are these unrecognized caretakers of our institutions who make this happen? On May 1st, 2024, the Sanskar Foundation took the initiative to celebrate and appreciate the invaluable contribution of non-teaching staff at Acharya Institutes. The event, held at Acharya Institutes, Bengaluru, was a small effort to acknowledge and express gratitude to these essential members of this community.
+    </p>
+    <a href="https://medium.com/@sanskarmkf/from-sweat-to-success-recognizing-the-invisible-workforce-the-labours-day-bab8038c7df1" class="read-more">View More...</a>
+   
+  </div>
+</div>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+     <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h4>SANSKAR</h4>
+                <p>Together we can bring changes in the society,</p>
+                <p>also sometimes the small happiness is the key</p>
+                <p>to a reason for the bigger happiness.</p>
+            </div>
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+              <li><a href="https://medium.com/@sanskarmkf" target="_blank"
+              rel="noopener noreferrer">Blogs</a></li>
+                    <li><a href="https://www.instagram.com/sanskar.mkf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-section contact">
+                <h4>Contact</h4>
+                <p>Phone: +917983923205</p>
+                <p>Email: <a href="mailto:sanskarmkf@gmail.com">sanskarmkf@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="./toggle.js"></script>
+</body>
+
+</html>
+
+<style>
+    /* General Styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+
+    .top-bar {
+        position: fixed;
+        top: 0px;
+        /* Place it below the announcement bar */
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #AD88C6;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    /* Announcement Bar Section */
+    .announcement-bar {
+        background-color: orange;
+        /* IITM Red */
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 16px;
+        position: fixed;
+        width: 100%;
+        /* Ensure it spans full width */
+        top: 58px;
+        z-index: 1001;
+    }
+
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #ffffff;
+        /* White Background */
+        color: #333;
+        /* Dark Gray Text */
+    }
+
+
+
+    .join-btn {
+        background-color: #ffffff;
+        /* White */
+        color: #b7282e;
+        /* Red Text */
+        border: 1px solid #b7282e;
+        padding: 6px 15px;
+        border-radius: 5px;
+        position: absolute;
+        right: 20px;
+        top: 4px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .join-btn:hover {
+        background-color: #b7282e;
+        color: #fff;
+    }
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333333;
+        /* Dark Gray */
+        padding: 20px 40px;
+    }
+
+    .logo-text {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 65px;
+        /* Adjust the size of the logo */
+        margin-top: -15px;
+        /* Move the logo slightly up */
+        padding: 8px;
+        /* Adjust padding around the logo */
+        margin-left: -30px;
+    }
+
+    .logo-text-content {
+        color: white;
+        font-size: 30px;
+        /* Adjust font size for text */
+        font-weight: bold;
+        margin-left: -1px;
+        /* Space between the logo and the text */
+        font-family: Arial, sans-serif;
+        /* Optional: Choose a font */
+        margin-top: -20px;
+        font-family: 'Playfair Display', serif;
+        /* A popular serif font */
+    }
+
+    .top-bar .logo img {
+        width: 55px;
+        /* Increase the width of the logo */
+        margin-top: -20px;
+        /* Move the logo slightly up */
+        padding: 8px;
+        /* Adjust padding around the logo */
+        margin-left: -30px;
+    }
+
+
+    .top-nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    .top-nav ul li {
+        margin-left: 30px;
+    }
+
+    .top-nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .top-nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+   
+
+
+    footer {
+        background-color: #333333;
+        /* Dark Gray */
+        color: white;
+        padding: 40px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        /* Prevent padding from affecting the layout */
+        text-align: center;
+        /* Center text on smaller screens */
+        border-top: 5px solid coral;
+        /* Add a decorative border to the top */
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .footer-section {
+        flex: 1 1 25%;
+        /* Sections will take 25% of the space on larger screens */
+        min-width: 200px;
+        /* Ensure sections don’t shrink too much on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .footer-section h4 {
+        color: coral;
+        /* Stand out with a vibrant color */
+        margin-bottom: 15px;
+        font-size: 1.4em;
+        /* Slightly larger font size for better readability */
+        text-transform: uppercase;
+        /* Add a professional touch */
+    }
+
+    .footer-section p,
+    .footer-section a {
+        color: #ccc;
+        /* Softer white for better contrast */
+        text-decoration: none;
+        line-height: 1.8;
+        /* More spacing for readability */
+        font-size: 0.95em;
+        /* Ensure smaller text doesn’t dominate */
+    }
+
+    .footer-section a:hover {
+        color: coral;
+        /* Make hover color consistent */
+        text-decoration: underline;
+        /* Add hover underline for clarity */
+    }
+
+    .footer-section ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        /* Standardize spacing for lists */
+    }
+
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+        color: #ddd;
+        text-decoration: none;
+    }
+
+    .footer-section ul li a:hover {
+        color: coral;
+    }
+
+    footer a {
+        transition: color 0.3s ease;
+        /* Smooth hover effect */
+    }
+
+    footer a:hover {
+        color: coral;
+    }
+
+    @media (max-width: 768px) {
+        .testimonial-container{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-content {
+            flex-direction: column;
+            /* Stack sections vertically on smaller screens */
+            text-align: center;
+        }
+
+        .footer-section {
+            flex: 1 1 100%;
+            /* Ensure sections take full width */
+        }
+        .join-btn {
+    background-color: #ffffff;
+    /* White */
+    color: #b7282e;
+    /* Red Text */
+    border: 1px solid #b7282e;
+    padding: 6px 15px;
+    border-radius: 5px;
+    position: relative;
+    right: auto;
+    top: auto;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .join-btn:hover {
+    background-color: #b7282e;
+    color: #fff;
+  }
+  .heading {
+  margin-top: 130px;  /* Adjust based on your navbar + orange bar height */
+  text-align: center;
+}
+.hamburger {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    z-index: 1001;
+  }
+
+  .hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.2s ease;
+  }
+
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before {
+    top: -8px;
+  }
+
+  .hamburger-inner::after {
+    top: 8px;
+  }
+
+  .top-nav ul {
+    list-style: none;
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 250px;
+      background-color: #333;
+      transition: right 0.3s ease;
+      padding-top: 80px;
+    }
+
+    .top-nav.active {
+      right: 0;
+    }
+
+    .top-nav ul {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .top-nav ul li {
+      margin: 15px 0;
+    }
+  }
+
+  /* Hamburger Menu Styles */
+  .hamburger {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+  }
+
+  .hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before {
+    top: -8px;
+  }
+
+  .hamburger-inner::after {
+    top: 8px;
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 250px;
+      background-color: #333;
+      flex-direction: column;
+      padding-top: 80px;
+      transition: right 0.3s ease;
+    }
+
+    .top-nav.active {
+      right: 0;
+    }
+
+    .top-nav ul {
+      flex-direction: column;
+    }
+
+    .top-nav ul li {
+      margin: 15px 0;
+    }
+  }
+
+  .top-nav ul li {
+    margin-left: 30px;
+  }
+
+  .top-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+     .top-nav {
+  margin-top: 60px;}
+
+    }
+    /* Hide hamburger by default (large screens) */
+.hamburger {
+  display: none;
+}
+
+/* Show hamburger on smaller screens (e.g., width <= 768px) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+.blog-image img {
+  width: 500px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.blog-text {
+  flex: 1;
+}
+
+.blog-text h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.blog-text .date {
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.blog-text p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.read-more {
+  display: inline-block;
+  color: #f44336;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.view-blogs-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-blogs-btn:hover {
+  background-color: #d32f2f;
+}
+.blog-card {
+  display: flex;
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+  margin: 120px 40px 40px; /* Top margin increased to 60px */
+  align-items: center;
+  gap: 30px;
+}
+
+.blog-card1 {
+  display: flex;
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+  margin: 80px 40px 40px; /* Top margin increased to 60px */
+  align-items: center;
+  gap: 30px;
+}
+
+
+</style>
