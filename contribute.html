@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation Form</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    
 </head>
-
 <body>
 
-
-    <div class="top-bar">
+   
+   <div class="top-bar">
         <div class="logo-text">
           <div class="logo">
            <a href="index.html" style="text-decoration: none; color: inherit;"><img src="images\logo1.png" alt="Logo" width="100"></a> 
@@ -28,66 +25,64 @@
           </button>
           <nav class="top-nav" aria-label="Main Navigation">
             <ul>
-      <li><a href="index.html">Home</a></li>
+      
+     <li><a href="index.html">Home</a></li>
         <li><a href="work.html">Our Work</a></li>
         <li><a href="blog.html">Blogs</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contribute.html">Contribute</a></li>
          <li><a href="contact.html">Contact</a></li>
-              
       
             </ul>
           </nav>
         </div>
-      
 
-    <!-- Top Announcement Bar -->
+     <!-- Top Announcement Bar -->
+     <div class="announcement-bar">
+        <p>Become a part of the change – Join our mission and make a difference together!</p>
+        <a href="contact.html"><button class="join-btn">Join Now</button></a>
+    </div>
     <div class="announcement-bar">
         <p>Become a part of the change – Join our mission and make a difference together!</p>
         <a href="contact.html"><button class="join-btn">Join Now</button></a>
     </div>
     <div class="container">
-        <div class="helping-hand">
-            <h1> Donate Today</h1>
-            <div class="donate-card">
-                <img src="images/QR CODE.jpg" alt="QR Code for Donation" class="qr-code">
-                <p class="scan-text">SCAN TO DONATE</p>
-                <p class="help-text"></p>
-                <p>UPI ID : shyamrdubey@oksbi</p>
-                <div class="underline"></div>
-            </div>
-        </div>
- <div class="page-container">
-        <div class="contact-info">
-            <h2>Our Contacts</h2>
-            <div class="contact-details">
-                <div class="contact-item">
-                    <i class="fab fa-instagram"></i>
-                    <a href="https://www.instagram.com/sanskar.mkf" target="_blank">Follow us on Instagram</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank">Connect with us on LinkedIn</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p>+917983923205</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>sanskarmkf@gmail.com</p>
-                </div>
-            </div>
+    <div class="helping-hand">
+        <h1> Donate Today</h1>
+        <div class="donate-card">
+            <img src="images/QR CODE.jpg" alt="QR Code for Donation" class="qr-code">
+            <p class="scan-text">SCAN TO DONATE</p>
+            <p class="help-text"></p>
+            <p>UPI ID : shyamrdubey@oksbi</p>
+            <div class="underline"></div>
         </div>
     </div>
+    <div class="contact-form">
+        <h1>Fill Out Your Details After Donating</h1>
+        <form id="donationForm" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
     
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
     
-          
-        
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" id="phone" required>
     
-    <!-- Footer Section -->
-  <footer>
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" required>
+    
+            <label for="payment-screenshot">Upload Payment Screenshot:</label>
+            <input type="file" name="payment-screenshot" id="payment-screenshot" accept="image/*" required>
+    
+            <button type="button" onclick="saveFormDetails()">Submit</button>
+        </form>
+    </div>
+</div>
+</div>
+     <!-- Footer Section -->
+    <footer>
     <div class="footer-content">
       <div class="footer-section about">
         <h4>SANSKAR</h4>
@@ -115,62 +110,52 @@
       </div>
     </div>
   </footer>
+   <script src="./toggle.js"></script>
   
-    <script src="./toggle.js"></script>
-
-    <style>
-        
+  <style>
+    
         /* General Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f0f0f0;
-        }
-
-
-
-        body {
+            }
+            
+         
+            
+            body {
             font-family: 'Arial', sans-serif;
-            background-color: #ffffff;
-            /* White Background */
-            color: #333;
-            /* Dark Gray Text */
-        }
-
-        .top-bar {
-            position: fixed;
-            top: 0px;
-            /* Place it below the announcement bar */
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: #AD88C6;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 20px;
-        }
-
-        /* Announcement Bar Section */
-        .announcement-bar {
-            background-color: orange;
-            /* IITM Red */
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 16px;
-            position: fixed;
-            width: 100%;
-            /* Ensure it spans full width */
-            top: 58px;
-            z-index: 1001;
-        }
-
-        .join-btn {
-            background-color: #ffffff;
-            /* White */
-            color: #b7282e;
-            /* Red Text */
+            background-color: #ffffff; /* White Background */
+            color: #333; /* Dark Gray Text */
+            }
+            
+            .top-bar {
+    position: fixed;
+    top: 0px; /* Place it below the announcement bar */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #AD88C6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+  /* Announcement Bar Section */
+  .announcement-bar {
+    background-color: orange; /* IITM Red */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    position: fixed;
+    width: 100%; /* Ensure it spans full width */
+    top: 58px; 
+    z-index: 1001;
+    }
+            .join-btn {
+            background-color: #ffffff; /* White */
+            color: #b7282e; /* Red Text */
             border: 1px solid #b7282e;
             padding: 6px 15px;
             border-radius: 5px;
@@ -179,69 +164,65 @@
             top: 4px;
             cursor: pointer;
             font-weight: bold;
-        }
-
-        .join-btn:hover {
+            }
+            
+            .join-btn:hover {
             background-color: #b7282e;
             color: #fff;
-        }
-
-        .top-bar {
+            }
+            .top-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #333333;
-            /* Dark Gray */
+            background-color: #333333; /* Dark Gray */
             padding: 20px 40px;
         }
-
         .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333333;
-            /* Dark Gray */
-            padding: 20px 40px;
-        }
-
-        .logo-text {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            width: 65px;
-            /* Adjust the size of the logo */
-            margin-top: -15px;
-            /* Move the logo slightly up */
-            padding: 8px;
-            /* Adjust padding around the logo */
-            margin-left: -30px;
-        }
-
-        .logo-text-content {
-            color: white;
-            font-size: 30px;
-            /* Adjust font size for text */
-            font-weight: bold;
-            margin-left: -1px;
-            /* Space between the logo and the text */
-            font-family: Arial, sans-serif;
-            /* Optional: Choose a font */
-            margin-top: -20px;
-            font-family: 'Playfair Display', serif;
-            /* A popular serif font */
-        }
-
-        .top-bar .logo img {
-            width: 55px;
-            /* Increase the width of the logo */
-            margin-top: -20px;
-            /* Move the logo slightly up */
-            padding: 8px;
-            /* Adjust padding around the logo */
-            margin-left: -30px;
-        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333333;
+        /* Dark Gray */
+        padding: 20px 40px;
+      }
+    
+      .logo-text {
+        display: flex;
+        align-items: center;
+      }
+    
+      .logo img {
+        width: 65px;
+        /* Adjust the size of the logo */
+        margin-top: -15px;
+        /* Move the logo slightly up */
+        padding: 8px;
+        /* Adjust padding around the logo */
+        margin-left: -30px;
+      }
+    
+      .logo-text-content {
+        color: white;
+        font-size: 30px;
+        /* Adjust font size for text */
+        font-weight: bold;
+        margin-left: -1px;
+        /* Space between the logo and the text */
+        font-family: Arial, sans-serif;
+        /* Optional: Choose a font */
+        margin-top: -20px;
+        font-family: 'Playfair Display', serif; /* A popular serif font */
+      }
+    
+      .top-bar .logo img {
+        width: 55px;
+        /* Increase the width of the logo */
+        margin-top: -20px;
+        /* Move the logo slightly up */
+        padding: 8px;
+        /* Adjust padding around the logo */
+        margin-left: -30px;
+      }
 
         .top-nav ul {
             list-style: none;
@@ -261,191 +242,304 @@
         .top-nav ul li a:hover {
             text-decoration: underline;
         }
-
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body,
-        html {
-            height: 100%;
-            font-family: Arial, sans-serif;
-        }
-
-        footer {
-            background-color: #333333;
-            /* Dark Gray */
-            color: white;
-            padding: 40px 20px;
-            width: 100%;
-            box-sizing: border-box;
-            /* Prevent padding from affecting the layout */
-            text-align: center;
-            /* Center text on smaller screens */
-            border-top: 5px solid coral;
-            /* Add a decorative border to the top */
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .footer-section {
-            flex: 1 1 25%;
-            /* Sections will take 25% of the space on larger screens */
-            /* min-width: 200px; */
-            /* Ensure sections don’t shrink too much on smaller screens */
-            margin-bottom: 20px;
-        }
-
-        .footer-section h4 {
-            color: coral;
-            /* Stand out with a vibrant color */
-            margin-bottom: 15px;
-            font-size: 1.4em;
-            /* Slightly larger font size for better readability */
-            text-transform: uppercase;
-            /* Add a professional touch */
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: #ccc;
-            /* Softer white for better contrast */
-            text-decoration: none;
-            line-height: 1.8;
-            /* More spacing for readability */
-            font-size: 0.95em;
-            /* Ensure smaller text doesn’t dominate */
-        }
-
-        .footer-section a:hover {
-            color: coral;
-            /* Make hover color consistent */
-            text-decoration: underline;
-            /* Add hover underline for clarity */
-        }
-
-        .footer-section ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            /* Standardize spacing for lists */
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section ul li a {
-            color: #ddd;
-            text-decoration: none;
-        }
-
-        .footer-section ul li a:hover {
-            color: coral;
-        }
-
-        footer a {
-            transition: color 0.3s ease;
-            /* Smooth hover effect */
-        }
-
-        footer a:hover {
-            color: coral;
-        }
-
-        @media (max-width: 768px) {
-            .footer-content {
-      flex-direction: column;
-      /* Stack sections vertically on smaller screens */
-      text-align: center;
-    }
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .helping-hand {
-                order: 1;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                height: auto;
-                margin-top: 100px;
-                width: 100%;
-            }
-
-            .helping-hand h1 {
-                font-size: 3.5em;
-                /* Increased font size */
-                margin-bottom: 20px;
-                padding-top: 20px;
-                text-align: center;
-                width: 100%;
-                margin-left: 50px;
-                /* Move text slightly to the right */
-            }
-
-            .donate-card {
-                width: 90%;
-                margin: 0 auto;
-                display: flex;
-                justify-content: center;
-            }
-
-            .contact-form {
-                order: 2;
-                width: 90%;
-                margin-top: 30px;
-            }
-
-            /* Move "Join Now" Button Slightly Down */
-            .announcement-bar {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                padding: 10px;
-            }
-
-            /*.announcement-bar p {
-                margin-bottom: 10px;
-                 Creates space between text and button 
-            
-
-            .join-btn {
-                margin-top: 12px;
-                /* Moves the button slightly down */
-            
-            .join-btn {
-    background-color: #ffffff;
-    /* White */
-    color: #b7282e;
-    /* Red Text */
-    border: 1px solid #b7282e;
-    padding: 6px 15px;
-    border-radius: 5px;
-    position: relative;
-    right: auto;
-    top: auto;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .join-btn:hover {
-    background-color: #b7282e;
-    color: #fff;
-  }
-  .helping-hand h1 {
-  margin-top: 40px; /* adjust value as needed */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.hamburger {
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.helping-hand {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    background-color:white; /* Navy blue background */
+    color: black;
+    height: 155vh;
+    text-align: center;
+
+    
+}
+
+.helping-hand h1 {
+    font-size: 50px;
+    color :#333333;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 90px;
+    font-family: 'Playfair Display', serif; /* A popular serif font */
+}
+
+.donate-card {
+    background-color: lightsalmon; 
+    padding: 50px;
+    border-radius: 15px;
+    width: 550px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    align-items: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 43px;
+}
+
+.qr-code {
+    width: 300px;
+    height: 280px;
+    background-color: white; /* Placeholder for QR code */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.scan-text {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #ffffff
+}
+
+.help-text {
+    font-size: 2em;
+    margin-top: 10px;
+    color:black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.underline {
+    width: 50px;
+    height: 4px;
+    background-color:grey; /* Teal color for the underline */
+    margin-top: 10px;
+    border-radius: 2px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;;
+    
+}
+
+.contact-info {
+    width: 45%;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-top:50px
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.contact-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    font-size: 16px;
+}
+
+.contact-form {
+    width: 45%;
+    margin-top: 120px;
+    padding:40px
+}
+.contact-form h1 {
+    margin-bottom: 22px; /* Adjust the value as needed */
+    font-size: 40px; 
+    font-family: 'Playfair Display', serif; /* A popular serif font */
+}
+
+.contact-form h2 {
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: hsl(27, 100%, 50%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: rgb(255, 119, 0);
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+footer {
+    background-color: #333333; /* Dark Gray */
+    color: white;
+    padding: 40px 20px;
+    width: 100%;
+    box-sizing: border-box; /* Prevent padding from affecting the layout */
+    text-align: center; /* Center text on smaller screens */
+    border-top: 5px solid coral; /* Add a decorative border to the top */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the top for consistency */
+    flex-wrap: wrap;
+    gap: 30px; /* More space between sections */
+}
+
+.footer-section {
+    flex: 1 1 25%; /* Sections will take 25% of the space on larger screens */
+    min-width: 200px; /* Ensure sections don’t shrink too much on smaller screens */
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    color: coral; /* Stand out with a vibrant color */
+    margin-bottom: 15px;
+    font-size: 1.4em; /* Slightly larger font size for better readability */
+    text-transform: uppercase; /* Add a professional touch */
+}
+
+.footer-section p,
+.footer-section a {
+    color: #ccc; /* Softer white for better contrast */
+    text-decoration: none;
+    line-height: 1.8; /* More spacing for readability */
+    font-size: 0.95em; /* Ensure smaller text doesn’t dominate */
+}
+
+.footer-section a:hover {
+    color: coral; /* Make hover color consistent */
+    text-decoration: underline; /* Add hover underline for clarity */
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Standardize spacing for lists */
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: coral;
+}
+
+footer a {
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+footer a:hover {
+    color: coral;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-section ul li {
+    margin: 8px 0;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+   .join-btn {
+            background-color: #ffffff;
+            /* White */
+            color: #b7282e;
+            /* Red Text */
+            border: 1px solid #b7282e;
+            padding: 6px 15px;
+            border-radius: 5px;
+            position: relative;
+            right: auto;
+            top: auto;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .join-btn:hover {
+            background-color: #b7282e;
+            color: #fff;
+        }
+
+ .hamburger {
     display: none;
     padding: 10px;
     cursor: pointer;
@@ -613,10 +707,11 @@
     text-decoration: none;
     font-size: 16px;
   }
-  .top-nav {
-    margin-top: 60px;}
-        }
-        /* Hide hamburger by default (large screens) */
+     .top-nav {
+  margin-top: 60px;}
+
+    }
+    /* Hide hamburger by default (large screens) */
 .hamburger {
   display: none;
 }
@@ -626,232 +721,59 @@
   .hamburger {
     display: block;
   }
-}
-.contact-info {
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    color: #333;
-    font-family: 'Segoe UI', sans-serif;
-}
+  @media (max-width: 768px) {
 
-.contact-info h2 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 25px;
-    font-family: 'Playfair Display', serif;
-}
-
-.contact-details {
+  /* Stack container sections vertically */
+  .container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
+    padding: 10px;
+  }
 
-.contact-item {
+  .helping-hand, .contact-form {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .donate-card {
+    text-align: center;
+    padding: 10px;
+    margin-left: -40px; /* 👈 Moves donate card slightly left */
+  }
+
+  .donate-card img.qr-code {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .scan-text, .help-text, .donate-card p {
+    font-size: 16px;
+  }
+
+  .contact-form form {
     display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 18px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-form input,
+  .contact-form label,
+  .contact-form button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .contact-form button {
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  body, html {
+    overflow-x: hidden;
+  }
 }
 
-.contact-item i {
-    font-size: 28px;
 }
-
-/* Optional: Color customization for specific icons */
-.contact-item .fa-instagram {
-    color: #E4405F;
-}
-
-.contact-item .fa-linkedin {
-    color: #0077B5;
-}
-
-.contact-item .fa-phone,
-.contact-item .fa-envelope {
-    color: #007BFF;
-}
-
-.contact-item a,
-.contact-item p {
-    margin: 0;
-    text-decoration: none;
-    color: #000;
-}
-
-.contact-item a:hover {
-    text-decoration: underline;
-}
- 
-        
-        
-        .helping-hand {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            justify-content: center;
-            background-color: white;
-            /* Navy blue background */
-            color: black;
-            height: 155vh;
-            text-align: center;
-
-
-        }
-
-        .helping-hand h1 {
-            font-size: 50px;
-            color: #333333;
-            font-weight: bold;
-            text-align: left;
-            margin-left: 90px;
-            font-family: 'Playfair Display', serif;
-            /* A popular serif font */
-        }
-
-        .donate-card {
-            background-color: lightsalmon;
-            padding: 50px;
-            border-radius: 15px;
-            width: 550px;
-            height: 500px;
-            display: flex;
-            flex-direction: column;
-            margin-left: 25px;
-            align-items: center;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-            margin-top: 43px;
-        }
-
-        .qr-code {
-            width: 300px;
-            height: 280px;
-            background-color: white;
-            /* Placeholder for QR code */
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .scan-text {
-            font-size: 1.3em;
-            font-weight: bold;
-            margin-top: 10px;
-            color: #ffffff
-        }
-
-        .help-text {
-            font-size: 2em;
-            margin-top: 10px;
-            color: black;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .underline {
-            width: 50px;
-            height: 4px;
-            background-color:white;
-            /* Teal color for the underline */
-            margin-top: 10px;
-            border-radius: 2px;
-        }
-
-        
-
-        .contact-info {
-            width: 45%;
-            margin-top: 50px;
-            padding: 20px;
-        }
-
-        .contact-info h2 {
-            font-size: 24px;
-            margin-top: 50px
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-        }
-           body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-    }
-
-    .page-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 40px;
-      gap: 40px;
-    }
-
-   .page-container {
-  display: flex;
-  flex-direction: row-reverse; /* Puts contact-info on the right side */
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 40px;
-  flex-wrap: wrap;
-}
-
-.contact-info {
-  flex: 1;
-  max-width: 400px;
-  background-color: #f9f9f9;
-  padding: 20px 30px;
-  border-radius: 10px;
-  color: #333;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  gap: 15px;
-}
-
-.contact-item i {
-  font-size: 24px;
-  color: #007bff;
-}
-
-.contact-item a,
-.contact-item p {
-  font-size: 18px;
-  color: #000;
-  text-decoration: none;
-}
-
-
-.container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
-}
-
-.helping-hand {
-  flex: 1;
-}
-
-.contact-info {
-  flex: 1;
-  margin-left: 40px;
-}
-
-    </style>
-
-    </style>
+</style>
