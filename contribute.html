@@ -25,14 +25,17 @@
           </button>
           <nav class="top-nav" aria-label="Main Navigation">
             <ul>
+
       
      <li><a href="index.html">Home</a></li>
+
         <li><a href="work.html">Our Work</a></li>
         <li><a href="blog.html">Blogs</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contribute.html">Contribute</a></li>
          <li><a href="contact.html">Contact</a></li>
+
       
             </ul>
           </nav>
@@ -60,7 +63,7 @@
     </div>
     <div class="contact-form">
         <h1>Fill Out Your Details After Donating</h1>
-        <form id="donationForm" enctype="multipart/form-data">
+        <form action="https://script.google.com/macros/s/AKfycbyAKb2JM8EpmIvLJNmyWbQRkTUatY3GFbiB7-PEpZ4hkGVmuDckX2EHND52i7WXkTGrbA/exec" id="donationForm" enctype="multipart/form-data" method="post">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" required>
     
@@ -76,13 +79,15 @@
             <label for="payment-screenshot">Upload Payment Screenshot:</label>
             <input type="file" name="payment-screenshot" id="payment-screenshot" accept="image/*" required>
     
-            <button type="button" onclick="saveFormDetails()">Submit</button>
+
+            <button type="submit">Submit</button>
         </form>
     </div>
 </div>
 </div>
-     <!-- Footer Section -->
-    <footer>
+    
+    <!-- Footer Section -->
+  <footer>
     <div class="footer-content">
       <div class="footer-section about">
         <h4>SANSKAR</h4>
@@ -110,10 +115,13 @@
       </div>
     </div>
   </footer>
+
    <script src="./toggle.js"></script>
   
   <style>
     
+
+  
         /* General Styling */
         body {
             font-family: Arial, sans-serif;
@@ -256,7 +264,7 @@ body, html {
 .helping-hand {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
     justify-content: center;
     background-color:white; /* Navy blue background */
     color: black;
@@ -270,8 +278,8 @@ body, html {
     font-size: 50px;
     color :#333333;
     font-weight: bold;
-    text-align: left;
-    margin-left: 90px;
+    text-align: center;
+    /* margin-left: 90px; */
     font-family: 'Playfair Display', serif; /* A popular serif font */
 }
 
@@ -279,11 +287,11 @@ body, html {
     background-color: lightsalmon; 
     padding: 50px;
     border-radius: 15px;
-    width: 550px;
     height: 500px;
+    width: 500px;
     display: flex;
     flex-direction: column;
-    margin-left: 25px;
+    margin-left: 55px;
     align-items: center;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     margin-top: 43px;
@@ -322,7 +330,8 @@ body, html {
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;;
+    align-items: flex-start;
+    gap:  0%;
     
 }
 
@@ -363,12 +372,14 @@ body, html {
 
 .contact-form {
     width: 45%;
-    margin-top: 120px;
+    margin-top: 70px;
     padding:40px
 }
 .contact-form h1 {
     margin-bottom: 22px; /* Adjust the value as needed */
     font-size: 40px; 
+    text-align: center;
+
     font-family: 'Playfair Display', serif; /* A popular serif font */
 }
 
@@ -725,7 +736,7 @@ footer a:hover {
 
   /* Stack container sections vertically */
   .container {
-    display: flex;
+    justify-content: flex-start; /* override space-between */
     flex-direction: column;
     padding: 10px;
   }
@@ -738,7 +749,7 @@ footer a:hover {
   .donate-card {
     text-align: center;
     padding: 10px;
-    margin-left: -40px; /* 👈 Moves donate card slightly left */
+    margin-left: -10px; /* 👈 Moves donate card slightly left */
   }
 
   .donate-card img.qr-code {
