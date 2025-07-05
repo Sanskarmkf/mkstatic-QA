@@ -104,21 +104,7 @@
         for growth, smiles, happiness, and quality education worldwide.</p>
     </div>
   </section>
-   <div class="co-founder-section">
-  <div class="co-founder-content">
-    <div class="co-founder-photo">
-      <img src="images\Shubham kokila.jpg" alt="Shubham Kokila - Co-Founder">
-    </div>
-    <div class="co-founder-text">
-      <p>As a co-founder, I deeply believe that we've all been given the amazing opportunity of life by something greater than
-        ourselves. It's a chance to lift each other up, spread positivity, and make our world a better place. Let's stand together,
-        combine our strengths, and commit to living with purpose. By touching the lives of those around us and contributing to our
-        communities, we can truly make a meaningful impact. Let's join forces on this journey to give our lives genuine meaning
-        and value.</p>
-      <p><strong>— Shubham Kokila, Co-Founder</strong></p>
-    </div>
-  </div>
-</div>
+  
 
 
   <!-- Key Programs Section -->
@@ -205,6 +191,51 @@
     </div>
   </div>
 </div>
+<section class="founders-section">
+  <h2 class="heading">Message from the Founders</h2>
+
+  <div class="founder-messages">
+
+    <!-- Founder Message -->
+    <div class="founder-message">
+      <p>
+        I believe that God has given us the gift of life as
+        humans to help others and make the world a
+        better place. Let's join hands, unite, and strive to
+        live purposefully, making a positive difference in
+        the lives of others and our communities.
+        Together, let's make our lives meaningful and
+        worthwhile.
+      </p>
+      <div class="msg-founder">
+        <img src="images\Madhav Kumar Choudhary (2) - Madhav Kumar Choudhary.jpg" alt="Madhav Kumar Choudhary ">
+        <div>
+          <span>Madhav Kumar Choudhary</span><br>
+          <span>Founder</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Co-Founder Message -->
+    <div class="co-founder-message">
+      <p>
+         I deeply believe that we've all been given the amazing opportunity of life by something greater than
+        ourselves.  Let's stand together,
+        combine our strengths, and commit to living with purpose.  Let's join forces on this journey to give our lives genuine meaning
+        and value.
+      </p>
+      <div class="msg-founder">
+        <img src="images/Shubham kokila.jpg" alt="Shubham Kokila">
+        <div>
+          <span>Shubham Kokila</span><br>
+          <span>Co-Founder</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <div class="container">
       <div class="description">
@@ -467,7 +498,7 @@
     color: #333;
     margin-top: 100px;
     text-align: center;
-    font-style: italic;
+   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ;
   }
 
 
@@ -1358,7 +1389,11 @@
     color: #000;
     font-family: fantasy;
     font-size: 40px;
-
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #333;
+    
+   
   }
 
   .achievements-container {
@@ -1944,6 +1979,255 @@
 
   .co-founder-text p strong {
     font-size: 16px;
+  }
+}
+.hamburger {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    z-index: 1001;
+  }
+
+  .hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.2s ease;
+  }
+
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before {
+    top: -8px;
+  }
+
+  .hamburger-inner::after {
+    top: 8px;
+  }
+
+  .top-nav ul {
+    list-style: none;
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 250px;
+      background-color: #333;
+      transition: right 0.3s ease;
+      padding-top: 80px;
+    }
+
+    .top-nav.active {
+      right: 0;
+    }
+
+    .top-nav ul {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .top-nav ul li {
+      margin: 15px 0;
+    }
+  }
+
+  /* Hamburger Menu Styles */
+  .hamburger {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+  }
+
+  .hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .hamburger-inner::before {
+    top: -8px;
+  }
+
+  .hamburger-inner::after {
+    top: 8px;
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 250px;
+      background-color: #333;
+      flex-direction: column;
+      padding-top: 80px;
+      transition: right 0.3s ease;
+    }
+
+    .top-nav.active {
+      right: 0;
+    }
+
+    .top-nav ul {
+      flex-direction: column;
+    }
+
+    .top-nav ul li {
+      margin: 15px 0;
+    }
+  }
+
+ 
+
+    
+   .founders-section {
+  padding: 60px 20px;
+  background-color: #f8f8f8;
+}
+
+.founders-section .heading {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.founder-messages {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.founder-message,
+.co-founder-message {
+  
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  flex: 1 1 500px;
+  max-width: 550px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.founder-message:hover,
+.co-founder-message:hover {
+  transform: translateY(-5px);
+}
+
+.founder-message p,
+.co-founder-message p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.msg-founder {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.msg-founder img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.msg-founder span {
+  font-size: 1rem;
+  display: block;
+}
+
+.msg-founder span:first-child {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.msg-founder span:last-child {
+  color: #444;
+}
+@media (max-width: 768px) {
+  .founder-messages {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .founder-message,
+  .co-founder-message {
+    max-width: 100%;
   }
 }
 
