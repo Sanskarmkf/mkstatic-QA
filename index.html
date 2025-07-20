@@ -405,24 +405,7 @@
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .hero {
-        min-height: 60vh;
-        background-attachment: scroll; /* Fix for mobile */
-    }
 
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    .hero-content .join-btn1 {
-        padding: 10px 20px;
-    }
-}
 
 
   /* Our Work Section */
@@ -654,20 +637,36 @@
     }
   }
 
-  /* Responsive Design */
   @media (max-width: 768px) {
-    .hero {
-      height: 400px;
-      background-position: center;
+    .hero{
+        height: 600px;
     }
+  .hero-content {
+    margin-left: 0 !important;
+    padding: 20px;
+    text-align: left !important;
+    max-width: 60%; /* let it use full width */
+  }
 
-    .hero-content h1 {
-      font-size: 36px;
-    }
+  .hero-content h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.3;
+    text-align: left;
+  }
 
-    .hero-content p {
-      font-size: 18px;
-    }
+  .hero-content p {
+    font-size: 1rem !important;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .hero-content .join-btn1 {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    margin-left: 0;
+  }
+
+
 
     .work-cards {
       flex-direction: column;
