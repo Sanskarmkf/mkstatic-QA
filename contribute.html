@@ -732,24 +732,23 @@ footer a:hover {
   .hamburger {
     display: block;
   }
-  @media (max-width: 768px) {
 
-  /* Stack container sections vertically */
   .container {
-    justify-content: flex-start; /* override space-between */
+    justify-content: flex-start;
     flex-direction: column;
     padding: 10px;
   }
 
   .helping-hand, .contact-form {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* reduced from 20px to 10px */
   }
 
   .donate-card {
     text-align: center;
     padding: 10px;
-    margin-left: -10px; /* 👈 Moves donate card slightly left */
+    margin-left: -10px;
+    margin-bottom: 0; /* 👈 remove bottom space between card and form */
   }
 
   .donate-card img.qr-code {
@@ -760,6 +759,11 @@ footer a:hover {
 
   .scan-text, .help-text, .donate-card p {
     font-size: 16px;
+  }
+
+  .contact-form {
+    margin-top: 0; /* 👈 remove top margin */
+    padding-top: 0; /* 👈 remove internal top padding */
   }
 
   .contact-form form {
@@ -785,6 +789,3 @@ footer a:hover {
     overflow-x: hidden;
   }
 }
-
-}
-</style>
