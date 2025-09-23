@@ -150,6 +150,26 @@
 
       </div>
   </section>
+  
+  <div class="scholarship-section">
+  <!-- Heading outside the block -->
+  <h2 class="scholarship-heading">Scholarship</h2>
+
+  <!-- Scholarship Block -->
+  <div class="scholarship-block">
+    <div class="scholarship-text">
+      <h2>Scholarship That Empowers Generations</h2>
+      <p>Through our scholarship program, children facing financial hardships get the chance to attend school, access educational resources, and build a brighter, more confident future.
+
+Together, we can transform lives through education. 🌱</p>
+    </div>
+
+    <div class="scholarship-image">
+      <img src="images\istockphoto-1355269883-612x612.jpg" alt="Scholarship Image">
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -191,6 +211,11 @@
     </div>
   </div>
 </div>
+
+ 
+
+  
+
 <section class="founders-section">
   <h2 class="heading">Message from the Founders</h2>
 
@@ -1477,7 +1502,63 @@
   }
 
 
+/* ====== Section Heading (outside the block) ====== */
+.scholarship-heading {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin: -20px 0 20px 0;  /* space above and below heading */
+}
 
+/* ====== Scholarship Block ====== */
+.scholarship-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin: 0 auto 40px auto; /* center block & add bottom spacing */
+  max-width: 1150px; 
+  min-height: 300px;
+  padding: 20px;
+}
+
+/* ====== Scholarship Text ====== */
+.scholarship-text {
+  flex: 1;
+  padding: 20px 40px;
+}
+
+.scholarship-text h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.scholarship-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* ====== Scholarship Image ====== */
+.scholarship-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scholarship-image img {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 20px;
+}
 
 
   /* Events, Success Stories, Volunteers, Donations Section */
@@ -2182,7 +2263,35 @@
     width: 100%;
     max-width: 100%;
   }
+}@media (min-width: 769px) {
+  .scholarship-block {
+    flex-direction: row;   /* Text left, image right */
+  }
+
+  .scholarship-text {
+    text-align: left;
+  }
 }
 
+/* ========== MOBILE STYLES ========== */
+@media (max-width: 768px) {
+  .scholarship-block {
+    flex-direction: column; /* Stack text first, image below */
+  }
+
+  .scholarship-text {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .scholarship-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .scholarship-image {
+    width: 100%;
+    height: auto;
+  }
+}
 
 </style>
