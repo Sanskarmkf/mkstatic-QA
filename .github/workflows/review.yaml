@@ -1,0 +1,30 @@
+name: Pull Request Review Check
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  review-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Ensure two reviews are required
+        run: |
+          APPROVALS=$(curl -s \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/reviews" | jq '.[] | select(.state == "APPROVED") | .user.login')
+          
+          # List of required reviewers
+          REQUIRED_REVIEWERS=("fsachin" "MadhavKrChoudhary")
+          
+          for reviewer in "${REQUIRED_REVIEWERS[@]}"; do
+            if echo "$APPROVALS" | grep -q "$reviewer"; then
+              echo "Reviewer $reviewer has approved."
+            else
+              echo "Error: Required reviewer $reviewer has not approved."
+              exit 1
+            fi
+          done
