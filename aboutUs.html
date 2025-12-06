@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+  <title>About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      padding-top: 140px; /* ✅ Push content below fixed nav + announcement bar */
+    }
+
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333333;
+      padding: 15px 30px;
+    }
+
+    .hamburger {
+      display: none;
+      padding: 10px;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      z-index: 1001;
+    }
+
+    .hamburger-box {
+      width: 30px;
+      height: 24px;
+      display: inline-block;
+      position: relative;
+    }
+
+    .hamburger-inner {
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: background-color 0.2s ease;
+    }
+
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+      content: '';
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .hamburger-inner::before {
+      top: -8px;
+    }
+
+    .hamburger-inner::after {
+      top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .top-nav {
+        position: fixed;
+        top: 90px;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background-color: #333;
+        transition: right 0.3s ease;
+        padding-top: 80px;
+      }
+
+      .top-nav.active {
+        right: 0;
+      }
+
+      .top-nav ul {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .top-nav ul li {
+        margin: 15px 0;
+      }
+
+      .top-nav ul li a {
+        font-size: 18px;
+      }
+    }
+
+    .logo-text {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 55px;
+      margin-top: -20px;
+      padding: 8px;
+      margin-left: -30px;
+      margin-right: 10px;
+    }
+
+    .logo-text-content {
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      margin-left: -10px;
+      margin-top: -18px;
+      font-family: 'Playfair Display', serif;
+      display: inline-block;
+      list-style: none !important;
+    }
+
+    .logo-text-content a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .top-nav ul {
+      list-style: none;
+      display: flex;
+      margin-top: 10px;
+    }
+
+    .top-nav ul li {
+      margin-left: 30px;
+    }
+
+    .top-nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .top-nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .announcement-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: orange;
+      color: white;
+      text-align: center;
+      padding: 6px;
+      font-size: 16px;
+      position: fixed;
+      width: 100%;
+      top: 58px;
+      z-index: 1001;
+      margin: 0;
+    }
+
+    .announcement-bar p {
+      flex: 3;
+      margin: 0;
+      font-size: 16px;
+
+    }
+
+    .join-btn {
+      background-color: #ffffff;
+      color: #b7282e;
+      border: 1px solid #b7282e;
+      padding: 4px 12px 5px 12px;
+      margin:0px 20px 0px 10px;
+      border-radius: 5px;
+      position: relative;
+      right: auto;
+      top: auto;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+      font-size: 13px;
+    }
+
+    .join-btn:hover {
+      background-color: #b7282e;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .announcement-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+
+      .announcement-bar p {
+        margin: 0;
+      }
+
+      .join-btn {
+        margin-top: 0;
+      }
+    }
+
+  
+
+/*carousels*/
+  .carousel-fade .carousel-item {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .carousel-fade .carousel-item.active {
+    opacity: 1;
+    transition-delay: 0s;
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+  }
+
+  .carousel-control-prev:hover, .carousel-control-next:hover {
+    opacity: 1;
+  }
+
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(1);
+  }
+
+  /* Core Initiatives Carousel Image Styles */
+  .carousel-image {
+    height: 400px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .carousel-item h3 {
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+
+/*member card*/
+/* Team Section Container */
+
+  .team-section {
+    background: #fff; /* white background */
+    color: #333; /* dark text */
+    padding: 60px 40px;
+    margin: 50px auto;
+    max-width: 1200px;
+  }
+
+  .section-title {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+  }
+
+  .filter-btns {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .filter-btns button {
+    background: transparent;
+    border: 2px solid #000000;
+    color: #000000;
+    padding: 8px 18px;
+    margin: 0 5px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .filter-btns button.active {
+    background: #000000;
+    color: #fff;
+  }
+
+  .filter-btns button:hover {
+    background: #FFA500;
+    color: #fff;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .team-card {
+    background: #fff; /* keep white */
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  }
+
+  .team-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #FFA500;
+    margin: 10px;
+  }
+
+  .heading-section {
+    flex-basis: 25%;
+    text-align: center;
+  }
+
+  .team-card h5 {
+    color: #000000;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .team-card .role {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .team-card .desc {
+    flex: 1;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .team-card .read-more-link, .team-card .read-less-link {
+    color: #FFA500;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .team-card .team {
+    color: #FFA500;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+
+  .team-card .contact-btn {
+    margin-top: 10px;
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .team-card .contact-btn:hover {
+    background-color: #ff8c00;
+  }
+
+  .team-card .social-icons {
+    margin-top: auto;
+  }
+
+  .team-card .social-icons a {
+    color: #000000;
+    margin: 0 5px;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+
+  .team-card .social-icons a:hover {
+    color: #000;
+  }
+
+  /* Modal styles */
+  .modal-content {
+    border-radius: 10px;
+  }
+
+  .modal-header {
+    background-color: #FFA500;
+    color: white;
+    border-bottom: none;
+  }
+
+  .modal-body {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .modal-body h5 {
+    margin-bottom: 10px;
+    color: #000;
+  }
+
+  .modal-body p {
+    font-size: 1.1rem;
+    color: #FFA500;
+    font-weight: bold;
+  }
+
+  .contact-team-btn {
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+
+  .contact-team-btn:hover {
+    background-color: #ff8c00;
+  }
+
+  /* Additional responsive fixes */
+  @media (max-width: 768px) {
+    .carousel-item img {
+      width: 150px !important;
+      height: 150px !important;
+    }
+
+    .split-section .card .row {
+      height: auto !important;
+      min-height: 420px;
+    }
+
+    .split-section .card-body {
+      padding: 20px !important;
+    }
+
+    .split-section .card-title {
+      font-size: 1.8rem !important;
+    }
+
+    .split-section .card-text {
+      font-size: 1.1rem !important;
+    }
+
+    .split-section ul {
+      font-size: 1rem !important;
+    }
+
+    .join-us-bar {
+      font-size: 14px !important;
+      padding: 12px 5px !important;
+    }
+
+    .team-messages .message-card p {
+      font-size: 1.1rem !important;
+    }
+
+    .contact-teams-card {
+      padding: 20px !important;
+    }
+
+    .contact-team-btn {
+      padding: 8px 16px !important;
+      font-size: 0.9rem !important;
+    }
+
+    /* Banner responsiveness */
+    .container.col-xxl-8.px-4.py-3 {
+      padding: 20px 10px !important;
+    }
+
+    .display-5.fw-bold.text-body-emphasis.lh-1.mb-3 {
+      font-size: 2rem !important;
+    }
+
+    /* Founders and Core Initiatives carousels */
+    .carousel-image {
+      height: 300px !important;
+    }
+
+    .carousel-item h3 {
+      font-size: 1.5rem !important;
+    }
+
+    /* Team section */
+    .team-section {
+      padding: 40px 10px !important;
+    }
+
+    .section-title {
+      font-size: 2rem !important;
+    }
+
+    .team-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+      gap: 15px !important;
+    }
+
+    .team-card {
+      padding: 15px !important;
+    }
+
+    .team-card img {
+      width: 150px !important;
+      height: 150px !important;
+    }
+
+    .team-card h5 {
+      font-size: 1.1rem !important;
+    }
+
+    /* Split section */
+    .split-section {
+      padding: 30px 10px !important;
+    }
+
+    .split-container {
+      flex-direction: column !important;
+    }
+
+    .column {
+      width: 100% !important;
+      padding: 0 10px !important;
+    }
+
+    .column h2 {
+      font-size: 2rem !important;
+    }
+
+    .column p {
+      font-size: 1.1rem !important;
+    }
+
+    .column ul {
+      font-size: 1rem !important;
+    }
+
+    /* Join team card */
+    .join-team-card {
+      padding: 30px !important;
+      max-width: 500px !important;
+    }
+
+    /* Team messages carousel */
+    .message-card {
+      padding: 20px !important;
+      max-width: 700px !important;
+    }
+
+    .message-card p {
+      font-size: 1.2rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .carousel-item img {
+      width: 120px !important;
+      height: 120px !important;
+    }
+
+    .split-section .card-title {
+      font-size: 1.5rem !important;
+    }
+
+    .split-section .card-text {
+      font-size: 1rem !important;
+    }
+
+    .split-section ul {
+      font-size: 0.9rem !important;
+    }
+
+    .team-messages .message-card p {
+      font-size: 1rem !important;
+    }
+
+    .contact-team-btn {
+      padding: 6px 12px !important;
+      font-size: 0.8rem !important;
+    }
+
+    /* Top bar */
+    .top-bar {
+      padding: 15px !important;
+    }
+
+    .logo img {
+      width: 45px !important;
+      margin-left: -20px !important;
+    }
+
+    .logo-text-content {
+      font-size: 24px !important;
+      margin-left: -5px !important;
+      margin-top: -15px !important;
+    }
+
+    /* Announcement bar */
+    .announcement-bar {
+      padding: 8px !important;
+      font-size: 14px !important;
+    }
+
+    .join-btn {
+      padding: 6px 12px !important;
+      font-size: 14px !important;
+    }
+
+    /* Banner */
+    .container.col-xxl-8.px-4.py-3 {
+      padding: 15px 5px !important;
+    }
+
+    .display-5.fw-bold.text-body-emphasis.lh-1.mb-3 {
+      font-size: 1.8rem !important;
+    }
+
+    /* Carousels */
+    .carousel-image {
+      height: 250px !important;
+    }
+
+    .carousel-item h3 {
+      font-size: 1.3rem !important;
+    }
+
+    /* Team section */
+    .section-title {
+      font-size: 1.8rem !important;
+    }
+
+    .filter-btns button {
+      padding: 6px 12px !important;
+      font-size: 0.9rem !important;
+      margin: 0 3px !important;
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr !important;
+      gap: 10px !important;
+    }
+
+    .team-card {
+      padding: 10px !important;
+      text-align: center !important;
+    }
+
+    .team-card img {
+      width: 120px !important;
+      height: 120px !important;
+    }
+
+    .team-card h5 {
+      font-size: 1rem !important;
+    }
+
+    .team-card .role {
+      font-size: 0.8rem !important;
+    }
+
+    .team-card .desc {
+      font-size: 0.9rem !important;
+    }
+
+    /* Split section */
+    .split-section {
+      padding: 20px 5px !important;
+    }
+
+    .column h2 {
+      font-size: 1.8rem !important;
+    }
+
+    .column p {
+      font-size: 1rem !important;
+    }
+
+    .column ul {
+      font-size: 0.9rem !important;
+    }
+
+    .column img {
+      max-width: 250px !important;
+    }
+
+    /* Join team card */
+    .join-team-card {
+      padding: 20px !important;
+      max-width: 90% !important;
+    }
+
+    .join-team-card h2 {
+      font-size: 1.5rem !important;
+    }
+
+    .join-team-card p {
+      font-size: 1rem !important;
+    }
+
+    /* Team messages */
+    .message-card {
+      padding: 15px !important;
+      max-width: 90% !important;
+    }
+
+    .message-card p {
+      font-size: 1.1rem !important;
+    }
+
+    /* Contact teams card */
+    .contact-teams-card {
+      padding: 15px !important;
+      width: 90vw !important;
+      position: relative !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+
+    .contact-teams-card h3 {
+      font-size: 1.5rem !important;
+    }
+
+    .contact-team-btn {
+      padding: 6px 10px !important;
+      font-size: 0.8rem !important;
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px 10px !important;
+    }
+
+    .footer-content {
+      flex-direction: column !important;
+      text-align: center !important;
+    }
+
+    .footer-section {
+      margin-bottom: 15px !important;
+    }
+
+    .footer-section h4 {
+      font-size: 1.2em !important;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      font-size: 0.9em !important;
+    }
+  }
+
+  /* Tablet specific adjustments */
+  @media (min-width: 481px) and (max-width: 768px) {
+    /* Banner */
+    .container.col-xxl-8.px-4.py-3 {
+      padding: 25px 15px !important;
+    }
+
+    .display-5.fw-bold.text-body-emphasis.lh-1.mb-3 {
+      font-size: 2.2rem !important;
+    }
+
+    /* Carousels */
+    .carousel-image {
+      height: 350px !important;
+    }
+
+    .carousel-item h3 {
+      font-size: 1.8rem !important;
+    }
+
+    /* Team section */
+    .team-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    }
+
+    .team-card img {
+      width: 180px !important;
+      height: 180px !important;
+    }
+
+    /* Split section */
+    .column h2 {
+      font-size: 2.2rem !important;
+    }
+
+    .column p {
+      font-size: 1.15rem !important;
+    }
+
+    .column ul {
+      font-size: 1.05rem !important;
+    }
+
+    /* Join team card */
+    .join-team-card {
+      padding: 35px !important;
+      max-width: 550px !important;
+    }
+
+    /* Team messages */
+    .message-card {
+      padding: 25px !important;
+      max-width: 750px !important;
+    }
+
+    .message-card p {
+      font-size: 1.3rem !important;
+    }
+  }
+
+  /* Large desktop screens */
+  @media (min-width: 1200px) {
+    .container.col-xxl-8.px-4.py-3 {
+      max-width: 1400px !important;
+    }
+
+    .team-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    }
+
+    .split-section {
+      max-width: 1400px !important;
+      margin: 50px auto !important;
+    }
+
+    .join-team-card {
+      max-width: 700px !important;
+    }
+
+    .message-card {
+      max-width: 900px !important;
+    }
+  }
+
+  /* Split Section Styles */
+  .split-section {
+    width: 100vw;
+    margin: 50px 0;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 40px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .split-container {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .column {
+    width: 50%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .column-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+  }
+
+  .text-content {
+    flex: 1;
+    padding: 0 20px;
+  }
+
+  .column img {
+    width: 100%;
+    height: auto;
+    flex-basis: 25%;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .column h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000000;
+    flex-basis: 25%;
+    margin-bottom: 20px;
+  }
+
+  .column p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    max-width: 400px;
+  }
+
+  .column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+  }
+
+  .column li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+  }
+
+  .column li::before {
+    content: '•';
+    color: #FFA500;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+  }
+
+  @media (max-width: 768px) {
+    .split-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .column {
+      width: 100%;
+    }
+
+    .column h2 {
+      font-size: 2rem;
+    }
+
+    .column img {
+      max-width: 300px;
+    }
+
+    .column p {
+      text-align: center;
+    }
+
+    .column ul {
+      text-align: left;
+    }
+
+    .team-section {
+      padding: 40px 20px;
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .team-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .team-card img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+/*pgm & goals */
+/* Shared section style */
+.section-container {
+  background-color: #ffffff; /* White background */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section-container h2 {
+  color: #000000; /* Black heading */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* List common styles */
+.styled-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 40px;
+  max-width: 800px;
+}
+
+.styled-list li {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #f0f0f0, #d9d9d9); /* Grey gradient */
+  margin: 12px 0;
+  padding: 15px 20px;
+  border-left: 8px solid #FFA500; /* Orange strip */
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333333;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.styled-list li:hover {
+  border-left-color: #ff8c00; /* Darker orange on hover */
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(255,165,0,0.5);
+}
+
+/* Animation delays for staggered effect */
+.styled-list li:nth-child(1) { animation-delay: 0.2s; }
+.styled-list li:nth-child(2) { animation-delay: 0.4s; }
+.styled-list li:nth-child(3) { animation-delay: 0.6s; }
+.styled-list li:nth-child(4) { animation-delay: 0.8s; }
+.styled-list li:nth-child(5) { animation-delay: 1s; }
+.styled-list li:nth-child(6) { animation-delay: 1.2s; }
+
+/* Fade-in animation */
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Join Us Bar */
+.join-us-bar {
+  background-color: #FFA500;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+    /* Footer */
+    footer {
+      background-color: #333333;
+      color: white;
+      padding: 40px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      border-top: 5px solid coral;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-section {
+      flex: 1 1 25%;
+      margin-bottom: 20px;
+    }
+
+    .footer-section h4 {
+      color: coral;
+      margin-bottom: 15px;
+      font-size: 1.4em;
+      text-transform: uppercase;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: #ccc;
+      text-decoration: none;
+      line-height: 1.8;
+      font-size: 0.95em;
+    }
+
+    .footer-section a:hover {
+      color: coral;
+      text-decoration: underline;
+    }
+
+    .footer-section ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+  /* About Us Card Animation */
+    .about-card {
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .message-card {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3) !important;
+    }
+
+    .join-team-card {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .message-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.4) !important;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="logo-text">
+      <div class="logo">
+        <a href="home.html"><img src="images/logo1.png" alt="Logo"></a>
+      </div>
+      <span class="logo-text-content">
+        <a href="home.html">SANSKAR</a>
+      </span>
+    </div>
+
+    <nav class="top-nav" aria-label="Main Navigation">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Our Work</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="aboutUs.html">About Us</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+
+  <div class="announcement-bar">
+    <p>Become a part of the change – Join our mission and make a difference together!</p>
+    <a href="contact.html"><button class="join-btn">Join Now</button></a>
+  </div>
+
+  <div style="background-image: url('images/aboutus_banner.png'); background-size: cover; background-position: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%); padding: 10px; border-radius: 10px;">
+    <div class="container col-xxl-8 px-4 py-3">
+      <div class="row align-items-start g-5 py-3">
+        <!-- Left side: About Sanskar -->
+        <div class="col-12">
+          <div class="about-card">
+            <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 10px; border-left: 4px solid #ff914d; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style="text-align: center;">About Sanskar</h1>
+                <p style="color: #333; font-size: 1.2rem; font-weight: 500; line-height: 1.6;">
+                Sanskar is a student-led charitable group driven by compassionate individuals dedicated to helping those in need. We provide essential support such as food, clothing, education, books, and medicine. Our mission is to promote equality, ease the burdens of those facing urgent hardships, and uplift honest workers with dignity and fairness.
+                <br><span style="color: #444; font-weight: 500; font-style: italic; margin-top: 10px; display: block;">The foundation day of Sanskar is January 26, 2023.</span>
+               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div style="background: rgba(255,255,255,0.9); padding: 40px; border-radius: 15px; margin: 30px 0; width: 100vw; position: relative; left: 50%; transform: translateX(-50%); box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+  <!-- Founders Fade Carousel -->
+  <div id="foundersCarousel" class="carousel slide carousel-fade text-center" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner">
+
+      <!-- Founder -->
+      <div class="carousel-item active">
+        <img src="images/founder1.jpg" class="d-block mx-auto rounded-circle mb-3" alt="Madhav Kumar Choudhary" style="width:200px; height:200px; object-fit:cover;">
+        <div>
+          <h3 class="mb-1">Madhav Kumar Choudhary</h3>
+          <p class="text-muted mb-4">Founder</p>
+        </div>
+      </div>
+
+      <!-- Co-founder -->
+      <div class="carousel-item">
+        <img src="images/founder2.jpg" class="d-block mx-auto rounded-circle mb-3" alt="Shubham Kokila" style="width:200px; height:200px; object-fit:cover;">
+        <div>
+          <h3 class="mb-1">Shubham Kokila</h3>
+          <p class="text-muted mb-4">Co-Founder</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#foundersCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#foundersCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+<div style="background: rgba(255,255,255,0.9); padding: 40px; border-radius: 15px; margin: 30px auto; max-width: 1200px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+  <h2 style="text-align: center; margin-bottom: 30px;">Core Initiatives</h2>
+
+  <!-- Core Initiatives Carousel -->
+  <div id="coreInitiativesCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner">
+
+      <!-- Happy Faces -->
+      <div class="carousel-item active">
+        <h3>Happy Faces</h3>
+        <div class="carousel-image" style="background-image: url('images/children.jpg');">
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="carousel-item">
+        <h3>Education</h3>
+        <div class="carousel-image" style="background-image: url('images/scholarships.jpg');">
+        </div>
+      </div>
+
+      <!-- Fun Activities -->
+      <div class="carousel-item">
+        <h3>Fun Activities</h3>
+        <div class="carousel-image" style="background-image: url('images/Programs.jpg');">
+        </div>
+      </div>
+
+      <!-- Food -->
+      <div class="carousel-item">
+        <h3>Food</h3>
+        <div class="carousel-image" style="background-image: url('images/labour day (acharya).jpg');">
+        </div>
+      </div>
+
+      <!-- Animal Welfare -->
+      <div class="carousel-item">
+        <h3>Animal Welfare</h3>
+        <div class="carousel-image" style="background-image: url('images/dog.jpg');">
+        </div>
+      </div>
+
+      <!-- Support for the Aged -->
+      <div class="carousel-item">
+        <h3>Support for the Aged</h3>
+        <div class="carousel-image" style="background-image: url('images/old age1.JPG');">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#coreInitiativesCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#coreInitiativesCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+    
+<!-- ===== TEAM SECTION START ===== -->
+<section id="team" class="team-section">
+  <h2 class="section-title">Our Team</h2>
+
+  <!-- Filter Buttons -->
+  <div class="filter-btns">
+    <button class="active" onclick="filterTeam('all', event)">All</button>
+    <button onclick="filterTeam('happiness', event)">Happiness</button>
+    <button onclick="filterTeam('web', event)">Web Dev </button>
+    <button onclick="filterTeam('marketing', event)">Marketing</button>
+    <button onclick="filterTeam('finance', event)">Finance</button>
+    <button onclick="filterTeam('volunteer', event)">Volunteers</button>
+    <button onclick="filterTeam('ops', event)">Ops & Management</button>
+  </div>
+
+  <!-- Team Grid -->
+  <div class="team-grid">
+    <!-- Ops & Management -->
+    <div class="team-card ops">
+        <img src="images/founder1.jpg" alt="Madhav Kumar Choudhary">
+        <h5>Madhav Kumar Choudhary</h5>
+        <p class="team">Ops & Management</p>
+        <p class="role">Founder</p>
+        <p class="desc">I am working as a DevOps Engineer at Hiver. I have completed my Btech in CSE from Acharya Institute of Technology. I am also pursuing a BS (4 year Bachelor Degree) in Data Science and Application from IIT Madras. I have completed my Diploma and currently in BSc Degree Level. I have also won the Best Student Award in my Btech journey which shows my dedication and discipline I have maintained continuously for 4 years in Academic. I am more enthusiastic to learn new things and exploring everyday. </p>
+        <div class="social-icons"><a href="https://www.instagram.com/madhavv._?igsh=MWYwenVkeHFzaHhkdw=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/madhav-kumar-choudhary-318948207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <div class="team-card ops">
+        <img src="images/founder2.jpg" alt="Shubham Kokila">
+        <h5>Shubham Kokila</h5>
+        <p class="team">Ops & Management</p>
+        <p class="role">Co-Founder, Finance Lead</p>
+        <p class="desc">Working as Junior Data Science Eng, an enthusiastic Data Science learner.</p>
+        <div class="social-icons"><a href="https://www.instagram.com/shubhamkokila?igsh=d3J3bGZjNjA5Mjdi"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/shubham-kokila-696bab220?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <div class="team-card ops">
+        <img src="images/founder1.jpg" alt="Himani Kokila">
+        <h5>Himani Kokila</h5>
+        <p class="team">Ops & Management</p>
+        <p class="role">VP</p>
+        <p class="desc">I am from Haldwani (Uttarakhand). Current i am persuing PhD in Physics and I am serving the role of Vice President at Sanskar.</p>
+        <div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <div class="team-card ops">
+        <img src="images/founder1.jpg" alt="Amit Kumar Thakur">
+        <h5>Amit Kumar Thakur</h5>
+        <p class="team">Ops & Management</p>
+        <p class="role">Ops and Management</p>
+        <p class="desc">My name is Amit Kumar Thakur, and I am currently pursuing a Bachelor's degree in Engineering. Alongside my studies, I serve on the Operations and Management team at Sanskar. I believe that if we are given the gift of life, it is our responsibility to help others and make this world a more beautiful place.</p>
+        <div class="social-icons"><a href="https://www.instagram.com/amitk_0006/?__pwa=1"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/amit-kumar-thakur-190b18294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <!-- Finance Team -->
+    <div class="team-card finance">
+        <img src="images/founder1.jpg" alt="Nitin Mohan">
+        <h5>Nitin Mohan</h5>
+        <p class="team">Finance Team</p>
+        <p class="role">Finance</p>
+        <p class="desc">Managing financial activities and operations.</p>
+        <div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <div class="team-card finance">
+        <img src="images/JayeshLohani.jpg" alt="Jayesh Lohani">
+        <h5>Jayesh Lohani</h5>
+        <p class="team">Finance Team</p>
+        <p class="role">Finance</p>
+        <p class="desc">I am a member of the Finance Team at Sanskar where I am responsible for managing donations, maintaining financial records, and ensuring transparency in financial activities to support the smooth functioning of the organization.</p>
+        <div class="social-icons"><a href="https://www.instagram.com/jayeshlohani/profilecard/?igsh=MWFzZDZoN2s1bDV1bQ=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/jayesh-lohani-58824b1b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <!-- Happiness Team -->
+    <div class="team-card happiness">
+        <img src="images/founder1.jpg" alt="Soumya S B">
+        <h5>Soumya S B</h5>
+        <p class="team">Happiness Team</p>
+        <p class="role">HM Team Lead</p>
+        <p class="desc">As the Happiness Manager, I am responsible for fostering a positive and uplifting environment. I also play an integral role in the hiring process, guiding new members through the registration process and ensuring a smooth onboarding experience. My vision is to create a supportive space where every individual feels valued and motivated to contribute. Driven by a passion for well-being and community, I aim to inspire positivity and collaboration within the team. </p>
+        <div class="social-icons"><a href="http://linkedin.com/in/soumya-sb-044506259"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <div class="team-card happiness">
+        <img src="images/AmanRaj.jpg" alt="Aman Raj">
+        <h5>Aman Raj</h5>
+        <p class="team">Happiness Team</p>
+        <p class="role">HM</p>
+        <p class="desc">I am currently pursuing my B.Tech in Information Science. I love contributing to meaningful projects that aim to bring positive change in society. As a member of the Happiness Manager Team at Sanskar, I focus on creating a positive and supportive environment where every core member feels motivated, valued, and connected. I strongly believe in the power of collaboration and kindness to drive meaningful social innovation.</p>
+        <div class="social-icons"><a href="https://www.instagram.com/itz_aman3232?igsh=MXA0YjBzczA3ZGJlNg=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/aman-raj-82b29628a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <div class="team-card happiness">
+        <img src="images/founder1.jpg" alt="Purnima Lohani">
+        <h5>Purnima Lohani</h5>
+        <p class="team">Happiness Team</p>
+        <p class="role">HM</p>
+        <p class="desc">Managing happiness and team morale.</p>
+        <div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <div class="team-card happiness">
+        <img src="images/founder1.jpg" alt="Amit Kumar">
+        <h5>Amit Kumar</h5>
+        <p class="team">Happiness Team</p>
+        <p class="role">Happiness Manager</p>
+        <p class="desc">Promoting positive team environment.</p>
+        <div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <!-- Web Dev Team -->
+    <div class="team-card web">
+        <img src="images/founder1.jpg" alt="Isha Rathore">
+        <h5>Isha Rathore</h5>
+        <p class="team">Web Dev Team</p>
+        <p class="role">Web-Dev Team Lead</p>
+        <p class="desc">Leading web development efforts.</p>
+        <div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <div class="team-card web">
+        <img src="images/SachinFulare.jpg" alt="Sachin Fulare">
+        <h5>Sachin Fulare</h5>
+        <p class="team">Web Dev Team</p>
+        <p class="role">Web-Dev Team</p>
+        <p class="desc">I’m Sachin Fulare, a software developer who enjoys solving problems with clean and creative code. At Sanskar, I focus on building web solutions that are simple, reliable, and easy to use, while always learning and experimenting with new technologies.</p>
+        <div class="social-icons"><a href="https://www.instagram.com/mr_sachhii__1708?igsh=MXdudGEwYWR3ZWx5cA=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/sachinfulare"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <div class="team-card web">
+        <img src="images/Madhura.jpg" alt="Madhura S N">
+        <h5>Madhura S N</h5>
+        <p class="team">Web Dev Team</p>
+        <p class="role">Web-Dev Team</p>
+        <p class="desc">I am hardworking and curious individual with a never-give-up attitude. I strive to learn continuously and give my best in every challenge.</p>
+        <div class="social-icons"><a href="https://www.instagram.com/madhura_sharan?igsh=NTQ0M2xmZ3hrMGVt"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/madhurasharan/"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <div class="team-card web">
+        <img src="images/mahika.jpg" alt="Mahika Singh">
+        <h5>Mahika Singh</h5>
+        <p class="team">Web Dev Team</p>
+        <p class="role">Web-Dev Intern</p>
+        <p class="desc">I'm Mahika Singh and I'm currently pursuing B.Tech in Computer Science and in 3rd year.</p>
+        <div class="social-icons"><a href="https://www.instagram.com/mahikasingh_12?igsh=MWxodWhheDd4NWt0Nw=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/mahika-singh-888ba0292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+
+    <!-- Marketing Team -->
+    <div class="team-card marketing">
+        <img src="images/MadhumitaPathy.jpg" alt="Madhumita pathy">
+        <h5>Madhumita pathy</h5>
+        <p class="team">Marketing Team</p>
+        <p class="role">Marketing Intern</p>
+        <p class="desc">As a CSE student at Acharya Institute of Technology and Marketing Intern at Sanskar NGO, I bring together innovation and communication to amplify our mission. I believe in using technology and creativity not just for progress, but also for creating a meaningful impact in society.</p>
+        <div class="social-icons"><a href="https://www.instagram.com/_madhumita_pathy/"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/shreya-verma-50baa4324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <div class="team-card marketing">
+        <img src="images/ShreyaVerma.jpg" alt="Shreya Verma">
+        <h5>Shreya Verma</h5>
+        <p class="team">Marketing Team</p>
+        <p class="role">Marketing Intern</p>
+        <p class="desc">I am an AIML student at Acharya Institute of Technology, currently working as a Marketing Intern at Sanskar. Along with my academic and professional journey, I am passionate about contributing to society beyond just technical work. I aspire to engage in initiatives that create positive social impact, support communities, and bring meaningful change.</p>
+        <div class="social-icons"><a href="https://www.linkedin.com/in/shreya-verma-50baa4324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+
+    <!-- Volunteers -->
+    <div class="team-card volunteer">
+        <img src="images/founder1.jpg" alt="Pankaj">
+        <h5>Pankaj Aghariya</h5>
+        <p class="team">Volunteers</p>
+        <p class="role">Volunteer</p>
+        <p class="desc">Supporting Sanskar's initiatives through volunteering.</p>
+        <div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div>
+    </div>
+  </div>
+
+  <!-- Contact Teams Card -->
+  <div class="contact-teams-card" style="text-align: center; margin-top: 40px; background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
+    <h3 style="color: #000000; margin-bottom: 25px; font-size: 1.8rem;">Contact Our Team</h3>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+      <button class="contact-team-btn" onclick="openContactModal('Ops & Management', 'operations_and_management@googlegroups.com')">Ops & Management</button>
+      <button class="contact-team-btn" onclick="openContactModal('Finance Team', 'sanskar_finance_team@googlegroups.com')">Finance Team</button>
+      <button class="contact-team-btn" onclick="openContactModal('Happiness Team', 'sanskar_happiness_manager@googlegroups.com')">Happiness Team</button>
+      <button class="contact-team-btn" onclick="openContactModal('Web Dev Team', 'sanskar_web_dev@googlegroups.com')">Web Dev Team</button>
+      <button class="contact-team-btn" onclick="openContactModal('Marketing Team', 'sanskar_marketing_team@googlegroups.com')">Marketing Team</button>
+      <button class="contact-team-btn" onclick="openContactModal('Volunteers', 'sanskar_captains@googlegroups.com')">Volunteers</button>
+    </div>
+  </div>
+</section>
+
+<!-- Join Our Team Card -->
+<div style="background: white; padding: 50px 0; display: flex; justify-content: center;">
+  <div class="join-team-card" style="background: white; color: black; padding: 40px; border-radius: 15px; max-width: 600px; text-align: center;">
+    <h2 style="font-weight: bold; margin-bottom: 20px;">Want to Join Our Team?</h2>
+    <p style="margin-bottom: 30px;">Become a part of Sanskar and help us make a meaningful impact through our community-driven initiatives. We welcome passionate individuals who want to contribute, learn, and grow with us.</p>
+    <a href="https://forms.gle/Sa7bYT8nfMFDiAcX7" style="background: #FFA500; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s;">Apply Now</a>
+  </div>
+</div>
+
+<!-- Team Messages Carousel -->
+<div style="background: #f8f9fa; color: #333; padding: 40px; border-radius: 15px; margin: 30px 0; width: 100vw; position: relative; left: 50%; transform: translateX(-50%); box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+  <h2 style="text-align: center; margin-bottom: 30px; color: #000000;">Team Member's Messages for Sanskar</h2>
+  <div id="messagesCarousel" class="carousel slide carousel-fade text-center" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+
+      <!-- Message 1 -->
+      <div class="carousel-item active">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"I am grateful to be a part of Sanskar, where I not only gained valuable experience in marketing but also learned the importance of culture, values, and teamwork. Being associated with Sanskar has inspired me to grow both professionally and personally, and I look forward to contributing meaningfully while carrying forward the spirit of Sanskar in all my future endeavors."</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">— Shreya Verma, Marketing Intern</p>
+        </div>
+      </div>
+
+      <!-- Message 2 -->
+      <div class="carousel-item">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"Sanskar has been a beautiful journey of learning, growth, and giving back. It has encouraged me to use my skills with creativity and purpose, while teaching me that even the smallest efforts can create meaningful change. I truly feel grateful and inspired to be part of Sanskar’s vision of building a brighter and better society."</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">— Madhumita Pathy, Marketing Intern</p>
+        </div>
+      </div>
+
+      <!-- Message 3 -->
+      <div class="carousel-item">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"At Sanskar, we believe in giving back to the community. Through our volunteer initiatives, we support education, empower underprivileged families, and work towards creating meaningful social impact. Our efforts are driven by compassion, teamwork, and the vision of building a better tomorrow"</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">— Sachin Fulare, Developer</p>
+        </div>
+      </div>
+
+      <!-- Message 4 -->
+      <div class="carousel-item">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"Being part of Sanskar is an incredible opportunity to contribute towards a brighter future. I am proud to help build a positive and supportive community where changemakers can thrive, collaborate, and make a lasting impact.I look forward to contributing my skills and learning from this inspiring community."</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">— Aman Raj, Happiness Manager</p>
+        </div>
+      </div>
+
+      <!-- Message 5 -->
+      <div class="carousel-item">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"glad to contribute in any way possible and be part of this meaningful journey"</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">— Madhura S N, Web Developer</p>
+        </div>
+      </div>
+
+      <!-- Message 6 -->
+      <div class="carousel-item">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"Sanskar Foundation is doing a wonderful job by consistently reaching out to those in need and creating a positive impact in society. The dedication and unity of the team are truly inspiring. Keep working with the same spirit, continue helping the needy, and spreading kindness—it’s this effort that makes Sanskar Foundation so special."</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">—Jayesh Lohani, Finance Team</p>
+        </div>
+      </div>
+
+ <!-- Message 7-->
+      <div class="carousel-item">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"This is a very good step toward the welfare of the society by the founder and co- founder.  Our agenda is to engage more people in our Sanskar so anyone who is needy can get the benefits of our organization."</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">—Mahika Singh, Web Dev Team</p>
+        </div>
+      </div>
+
+ <!-- Message 8-->
+      <div class="carousel-item">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"Keep growing."</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">—Himani Kokila, Vice President</p>
+        </div>
+      </div>
+
+      <!-- Message 9-->
+      <div class="carousel-item">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"It is going to be a very big things in upcoming 2 years."</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">—Madhav Kumar Choudhary, Founder</p>
+        </div>
+      </div>
+
+      <!-- Message 10-->
+      <div class="carousel-item">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"Sanskar is a charitable group driven by compassionate individuals aiming to aid those in need."</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">—Shubam Kokila, Co-founder</p>
+        </div>
+      </div>
+
+      <!-- Message 11-->
+      <div class="carousel-item">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"A very good initiative is taken by our founder and co-founder. Just we need to expand it so that more  people who are in need can get the benefits of Sanskar."</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">—Amit Kumar Thakur, Ops and management</p>
+        </div>
+      </div>
+
+      <!-- Message 12-->
+      <div class="carousel-item">
+        <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
+          <p style="font-size: 1.4rem; color: #333; font-weight: 500; line-height: 1.6; margin-bottom: 15px;">"At SANSKAR, we believe in the power of compassion, collaboration, and positivity to drive meaningful change. Together, we aim to create a community where every individual is empowered to contribute their unique strengths, helping us build a brighter, more inclusive future."</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">—Soumya S B, HM team lead</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#messagesCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#messagesCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+<!-- Programs & Activities and Our Goals Section -->
+<section class="split-section">
+  <div class="container-fluid">
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="card" style="border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden;">
+          <div class="row g-0" style="height: 420px;">
+            <div class="col-md-6 p-3">
+              <img src="images/Programs.jpg" alt="Programs" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px 15px 0 0; margin: 10px;">
+            </div>
+            <div class="col-md-6" style="height: 100%;">
+              <div class="card-body d-flex flex-column justify-content-start align-items-center h-100" style="padding: 26px 24px 24px 24px;">
+                <h2 class="card-title" style="margin-top: 0; text-align: center;">Programs & Activities</h2>
+                <p class="card-text" style="text-align: center; font-size: 1.2rem;">Our initiatives are designed to bring positive change, support communities, and empower individuals.</p>
+                <ul style="font-size: 1.1rem; text-align: left; align-self: flex-start;">
+                  <li>Education Empowerment</li>
+                  <li>Mental Support</li>
+                  <li>Financial Support</li>
+                  <li>Psychological Support</li>
+                  <li>Career Growth</li>
+                  <li>Women Empowerment</li>
+                  <li>Old Age Home Visit</li>
+                  <li>Orphanage Visit</li>
+                  <li>Animal Welfare</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card" style="border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden;">
+          <div class="row g-0" style="height: 420px;">
+            <div class="col-md-6" style="height: 100%;">
+              <div class="card-body d-flex flex-column justify-content-start align-items-center h-100" style="padding: 26px 24px 24px 24px;">
+                <h2 class="card-title" style="margin-top: 0;">Our Goals</h2>
+                <p class="card-text" style="text-align: center; font-size: 1.4rem;">Sanskar Engineering works with a mission to uplift communities and create a peaceful, progressive society.</p>
+                <ul style="font-size: 1.2rem; text-align: center;">
+                  <li style="text-align: left;">Empower communities to make the world a peaceful place this also</li>
+                  <li style="text-align: left;">Ensure everyone has access to essentials, opportunities, smiles, happiness, and quality education this also</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 p-3">
+              <img src="images/ourGoals.jpg" alt="Our Goals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px 15px 0 0; margin: 10px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Join Us Bar -->
+<div class="join-us-bar">
+  Join this initiative and be the reason for someone's growth and happiness!!
+</div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h4>SANSKAR</h4>
+        <p>Together we can bring changes in the society,
+          also sometimes the small happiness is the key
+          to a reason for the bigger happiness.</p>
+      </div>
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="blog.html" target="_blank" rel="noopener noreferrer">Blogs</a></li>
+          <li><a href="https://www.instagram.com/sanskar.mkf" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/sanskarfoundation/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact">
+        <h4>Contact</h4>
+        <p>Phone: +917983923205</p>
+        <p>Email: <a href="mailto:sanskarmkf@gmail.com">sanskarmkf@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Contact Team</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h5 id="teamName"></h5>
+          <p id="teamEmail"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterTeam(category) {
+    const cards = document.querySelectorAll('.team-card');
+    const buttons = document.querySelectorAll('.filter-btns button');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    cards.forEach(card => {
+      if (category === 'all' || card.classList.contains(category)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  function openContactModal(teamName, email) {
+    document.getElementById('teamName').textContent = teamName;
+    document.getElementById('teamEmail').innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+    const modal = new bootstrap.Modal(document.getElementById('contactModal'));
+    modal.show();
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const descElements = document.querySelectorAll('.team-card .desc');
+    descElements.forEach(desc => {
+      const fullText = desc.textContent.trim();
+      if (fullText.length > 150) {
+        desc.setAttribute('data-full-text', fullText);
+        const truncatedText = fullText.substring(0, 150) + '... ';
+        desc.innerHTML = truncatedText + '<span class="read-more-link">Read More</span>';
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('read-more-link')) {
+        const desc = e.target.closest('.desc');
+        const fullText = desc.getAttribute('data-full-text');
+        desc.innerHTML = fullText + ' <span class="read-less-link">Read Less</span>';
+      } else if (e.target.classList.contains('read-less-link')) {
+        const desc = e.target.closest('.desc');
+        const fullText = desc.getAttribute('data-full-text');
+        const truncatedText = fullText.substring(0, 150) + '... ';
+        desc.innerHTML = truncatedText + '<span class="read-more-link">Read More</span>';
+      }
+    });
+  });
+   </script>
+  <script src="./toggle.js"></script>
+  <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
