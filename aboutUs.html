@@ -19,7 +19,8 @@
       font-family: 'Roboto', sans-serif;
       background-color: #ffffff;
       color: #333;
-      padding-top: 140px; /* ✅ Push content below fixed nav + announcement bar */
+      padding-top: 100px;
+      margin: 0;
     }
 
     .top-bar {
@@ -255,6 +256,7 @@
   }
 
   /* Core Initiatives Carousel Image Styles */
+
   .carousel-image {
     height: 400px;
     background-size: contain;
@@ -276,8 +278,8 @@
 /* Team Section Container */
 
   .team-section {
-    background: #fff; /* white background */
-    color: #333; /* dark text */
+    background: #fff;
+    color: #333;
     padding: 60px 40px;
     margin: 50px auto;
     max-width: 1200px;
@@ -324,7 +326,7 @@
   }
 
   .team-card {
-    background: #fff; /* keep white */
+    background: #fff;
     border: 1px solid #eee;
     padding: 20px;
     border-radius: 12px;
@@ -1015,13 +1017,13 @@
 /*pgm & goals */
 /* Shared section style */
 .section-container {
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff;
   padding: 50px 20px;
   text-align: center;
 }
 
 .section-container h2 {
-  color: #000000; /* Black heading */
+  color: #000000;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -1037,10 +1039,10 @@
 .styled-list li {
   display: flex;
   align-items: center;
-  background: linear-gradient(90deg, #f0f0f0, #d9d9d9); /* Grey gradient */
+  background: linear-gradient(90deg, #f0f0f0, #d9d9d9);
   margin: 12px 0;
   padding: 15px 20px;
-  border-left: 8px solid #FFA500; /* Orange strip */
+  border-left: 8px solid #FFA500;
   border-radius: 8px;
   font-size: 16px;
   color: #333333;
@@ -1049,7 +1051,7 @@
 }
 
 .styled-list li:hover {
-  border-left-color: #ff8c00; /* Darker orange on hover */
+  border-left-color: #ff8c00;
   transform: translateX(5px);
   box-shadow: 0 4px 15px rgba(255,165,0,0.5);
 }
@@ -1064,8 +1066,8 @@
 
 /* Fade-in animation */
 @keyframes fadeSlide {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+ 0% { opacity: 0; transform: translateY(20px); }
+ 100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Join Us Bar */
@@ -1206,7 +1208,7 @@
     <a href="contact.html"><button class="join-btn">Join Now</button></a>
   </div>
 
-  <div style="background-image: url('images/aboutus_banner.png'); background-size: cover; background-position: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%); padding: 10px; border-radius: 10px;">
+  <div style="background-image: url('images/aboutus_banner.png'); background-size: cover; background-position: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%); padding: 0; border-radius: 0; ">
     <div class="container col-xxl-8 px-4 py-3">
       <div class="row align-items-start g-5 py-3">
         <!-- Left side: About Sanskar -->
@@ -1268,48 +1270,61 @@
   <div id="coreInitiativesCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
     <div class="carousel-inner">
 
-      <!-- Happy Faces -->
-      <div class="carousel-item active">
-        <h3>Happy Faces</h3>
-        <div class="carousel-image" style="background-image: url('images/children.JPG');">
-        </div>
-      </div>
+  <!-- Happy Faces -->
+<a href="https://medium.com/@sanskarmkf/educational-drive-in-haldwani-sanskar-6989e9bb8248" target="_blank" class="card-link">
+  <div class="carousel-item active">
+    <h3><u>Happy Faces</u></h3>
+    <div class="carousel-image" 
+         style="background-image: url('images/children.JPG');">
+    </div>
+  </div>
+</a>
 
       <!-- Education -->
-      <div class="carousel-item">
-        <h3>Education</h3>
-        <div class="carousel-image" style="background-image: url('images/scholarships.jpg');">
-        </div>
-      </div>
+<a href="https://medium.com/@sanskarmkf/educational-drive-in-haldwani-sanskar-6989e9bb8248" target="_blank" class="card-link">
+  <div class="carousel-item">
+    <h3><u>Education - Scholarship Initiative</u></h3>
+    <div class="carousel-image" 
+         style="background-image: url('images/Kritika.jpeg');">
+    </div>
+  </div>
+</a>
 
-      <!-- Fun Activities -->
-      <div class="carousel-item">
-        <h3>Fun Activities</h3>
-        <div class="carousel-image" style="background-image: url('images/Programs.jpg');">
-        </div>
-      </div>
+     <!-- Fun Activities -->
+<a href="https://medium.com/@sanskarmkf/lighting-lives-on-diwali-sanskar-foundations-9d927bfc36b9" target="_blank" >
+  <div class="carousel-item">
+    <h3><u>Fun Activities</u></h3>
+    <div class="carousel-image" style="background-image: url('images/Programs.jpg');">
+    </div>
+  </div>
+</a>
 
-      <!-- Food -->
-      <div class="carousel-item">
-        <h3>Food</h3>
-        <div class="carousel-image" style="background-image: url('images/labour day (acharya).jpg');">
-        </div>
-      </div>
+<!-- Food -->
+<a href="https://medium.com/@sanskarmkf/from-sweat-to-success-recognizing-the-invisible-workforce-the-labours-day-bab8038c7df1" target="_blank" class="card-link">
+  <div class="carousel-item">
+    <h3><u>Food Donation Drive</u></h3>
+    <div class="carousel-image" style="background-image: url('images/labour day (acharya).jpg');">
+    </div>
+  </div>
+</a>
 
-      <!-- Animal Welfare -->
-      <div class="carousel-item">
-        <h3>Animal Welfare</h3>
-        <div class="carousel-image" style="background-image: url('images/dog.jpg');">
-        </div>
-      </div>
+<!-- Animal Welfare -->
+<a href="https://medium.com/@sanskarmkf/lighting-lives-on-diwali-sanskar-foundations-9d927bfc36b9" target="_blank" class="card-link">
+  <div class="carousel-item">
+    <h3><u>Animal Welfare</u></h3>
+    <div class="carousel-image" style="background-image: url('images/dog.jpg');">
+    </div>
+  </div>
+</a>
 
-      <!-- Support for the Aged -->
-      <div class="carousel-item">
-        <h3>Support for the Aged</h3>
-        <div class="carousel-image" style="background-image: url('images/old age1.JPG');">
-        </div>
-      </div>
-
+<!-- Support for the Aged -->
+<a href="https://medium.com/@sanskarmkf/from-sweat-to-success-recognizing-the-invisible-workforce-the-labours-day-bab8038c7df1" target="_blank" class="card-link">
+  <div class="carousel-item">
+    <h3><u>Support for the Aged</u></h3>
+    <div class="carousel-image" style="background-image: url('images/old age1.JPG');">
+    </div>
+  </div>
+</a>
     </div>
 
     <!-- Controls -->
@@ -1332,9 +1347,7 @@
     <button class="active" onclick="filterTeam('all', event)">All</button>
     <button onclick="filterTeam('happiness', event)">Happiness</button>
     <button onclick="filterTeam('web', event)">Technical </button>
-    <!-- <button onclick="filterTeam('marketing', event)">Marketing</button> -->
     <button onclick="filterTeam('finance', event)">Finance</button>
-    <!-- <button onclick="filterTeam('volunteer', event)">Volunteers</button> -->
     <button onclick="filterTeam('ops', event)">Ops & Management</button>
   </div>
 
@@ -1345,18 +1358,18 @@
         <img src="images/founder1.jpg" alt="Madhav Kumar Choudhary">
         <h5>Madhav Kumar Choudhary</h5>
         <p class="team">Ops & Management</p>
-        <p class="role">Founder</p>
+        <p class="role">Founder </p>
         <p class="desc">I am working as a DevOps Engineer at Hiver. I have completed my Btech in CSE from Acharya Institute of Technology. I am also pursuing a BS (4 year Bachelor Degree) in Data Science and Application from IIT Madras. I have completed my Diploma and currently in BSc Degree Level. I have also won the Best Student Award in my Btech journey which shows my dedication and discipline I have maintained continuously for 4 years in Academic. I am more enthusiastic to learn new things and exploring everyday. </p>
-        <div class="social-icons"><a href="https://www.instagram.com/madhavv._?igsh=MWYwenVkeHFzaHhkdw=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/madhav-kumar-choudhary-318948207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+        <div class="social-icons"><a href="https://www.instagram.com/madhavv._?igsh=MWYwenVkeHFzaHhkdw==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/madhav-kumar-choudhary-318948207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></div>
     </div>
 
     <div class="team-card ops">
         <img src="images/founder2.jpg" alt="Shubham Kokila">
         <h5>Shubham Kokila</h5>
         <p class="team">Ops & Management</p>
-        <p class="role">Co-Founder, Finance Lead</p>
-        <p class="desc">Working as Junior Data Science Eng, an enthusiastic Data Science learner.</p>
-        <div class="social-icons"><a href="https://www.instagram.com/shubhamkokila?igsh=d3J3bGZjNjA5Mjdi"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/shubham-kokila-696bab220?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+        <p class="role">Co-Founder | Finance Lead</p>
+        <p class="desc">To transform Sanskar into a scalable and data-driven social organization that operates with strong financial structure, complete transparency, and sustainable donation model, empowering communities while setting new standards for how technology and social impact can grow together.</p>
+        <div class="social-icons"><a href="https://www.instagram.com/shubhamkokila?igsh=d3J3bGZjNjA5Mjdi" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/shubham-kokila-696bab220?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></div>
     </div>
 
     <div class="team-card ops">
@@ -1365,7 +1378,7 @@
         <p class="team">Ops & Management</p>
         <p class="role">Vice President</p>
         <p class="desc">I am from Haldwani (Uttarakhand). Current i am persuing PhD in Physics and I am serving the role of Vice President at Sanskar.</p>
-        <div class="social-icons"><a href="https://www.instagram.com/h_k_09_03?igsh=MXZ6cG5jY2UyNjJneA=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/himani-kokila-bb0a9b279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+        <div class="social-icons"><a href="https://www.instagram.com/h_k_09_03?igsh=MXZ6cG5jY2UyNjJneA==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/himani-kokila-bb0a9b279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></div>
     </div>
 
     <!-- Finance Team -->
@@ -1375,7 +1388,7 @@
         <p class="team">Finance Team</p>
         <p class="role">member</p>
         <p class="desc">I am a member of the Finance Team at Sanskaar, contributing to budgeting, fund tracking, and transparent financial management. I help monitor donations and expenses to ensure funds are used efficiently to support education and community welfare initiatives.</p>
-        <div class="social-icons"><a href="https://www.instagram.com/nitin_mohan___?igsh=MTRmMTEzMXR2YjE2bw=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/nitin-mohan08?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+        <div class="social-icons"><a href="https://www.instagram.com/nitin_mohan___?igsh=MTRmMTEzMXR2YjE2bw==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/nitin-mohan08?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></div>
     </div>
 
     <div class="team-card finance">
@@ -1384,7 +1397,7 @@
         <p class="team">Finance Team</p>
         <p class="role">member</p>
         <p class="desc">I am a member of the Finance Team at Sanskar where I am responsible for managing donations, maintaining financial records, and ensuring transparency in financial activities to support the smooth functioning of the organization.</p>
-        <div class="social-icons"><a href="https://www.instagram.com/jayeshlohani/profilecard/?igsh=MWFzZDZoN2s1bDV1bQ=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/jayesh-lohani-58824b1b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+        <div class="social-icons"><a href="https://www.instagram.com/jayeshlohani/profilecard/?igsh=MWFzZDZoN2s1bDV1bQ==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/jayesh-lohani-58824b1b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></div>
     </div>
 
     <!-- Happiness Team -->
@@ -1394,7 +1407,7 @@
         <p class="team">Happiness Team</p>
         <p class="role">Happiness Manager</p>
         <p class="desc">I am currently pursuing my B.Tech in Information Science. I love contributing to meaningful projects that aim to bring positive change in society. As a member of the Happiness Manager Team at Sanskar, I focus on creating a positive and supportive environment where every core member feels motivated, valued, and connected. I strongly believe in the power of collaboration and kindness to drive meaningful social innovation.</p>
-        <div class="social-icons"><a href="https://www.instagram.com/itz_aman3232?igsh=MXA0YjBzczA3ZGJlNg=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/aman-raj-82b29628a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+        <div class="social-icons"><a href="https://www.instagram.com/itz_aman3232?igsh=MXA0YjBzczA3ZGJlNg==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/aman-raj-82b29628a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></div>
     </div>
 
     <!-- Technical Team -->
@@ -1404,7 +1417,7 @@
         <p class="team">Technical Team </p>
         <p class="role">Lead</p>
         <p class="desc">I'm Amit Kumar Thakur, Engineering student and Team Lead of Technical at Sanskar. Leading tech initiatives, driven by the belief that life's purpose is to make a positive impact.</p>
-        <div class="social-icons"><a href="https://www.instagram.com/amitk_0006/?__pwa=1"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/amit-kumar-thakur-190b18294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+        <div class="social-icons"><a href="https://www.instagram.com/amitk_0006/?__pwa=1" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/amit-kumar-thakur-190b18294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></div>
     </div>
 
     <div class="team-card web">
@@ -1412,8 +1425,8 @@
         <h5>Sachin Fulare</h5>
         <p class="team">Technical Team</p>
         <p class="role">member</p>
-        <p class="desc">I’m Sachin Fulare, a software developer who enjoys solving problems with clean and creative code. At Sanskar, I focus on building web solutions that are simple, reliable, and easy to use, while always learning and experimenting with new technologies.</p>
-        <div class="social-icons"><a href="https://www.instagram.com/mr_sachhii__1708?igsh=MXdudGEwYWR3ZWx5cA=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/sachinfulare"><i class="fab fa-linkedin"></i></a></div>
+        <p class="desc">I'm Sachin Fulare, a software developer who enjoys solving problems with clean and creative code. At Sanskar, I focus on building web solutions that are simple, reliable, and easy to use, while always learning and experimenting with new technologies.</p>
+        <div class="social-icons"><a href="https://www.instagram.com/mr_sachhii__1708?igsh=MXdudGEwYWR3ZWx5cA==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/sachinfulare" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></div>
     </div>
 
     <div class="team-card web">
@@ -1422,32 +1435,9 @@
         <p class="team">Technical Team</p>
         <p class="role">member</p>
         <p class="desc">I'm Mahika Singh and I'm currently pursuing B.Tech in Computer Science and in 3rd year.</p>
-        <div class="social-icons"><a href="https://www.instagram.com/mahikasingh_12?igsh=MWxodWhheDd4NWt0Nw=="><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/mahika-singh-888ba0292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
+        <div class="social-icons"><a href="https://www.instagram.com/mahikasingh_12?igsh=MWxodWhheDd4NWt0Nw==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/mahika-singh-888ba0292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></div>
     </div>
 
-    
-    <!-- Marketing Team 
-    <div class="team-card marketing">
-        <img src="images/MadhumitaPathy.jpg" alt="Madhumita pathy">
-        <h5>Madhumita pathy</h5>
-        <p class="team">Marketing Team</p>
-        <p class="role">Intern</p>
-        <p class="desc">As a CSE student at Acharya Institute of Technology and Marketing Intern at Sanskar NGO, I bring together innovation and communication to amplify our mission. I believe in using technology and creativity not just for progress, but also for creating a meaningful impact in society.</p>
-        <div class="social-icons"><a href="https://www.instagram.com/_madhumita_pathy/"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/shreya-verma-50baa4324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a></div>
-    </div>
-    -->
-    
-
-    <!-- Volunteers 
-       <div class="team-card volunteer">
-        <img src="images/PankajAghariya.jpg" alt="Pankaj">
-        <h5>Pankaj Aghariya</h5>
-        <p class="team">Volunteers</p>
-        <p class="role">Volunteer</p>
-        <p class="desc">Supporting Sanskar's initiatives through volunteering.</p>
-        <div class="social-icons"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div>
-    </div> -->
-    
   </div> 
   
 
@@ -1459,8 +1449,6 @@
       <button class="contact-team-btn" onclick="openContactModal('Finance Team', 'sanskar_finance_team@googlegroups.com')">Finance Team</button>
       <button class="contact-team-btn" onclick="openContactModal('Happiness Team', 'sanskar_happiness_manager@googlegroups.com')">Happiness Team</button>
       <button class="contact-team-btn" onclick="openContactModal('Technical Team', 'sanskar_web_dev@googlegroups.com')">Technical Team</button>
-     <!-- <button class="contact-team-btn" onclick="openContactModal('Marketing Team', 'sanskar_marketing_team@googlegroups.com')">Marketing Team</button> -->
-     <!-- <button class="contact-team-btn" onclick="openContactModal('Volunteers', 'sanskar_captains@googlegroups.com')">Volunteers</button> -->
     </div>
   </div>
 </section>
@@ -1470,7 +1458,7 @@
   <div class="join-team-card" style="background: white; color: black; padding: 40px; border-radius: 15px; max-width: 600px; text-align: center;">
     <h2 style="font-weight: bold; margin-bottom: 20px;">Want to Join Our Team?</h2>
     <p style="margin-bottom: 30px;">Become a part of Sanskar and help us make a meaningful impact through our community-driven initiatives. We welcome passionate individuals who want to contribute, learn, and grow with us.</p>
-    <a href="https://forms.gle/Sa7bYT8nfMFDiAcX7" style="background: #FFA500; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s;">Apply Now</a>
+    <a href="https://forms.gle/Sa7bYT8nfMFDiAcX7" target="_blank" style="background: #FFA500; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s;">Apply Now</a>
   </div>
 </div>
 
@@ -1485,7 +1473,7 @@
       <div class="carousel-item active">
         <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
           <p style="font-size: 1.2rem; color: #333; font-weight: 400; line-height: 1.6; margin-bottom: 15px;">"At Sanskar, we believe in giving back to the community. Through our volunteer initiatives, we support education, empower underprivileged families, and work towards creating meaningful social impact. Our efforts are driven by compassion, teamwork, and the vision of building a better tomorrow"</p>
-          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">— Sachin Fulare, Developer</p>
+          <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">— Sachin Fulare, Technical Team</p>
         </div>
       </div>
 
@@ -1501,7 +1489,7 @@
       <!-- Message 3 -->
       <div class="carousel-item">
         <div class="message-card" style="background: #f8f9fa; color: #333; padding: 30px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); width: 100%; max-width: 800px; margin: 0 auto;">
-          <p style="font-size: 1.2rem; color: #333; font-weight: 400; line-height: 1.6; margin-bottom: 15px;">"Sanskar Foundation is doing a wonderful job by consistently reaching out to those in need and creating a positive impact in society. The dedication and unity of the team are truly inspiring. Keep working with the same spirit, continue helping the needy, and spreading kindness—it’s this effort that makes Sanskar Foundation so special."</p>
+          <p style="font-size: 1.2rem; color: #333; font-weight: 400; line-height: 1.6; margin-bottom: 15px;">"Sanskar Foundation is doing a wonderful job by consistently reaching out to those in need and creating a positive impact in society. The dedication and unity of the team are truly inspiring. Keep working with the same spirit, continue helping the needy, and spreading kindness—it's this effort that makes Sanskar Foundation so special."</p>
           <p style="color: #FFA500; font-size: 1rem; font-weight: bold; text-align: center; margin: 0;">—Jayesh Lohani, Finance Team</p>
         </div>
       </div>
@@ -1574,9 +1562,8 @@
                 <p class="card-text" style="text-align: center; font-size: 1.2rem;">Our initiatives are designed to bring positive change, support communities, and empower individuals.</p>
                 <ul style="font-size: 1.1rem; text-align: left; align-self: flex-start;">
                   <li>Education Empowerment</li>
-                  <li>Mental Support</li>
+                  <li>Wellness Programs</li>
                   <li>Financial Support</li>
-                  <li>Psychological Support</li>
                   <li>Career Growth</li>
                   <li>Women Empowerment</li>
                   <li>Old Age Home Visit</li>
@@ -1602,7 +1589,7 @@
               </div>
             </div>
             <div class="col-md-6 p-3">
-              <img src="images/ourGoals.jpg" alt="Our Goals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px 15px 0 0; margin: 10px;">
+              <img src="images/20TH oct.JPG" alt="Our Goals" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px 15px 0 0; margin: 10px;">
             </div>
           </div>
         </div>
