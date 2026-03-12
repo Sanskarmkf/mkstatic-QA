@@ -1,901 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scholarship - Sanskar Foundation</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background-color: #ffffff; color: #333; }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    .top-bar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background-color: #333333; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; }
+    .logo-text { display: flex; align-items: center; }
+    .logo img { width: 55px; margin-top: -20px; padding: 8px; margin-left: -30px; }
+    .logo-text-content { color: white; font-size: 30px; font-weight: bold; margin-left: -1px; margin-top: -20px; font-family: 'Playfair Display', serif; }
+    .top-nav ul { list-style: none; display: flex; }
+    .top-nav ul li { margin-left: 30px; }
+    .top-nav ul li a { color: white; text-decoration: none; font-size: 16px; }
+    .top-nav ul li a:hover { text-decoration: underline; }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #ffffff;
-      color: #333;
-    }
+    .announcement-bar { background-color: orange; color: white; text-align: center; padding: 10px; font-size: 16px; position: fixed; width: 100%; top: 58px; z-index: 1001; }
+    .join-btn { background-color: #ffffff; color: #b7282e; border: 1px solid #b7282e; padding: 8px 15px; border-radius: 5px; position: absolute; right: 20px; top: 2px; cursor: pointer; font-weight: bold; }
+    .join-btn:hover { background-color: #b7282e; color: #fff; }
 
-    /* ===== TOP BAR ===== */
-    .top-bar {
-      position: fixed;
-      top: 0px;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background-color: #333333;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-    }
-
-    .logo-text {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo img {
-      width: 55px;
-      margin-top: -20px;
-      padding: 8px;
-      margin-left: -30px;
-    }
-
-    .logo-text-content {
-      color: white;
-      font-size: 30px;
-      font-weight: bold;
-      margin-left: -1px;
-      margin-top: -20px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .top-nav ul {
-      list-style: none;
-      display: flex;
-    }
-
-    .top-nav ul li {
-      margin-left: 30px;
-    }
-
-    .top-nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    .top-nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== ANNOUNCEMENT BAR ===== */
-    .announcement-bar {
-      background-color: orange;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-size: 16px;
-      position: fixed;
-      width: 100%;
-      top: 58px;
-      z-index: 1001;
-    }
-
-    .join-btn {
-      background-color: #ffffff;
-      color: #b7282e;
-      border: 1px solid #b7282e;
-      padding: 8px 15px;
-      border-radius: 5px;
-      position: absolute;
-      right: 20px;
-      top: 2px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .join-btn:hover {
-      background-color: #b7282e;
-      color: #fff;
-    }
-
-    /* ===== HERO SECTION ===== */
+    /* HERO — uses <img> tag for easy replacement */
     .hero {
-      position: relative;
-      width: 100%;
-      height: 650px;
-      background: linear-gradient(135deg, #2d2d2d 0%, #4a3f6b 50%, #333 100%);
-      display: flex;
-      align-items: center;
-      margin-top: 100px;
-      overflow: hidden;
+      position: relative; width: 100%; height: 650px;
+      display: flex; align-items: center; margin-top: 100px; overflow: hidden;
     }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
+    .hero-bg-img {
+      position: absolute; top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.45);
+      object-fit: cover; object-position: center;
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.58);
       z-index: 1;
     }
-
-    /* Decorative background pattern */
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: -50px; right: -50px;
+    .hero-glow {
+      position: absolute; top: -50px; right: -50px;
       width: 500px; height: 500px;
       background: radial-gradient(circle, rgba(243,156,18,0.15) 0%, transparent 70%);
-      z-index: 1;
-    }
-
-    .hero-bg-text {
-      position: absolute;
-      right: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      font-family: 'Playfair Display', serif;
-      font-size: 160px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.04);
-      z-index: 1;
-      user-select: none;
-      line-height: 1;
-    }
-
-    .hero-content {
-      max-width: 620px;
-      position: relative;
-      color: #fff;
-      text-align: left;
-      padding: 20px;
       z-index: 2;
-      margin-left: 50px;
     }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(243,156,18,0.2);
-      border: 1px solid #f39c12;
-      color: #f39c12;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
-
-    .hero-content h1 {
-      font-size: 3rem;
-      line-height: 1.2;
-      margin-bottom: 15px;
-      font-weight: bold;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .hero-content h1 .highlight {
-      color: #f39c12;
-    }
-
-    .hero-content p {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      margin-bottom: 30px;
-      color: #ddd;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      padding: 13px 28px;
-      background-color: #f39c12;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-      font-size: 15px;
-    }
-
-    .btn-primary:hover {
-      background-color: #d35400;
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      padding: 13px 28px;
-      background-color: transparent;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      border: 2px solid #fff;
-      transition: all 0.3s ease;
-      font-size: 15px;
-    }
-
-    .btn-secondary:hover {
-      background-color: #fff;
-      color: #333;
-    }
-
-    /* ===== STATS BAR ===== */
-    .stats-bar {
-      background-color: #f39c12;
-      padding: 25px 40px;
-      display: flex;
-      justify-content: center;
-      gap: 80px;
-      flex-wrap: wrap;
-    }
-
-    .stat-item {
-      text-align: center;
-      color: #fff;
-    }
-
-    .stat-item .stat-number {
-      font-size: 2.2rem;
-      font-weight: 900;
-      font-family: 'Playfair Display', serif;
-      line-height: 1;
-    }
-
-    .stat-item .stat-label {
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-top: 4px;
-      opacity: 0.9;
-    }
-
-    /* ===== ABOUT SCHOLARSHIP SECTION ===== */
-    .about-scholarship {
-      padding: 90px 60px;
-      background-color: #f5f5f5;
-    }
-
-    .about-inner {
-      display: flex;
-      align-items: center;
-      gap: 60px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .about-text {
-      flex: 1;
-    }
-
-    .section-label {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #f39c12;
-      margin-bottom: 12px;
-    }
-
-    .about-text h2 {
-      font-size: 2.6rem;
-      font-family: 'Playfair Display', serif;
-      color: #2d2d2d;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-
-    .about-text p {
-      font-size: 1.05rem;
-      color: #555;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-
-    .criteria-list {
-      list-style: none;
-      margin-top: 20px;
-    }
-
-    .criteria-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 12px;
-      font-size: 1rem;
-      color: #444;
-    }
-
-    .criteria-list li i {
-      color: #f39c12;
-      margin-top: 3px;
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-
-    .about-image {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .about-image-main {
-      width: 100%;
-      height: 320px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      text-align: center;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    }
-
-    .about-image-main::before {
-      content: '\f19d';
-      font-family: 'Font Awesome 6 Free';
-      font-weight: 900;
-      position: absolute;
-      font-size: 120px;
-      opacity: 0.08;
-      bottom: -10px;
-      right: -10px;
-    }
-
-    .about-image-main span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .image-caption {
-      background: #fff;
-      border-left: 4px solid #f39c12;
-      padding: 12px 18px;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.9rem;
-      color: #555;
-      font-style: italic;
-    }
-
-    /* ===== OUR PROGRAMS ===== */
-    .our-programs {
-      background-color: #fff;
-      padding: 80px 20px 20px;
-      text-align: center;
-    }
-
-    .our-programs h2 {
-      font-size: 48px;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 10px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .our-programs p {
-      font-size: 22px;
-      color: #555;
-      margin-bottom: 40px;
-    }
-
-    /* ===== SCHOLARSHIP CARD ===== */
-    .scholarship-section {
-      padding: 20px 40px 80px;
-      background: #fff;
-    }
-
-    .scholarship-card-outer {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 15px 50px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .scholarship-card-outer:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-    }
-
-    .scholarship-card-header {
-      background: linear-gradient(135deg, #333 0%, #4a3f6b 100%);
-      padding: 35px 40px;
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .scholarship-icon {
-      width: 70px;
-      height: 70px;
-      background: rgba(243,156,18,0.2);
-      border: 2px solid #f39c12;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .scholarship-icon i {
-      font-size: 30px;
-      color: #f39c12;
-    }
-
-    .scholarship-card-header h3 {
-      color: #fff;
-      font-size: 1.8rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .scholarship-card-header p {
-      color: rgba(255,255,255,0.75);
-      font-size: 1rem;
-      margin-top: 5px;
-    }
-
-    .scholarship-tag {
-      margin-left: auto;
-      background: #f39c12;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 6px 18px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    .scholarship-card-body {
-      padding: 35px 40px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .sc-detail-block h4 {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #f39c12;
-      margin-bottom: 10px;
-    }
-
-    .sc-detail-block p {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.7;
-    }
-
-    .sc-detail-block ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .sc-detail-block ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 8px;
-    }
-
-    .sc-detail-block ul li i {
-      color: #f39c12;
-      margin-top: 3px;
-      font-size: 13px;
-      flex-shrink: 0;
-    }
-
-    .scholarship-card-footer {
-      background: #f9f9f9;
-      padding: 25px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid #eee;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .deadline-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #555;
-      font-size: 0.95rem;
-    }
-
-    .deadline-info i {
-      color: #f39c12;
-    }
-
-    .btn-apply {
-      display: inline-block;
-      padding: 13px 35px;
-      background-color: #f39c12;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      font-size: 15px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-apply:hover {
-      background-color: #d35400;
-    }
-
-    /* ===== GET INVOLVED ===== */
-    .get-involved {
-      background-color: #f5f5f5;
-      padding: 90px 40px;
-    }
-
-    .get-involved h2 {
-      text-align: center;
-      font-size: 2.8rem;
-      font-family: 'Playfair Display', serif;
-      color: #2d2d2d;
-      margin-bottom: 10px;
-    }
-
-    .get-involved .sub {
-      text-align: center;
-      font-size: 1.1rem;
-      color: #666;
-      margin-bottom: 50px;
-    }
-
-    .involved-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .involved-card {
-      background: #fff;
-      border-radius: 15px;
-      padding: 35px 30px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .involved-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-    }
-
-    .involved-card .card-icon {
-      width: 70px;
-      height: 70px;
-      background: #fff3e0;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-    }
-
-    .involved-card .card-icon i {
-      font-size: 28px;
-      color: #f39c12;
-    }
-
-    .involved-card h3 {
-      font-size: 1.4rem;
-      font-family: 'Playfair Display', serif;
-      color: #2d2d2d;
-      margin-bottom: 12px;
-    }
-
-    .involved-card p {
-      font-size: 0.95rem;
-      color: #666;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .btn-card {
-      display: inline-block;
-      padding: 10px 25px;
-      background-color: #333;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-card:hover {
-      background-color: #f39c12;
-    }
-
-    /* ===== DONATE SECTION ===== */
-    .donate-section {
-      background: linear-gradient(135deg, #2d2d2d 0%, #4a3f6b 100%);
-      padding: 90px 40px;
-    }
-
-    .donate-inner {
-      display: flex;
-      align-items: center;
-      gap: 60px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .donate-photo {
-      flex-shrink: 0;
-      width: 240px;
-    }
-
-    .donate-photo-box {
-      width: 240px;
-      height: 280px;
-      border-radius: 15px;
-      overflow: hidden;
-      border: 3px solid rgba(243,156,18,0.5);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    }
-
-    .donate-photo-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .donate-content {
-      flex: 1;
-    }
-
-    .donate-content .section-label {
-      color: #f39c12;
-    }
-
-    .donate-content h2 {
-      font-size: 2.5rem;
-      font-family: 'Playfair Display', serif;
-      color: #fff;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-
-    .donate-content p {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.8;
-      margin-bottom: 30px;
-    }
-
-    .btn-donate {
-      display: inline-block;
-      padding: 14px 35px;
-      background-color: #f39c12;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-donate:hover {
-      background-color: #d35400;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background-color: #333333;
-      color: white;
-      padding: 40px 20px;
-      width: 100%;
-      text-align: center;
-      border-top: 5px solid coral;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .footer-section {
-      flex: 1 1 25%;
-      min-width: 200px;
-      margin-bottom: 20px;
-    }
-
-    .footer-section h4 {
-      color: coral;
-      margin-bottom: 15px;
-      font-size: 1.4em;
-      text-transform: uppercase;
-    }
-
-    .footer-section p,
-    .footer-section a {
-      color: #ccc;
-      text-decoration: none;
-      line-height: 1.8;
-      font-size: 0.95em;
-    }
-
-    .footer-section a:hover {
-      color: coral;
-      text-decoration: underline;
-    }
-
-    .footer-section ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-section ul li {
-      margin-bottom: 10px;
-    }
-
-    .footer-section ul li a {
-      color: #ddd;
-      text-decoration: none;
-    }
-
-    .footer-section ul li a:hover {
-      color: coral;
-    }
-
-    /* ===== HAMBURGER ===== */
-    .hamburger {
-      display: none;
-      padding: 10px;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-      z-index: 1001;
-    }
-
-    .hamburger-box {
-      width: 30px;
-      height: 24px;
-      display: inline-block;
-      position: relative;
-    }
-
-    .hamburger-inner {
-      width: 100%;
-      height: 3px;
-      background-color: white;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: transform 0.2s ease;
-    }
-
-    .hamburger-inner::before,
-    .hamburger-inner::after {
-      content: '';
-      width: 100%;
-      height: 3px;
-      background-color: white;
-      position: absolute;
-      left: 0;
-      transition: transform 0.2s ease;
-    }
-
+    .hero-bg-text { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); font-family: 'Playfair Display', serif; font-size: 160px; font-weight: 700; color: rgba(255,255,255,0.06); z-index: 2; user-select: none; line-height: 1; }
+    .hero-content { max-width: 620px; position: relative; color: #fff; text-align: left; padding: 20px; z-index: 3; margin-left: 50px; }
+    .hero-badge { display: inline-block; background: rgba(243,156,18,0.2); border: 1px solid #f39c12; color: #f39c12; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 20px; }
+    .hero-content h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 15px; font-weight: bold; font-family: 'Playfair Display', serif; }
+    .hero-content h1 .highlight { color: #f39c12; }
+    .hero-content p { font-size: 1.15rem; line-height: 1.6; margin-bottom: 30px; color: #ddd; }
+    .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
+    .btn-primary { display: inline-block; padding: 13px 28px; background-color: #f39c12; color: #fff; text-decoration: none; font-weight: bold; border-radius: 5px; transition: background-color 0.3s ease; font-size: 15px; }
+    .btn-primary:hover { background-color: #d35400; }
+    .btn-secondary { display: inline-block; padding: 13px 28px; background-color: transparent; color: #fff; text-decoration: none; font-weight: bold; border-radius: 5px; border: 2px solid #fff; transition: all 0.3s ease; font-size: 15px; }
+    .btn-secondary:hover { background-color: #fff; color: #333; }
+
+    .stats-bar { background-color: #f39c12; padding: 25px 40px; display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; }
+    .stat-item { text-align: center; color: #fff; }
+    .stat-item .stat-number { font-size: 2.2rem; font-weight: 900; font-family: 'Playfair Display', serif; line-height: 1; }
+    .stat-item .stat-label { font-size: 13px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; opacity: 0.9; }
+
+    .about-scholarship { padding: 55px 60px; background-color: #f5f5f5; }
+    .about-inner { display: flex; align-items: flex-start; gap: 40px; max-width: 1100px; margin: 0 auto; }
+    .about-text { flex: 1; }
+    .section-label { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #f39c12; margin-bottom: 12px; }
+    .about-text h2 { font-size: 2.6rem; font-family: 'Playfair Display', serif; color: #2d2d2d; line-height: 1.3; margin-bottom: 20px; }
+    .about-text p { font-size: 1.05rem; color: #555; line-height: 1.8; margin-bottom: 15px; }
+    .criteria-list { list-style: none; margin-top: 20px; }
+    .criteria-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 1rem; color: #444; }
+    .criteria-list li i { color: #f39c12; margin-top: 3px; font-size: 14px; flex-shrink: 0; }
+    .about-image { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+    .about-image-main { width: 100%; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.18); display: flex; align-items: center; justify-content: center; background: #f5f5f5; }
+    .about-image-main img { width: auto; height: auto; max-width: 100%; display: block; border-radius: 15px; }
+    .image-caption { background: #fff; border-left: 4px solid #f39c12; padding: 12px 18px; border-radius: 0 8px 8px 0; font-size: 0.9rem; color: #555; font-style: italic; }
+    .programs-tagline { background: #fff; border-radius: 12px; padding: 22px 28px; margin-top: 10px; display: flex; align-items: center; gap: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); }
+    .programs-tagline .pt-icon { width: 48px; height: 48px; background: #fff3e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .programs-tagline .pt-icon i { font-size: 22px; color: #f39c12; }
+    .programs-tagline p { font-size: 1rem; color: #555; line-height: 1.6; margin: 0; }
+
+    .scholarship-section { padding: 15px 40px 50px; background: #fff; }
+    .scholarship-card-outer { max-width: 900px; margin: 0 auto; background: #fff; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .scholarship-card-outer:hover { transform: translateY(-8px); box-shadow: 0 25px 60px rgba(0,0,0,0.15); }
+    .scholarship-card-header { background: linear-gradient(135deg, #333 0%, #4a3f6b 100%); padding: 35px 40px; display: flex; align-items: center; gap: 25px; }
+    .scholarship-icon { width: 70px; height: 70px; background: rgba(243,156,18,0.2); border: 2px solid #f39c12; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .scholarship-icon i { font-size: 30px; color: #f39c12; }
+    .scholarship-card-header h3 { color: #fff; font-size: 1.8rem; font-family: 'Playfair Display', serif; }
+    .scholarship-card-header p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-top: 5px; }
+    .scholarship-tag { margin-left: auto; background: #f39c12; color: #fff; font-size: 13px; font-weight: 700; padding: 6px 18px; border-radius: 20px; white-space: nowrap; }
+    .scholarship-card-body { padding: 35px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .sc-detail-block h4 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #f39c12; margin-bottom: 10px; }
+    .sc-detail-block p { font-size: 1rem; color: #555; line-height: 1.7; }
+    .sc-detail-block ul { list-style: none; padding: 0; }
+    .sc-detail-block ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; color: #555; margin-bottom: 8px; }
+    .sc-detail-block ul li i { color: #f39c12; margin-top: 3px; font-size: 13px; flex-shrink: 0; }
+    .scholarship-card-footer { background: #f9f9f9; padding: 25px 40px; display: flex; align-items: center; border-top: 1px solid #eee; }
+    .deadline-info { display: flex; align-items: center; gap: 10px; color: #555; font-size: 0.95rem; }
+    .deadline-info i { color: #f39c12; }
+
+    .video-section { background-color: #f9f9f9; padding: 50px 40px; }
+    .video-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+    .video-text { flex: 1; min-width: 280px; }
+    .video-text .section-label { color: #f39c12; }
+    .video-text h2 { font-size: 2rem; font-family: 'Playfair Display', serif; color: #2d2d2d; line-height: 1.3; margin-bottom: 15px; }
+    .video-text p { font-size: 1rem; color: #555; line-height: 1.8; margin-bottom: 20px; }
+    .video-thumb-wrap { flex-shrink: 0; }
+    .video-thumb-link { display: block; position: relative; width: 220px; height: 260px; border-radius: 15px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.18); transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; }
+    .video-thumb-link:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.25); }
+    .video-thumb-link img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+    .video-thumb-link .play-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; transition: background 0.3s ease; }
+    .video-thumb-link:hover .play-overlay { background: rgba(0,0,0,0.2); }
+   .yt-play-btn { width: 40px; height: 40px; background: #FF0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(255,0,0,0.5); transition: transform 0.2s ease; }
+    .yt-play-btn svg { width: 26px; height: 26px; fill: white; margin-left: 4px; }
+    .video-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); padding: 18px 14px 12px; color: #fff; font-size: 0.85rem; font-weight: 600; }
+
+    .get-involved { background-color: #f5f5f5; padding: 55px 40px; }
+    .get-involved h2 { text-align: center; font-size: 2.8rem; font-family: 'Playfair Display', serif; color: #2d2d2d; margin-bottom: 10px; }
+    .get-involved .sub { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px; }
+    .involved-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto; }
+    .involved-card { background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .involved-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+    .involved-card .card-icon { width: 70px; height: 70px; background: #fff3e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    .involved-card .card-icon i { font-size: 28px; color: #f39c12; }
+    .involved-card h3 { font-size: 1.4rem; font-family: 'Playfair Display', serif; color: #2d2d2d; margin-bottom: 12px; }
+    .involved-card p { font-size: 0.95rem; color: #666; line-height: 1.7; margin-bottom: 20px; }
+    .btn-card { display: inline-block; padding: 10px 25px; background-color: #333; color: #fff; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 14px; transition: background-color 0.3s ease; }
+    .btn-card:hover { background-color: #f39c12; }
+
+    .donate-section { background: linear-gradient(135deg, #2d2d2d 0%, #4a3f6b 100%); padding: 55px 40px; }
+    .donate-inner { display: flex; align-items: center; gap: 40px; max-width: 1000px; margin: 0 auto; }
+    .donate-photo { flex-shrink: 0; width: 240px; }
+    .donate-photo-box { width: 240px; height: 280px; border-radius: 15px; overflow: hidden; border: 3px solid rgba(243,156,18,0.5); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+    .donate-photo-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .donate-content { flex: 1; }
+    .donate-content .section-label { color: #f39c12; }
+    .donate-content h2 { font-size: 2.5rem; font-family: 'Playfair Display', serif; color: #fff; line-height: 1.3; margin-bottom: 20px; }
+    .donate-content p { font-size: 1.05rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 30px; }
+    .btn-donate { display: inline-block; padding: 14px 35px; background-color: #f39c12; color: #fff; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 16px; transition: background-color 0.3s ease; }
+    .btn-donate:hover { background-color: #d35400; }
+
+    footer { background-color: #333333; color: white; padding: 40px 20px; width: 100%; text-align: center; border-top: 5px solid coral; }
+    .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; }
+    .footer-section { flex: 1 1 25%; min-width: 200px; margin-bottom: 20px; }
+    .footer-section h4 { color: coral; margin-bottom: 15px; font-size: 1.4em; text-transform: uppercase; }
+    .footer-section p, .footer-section a { color: #ccc; text-decoration: none; line-height: 1.8; font-size: 0.95em; }
+    .footer-section a:hover { color: coral; text-decoration: underline; }
+    .footer-section ul { list-style-type: none; padding: 0; margin: 0; }
+    .footer-section ul li { margin-bottom: 10px; }
+    .footer-section ul li a { color: #ddd; text-decoration: none; }
+    .footer-section ul li a:hover { color: coral; }
+
+    .hamburger { display: none; padding: 10px; cursor: pointer; background: transparent; border: none; z-index: 1001; }
+    .hamburger-box { width: 30px; height: 24px; display: inline-block; position: relative; }
+    .hamburger-inner { width: 100%; height: 3px; background-color: white; position: absolute; left: 0; top: 50%; transform: translateY(-50%); transition: transform 0.2s ease; }
+    .hamburger-inner::before, .hamburger-inner::after { content: ''; width: 100%; height: 3px; background-color: white; position: absolute; left: 0; transition: transform 0.2s ease; }
     .hamburger-inner::before { top: -8px; }
     .hamburger-inner::after { top: 8px; }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .hamburger { display: block; }
-
-      .top-nav {
-        position: fixed;
-        top: 58px;
-        right: -100%;
-        height: 100vh;
-        width: 250px;
-        background-color: #333;
-        flex-direction: column;
-        padding-top: 80px;
-        transition: right 0.3s ease;
-      }
-
+      .top-nav { position: fixed; top: 58px; right: -100%; height: 100vh; width: 250px; background-color: #333; flex-direction: column; padding-top: 80px; transition: right 0.3s ease; }
       .top-nav.active { right: 0; }
-
-      .top-nav ul {
-        flex-direction: column;
-        padding: 20px;
-      }
-
+      .top-nav ul { flex-direction: column; padding: 20px; }
       .top-nav ul li { margin: 15px 0; }
-
-      .hero { height: auto; padding: 60px 20px 50px; }
+      .hero { height: auto; min-height: 500px; padding: 60px 20px 50px; }
       .hero-content { margin-left: 0; max-width: 100%; }
       .hero-content h1 { font-size: 2rem; }
       .hero-bg-text { display: none; }
-
       .stats-bar { gap: 30px; padding: 20px; }
-
-      .about-scholarship { padding: 50px 20px; }
-      .about-inner { flex-direction: column; gap: 30px; }
-      .about-image-main { height: 220px; }
-
+      .about-scholarship { padding: 40px 20px; }
+      .about-inner { flex-direction: column; gap: 25px; }
+      .about-image-main { height: 240px; }
       .scholarship-card-header { flex-direction: column; align-items: flex-start; }
       .scholarship-tag { margin-left: 0; }
       .scholarship-card-body { grid-template-columns: 1fr; }
       .scholarship-card-footer { flex-direction: column; align-items: flex-start; }
-
       .involved-cards { grid-template-columns: 1fr; }
-
-      .donate-inner { flex-direction: column; gap: 30px; }
+      .donate-inner { flex-direction: column; gap: 25px; }
       .donate-photo { width: 100%; }
       .donate-photo-box { width: 100%; height: 220px; }
-
       .footer-content { flex-direction: column; text-align: center; }
       .footer-section { flex: 1 1 100%; }
-
-      .join-btn {
-        position: relative;
-        right: auto; top: auto;
-      }
+      .join-btn { position: relative; right: auto; top: auto; }
+      .video-inner { flex-direction: column; gap: 25px; }
+      .video-thumb-link { width: 100%; height: 200px; }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- ===== TOP BAR ===== -->
+  <!-- TOP BAR -->
   <div class="top-bar">
     <div class="logo-text">
       <div class="logo">
-        <a href="index.html" style="text-decoration: none; color: inherit;">
+        <a href="index.html" style="text-decoration:none;color:inherit;">
           <img src="images/logo1.png" alt="Logo" width="100">
         </a>
       </div>
       <span class="logo-text-content">
-        <a href="index.html" style="text-decoration: none; color: inherit;">SANSKAR</a>
+        <a href="index.html" style="text-decoration:none;color:inherit;">SANSKAR</a>
       </span>
     </div>
     <button class="hamburger" aria-label="Menu" aria-expanded="false">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
+      <span class="hamburger-box"><span class="hamburger-inner"></span></span>
     </button>
     <nav class="top-nav" aria-label="Main Navigation">
       <ul>
@@ -912,27 +221,30 @@
     </nav>
   </div>
 
-  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <!-- ANNOUNCEMENT BAR -->
   <div class="announcement-bar">
     <p>Become a part of the change – Join our mission and make a difference together!</p>
     <a href="contact.html"><button class="join-btn">Join Now</button></a>
   </div>
 
-  <!-- ===== HERO SECTION ===== -->
+  <!-- HERO SECTION -->
+  <!-- ✅ TO CHANGE HERO IMAGE: replace src="images/hero-scholarship.jpg" with your new image path -->
   <section class="hero">
+    <img class="hero-bg-img" src="images/hero-scholarship.jpg" alt="Scholarship Hero Background">
+    <div class="hero-overlay"></div>
+    <div class="hero-glow"></div>
     <div class="hero-bg-text">Scholar</div>
     <div class="hero-content">
       <div class="hero-badge"><i class="fa-solid fa-graduation-cap" style="margin-right:6px;"></i> Scholarship Program</div>
       <h1>We Believe Every Talented Student Deserves a <span class="highlight">Fair Chance.</span></h1>
       <p>Sanskar Foundation is committed to empowering deserving students by providing scholarships that open doors to a brighter future.</p>
       <div class="hero-btns">
-        <a href="apply.html" class="btn-primary">Apply Now</a>
         <a href="contribute.html" class="btn-secondary">Donate Us</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== STATS BAR ===== -->
+  <!-- STATS BAR -->
   <div class="stats-bar">
     <div class="stat-item">
       <div class="stat-number">50+</div>
@@ -947,52 +259,45 @@
       <div class="stat-label">Dedicated to Change</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">∞</div>
+      <div class="stat-number">&#8734;</div>
       <div class="stat-label">Dreams Empowered</div>
     </div>
   </div>
 
-  <!-- ===== ABOUT SCHOLARSHIP SECTION ===== -->
+  <!-- ABOUT SCHOLARSHIP -->
   <section class="about-scholarship">
     <div class="about-inner">
       <div class="about-text">
         <div class="section-label">About The Program</div>
         <h2>About Our Scholarship Program</h2>
-        <p>
-          At Sanskar Foundation, we firmly believe that financial constraints should never stand in the way of a student's potential. Our scholarship program is designed to identify and support talented young individuals who have the drive to succeed but lack the resources.
-        </p>
-        <p>
-          Through this initiative, we aim to bridge the gap between talent and opportunity — helping students focus on their education without the burden of financial stress.
-        </p>
+        <p>At Sanskar Foundation, we firmly believe that financial constraints should never stand in the way of a student's potential. Our scholarship program is designed to identify and support talented young individuals who have the drive to succeed but lack the resources.</p>
+        <p>Through this initiative, we aim to bridge the gap between talent and opportunity — helping students focus on their education without the burden of financial stress.</p>
         <ul class="criteria-list">
           <li><i class="fa-solid fa-circle-check"></i> Open to students from economically weaker sections</li>
           <li><i class="fa-solid fa-circle-check"></i> Merit-based selection process</li>
           <li><i class="fa-solid fa-circle-check"></i> Support for academic fees and educational materials</li>
           <li><i class="fa-solid fa-circle-check"></i> Mentorship and guidance provided alongside financial aid</li>
         </ul>
+        
       </div>
       <div class="about-image">
+        <!-- ✅ TO CHANGE STUDENT IMAGE: replace src below with your image path -->
         <div class="about-image-main">
-          <span>
-            <i class="fa-solid fa-user-graduate" style="font-size:50px; display:block; margin-bottom:10px; color:#f39c12;"></i>
-            Photo of a student<br>who received the benefit
-            <br><small style="opacity:0.7; font-size:0.8rem; font-family:'Roboto',sans-serif;">(Replace with actual student photo)</small>
-          </span>
+          <img src="images/Scholarship_Initiative.jpg" alt="Student Scholarship Initiative">
         </div>
         <div class="image-caption">
-          "Sanskar helped me continue my education when I thought there was no way forward." — Scholarship Recipient
+          Every dream deserves a chance — Sanskar Scholarship Initiative
+        </div>
+         <div class="programs-tagline">
+         <div class="pt-icon"><i class="fa-solid fa-people-carry-box"></i></div>
+         <p><strong>Our Programs</strong> — Empowering Communities Through Action. Every initiative we take is aimed at creating sustainable, positive change in society.</p>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ===== OUR PROGRAMS HEADING ===== -->
-  <section class="our-programs">
-    <h2>Our Programs</h2>
-    <p>Empowering Communities Through Action.</p>
-  </section>
-
-  <!-- ===== SCHOLARSHIP CARD ===== -->
+  <!-- SCHOLARSHIP CARD -->
   <section class="scholarship-section">
     <div class="scholarship-card-outer">
       <div class="scholarship-card-header">
@@ -1005,13 +310,12 @@
         </div>
         <div class="scholarship-tag">Now Open</div>
       </div>
-
       <div class="scholarship-card-body">
         <div class="sc-detail-block">
           <h4>Eligibility</h4>
           <ul>
             <li><i class="fa-solid fa-check"></i> Students from Class 8 to Graduation level</li>
-            <li><i class="fa-solid fa-check"></i> Family annual income below ₹2,50,000</li>
+            <li><i class="fa-solid fa-check"></i> Family annual income below &#8377;2,50,000</li>
             <li><i class="fa-solid fa-check"></i> Minimum 60% marks in previous year</li>
             <li><i class="fa-solid fa-check"></i> Strong will to continue education</li>
           </ul>
@@ -1039,34 +343,82 @@
           </ul>
         </div>
       </div>
-
       <div class="scholarship-card-footer">
         <div class="deadline-info">
           <i class="fa-solid fa-calendar-days"></i>
           <span><strong>Applications Open</strong> — Contact us to know the current cycle</span>
         </div>
-        <a href="apply.html" class="btn-apply">Apply Now →</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== GET INVOLVED ===== -->
+  <!-- YOUTUBE / KRITIKA VIDEO SECTION -->
+  <section class="video-section">
+  <div class="video-inner">
+    
+    <div class="video-text">
+      <div class="section-label">Student Story</div>
+      <h2>Hear From Our Scholarship Recipient — Kritika</h2>
+      <p>
+        We have distributed necessities, refreshments and education to nearly 100 people. 
+        Special thanks to all core members and members of the Sanskar family for making this milestone possible. 
+        Watch Kritika's inspiring story and see how your contributions are creating real impact.
+      </p>
+
+      <a href="https://www.youtube.com/shorts/R_uKQnIfJ9I" target="_blank"
+         rel="noopener noreferrer" class="btn-primary"
+         style="display:inline-flex;align-items:center;gap:10px;">
+
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+
+        Watch on YouTube
+      </a>
+    </div>
+
+    <div class="video-thumb-wrap">
+      <a href="https://www.youtube.com/shorts/R_uKQnIfJ9I" target="_blank"
+         rel="noopener noreferrer" class="video-thumb-link">
+
+        <img src="images/kritika.jpg.jpeg" alt="Kritika's Scholarship Story">
+        <div class="play-overlay">
+  <div class="yt-play-btn">
+    <svg viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+  </div>
+</div>
+
+        <div class="yt-play-btn">
+          <svg viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+
+        <div class="video-label">
+          Kritika's Story — Sanskar Scholarship
+        </div>
+
+      </a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- GET INVOLVED -->
   <section class="get-involved">
     <h2>Get Involved</h2>
     <p class="sub">There are many ways you can support our scholarship mission</p>
     <div class="involved-cards">
       <div class="involved-card">
-        <div class="card-icon">
-          <i class="fa-solid fa-users"></i>
-        </div>
+        <div class="card-icon"><i class="fa-solid fa-users"></i></div>
         <h3>Be a Member</h3>
         <p>Join our growing community of changemakers. As a member, you'll volunteer, spread the word, and help us identify deserving students in your community.</p>
         <a href="aboutUs.html" class="btn-card">Join Us</a>
       </div>
       <div class="involved-card">
-        <div class="card-icon">
-          <i class="fa-solid fa-hand-holding-heart"></i>
-        </div>
+        <div class="card-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
         <h3>Be A Donor</h3>
         <p>Your financial contribution directly funds a student's education. Even a small donation can cover books, fees, or essentials that change a child's trajectory.</p>
         <a href="contribute.html" class="btn-card">Donate Now</a>
@@ -1074,10 +426,11 @@
     </div>
   </section>
 
-  <!-- ===== DONATE SECTION ===== -->
+  <!-- DONATE SECTION -->
   <section class="donate-section">
     <div class="donate-inner">
       <div class="donate-photo">
+        <!-- ✅ TO CHANGE FOUNDER PHOTO: replace src="images/founder1.jpg" with your image path -->
         <div class="donate-photo-box">
           <img src="images/founder1.jpg" alt="Sanskar Foundation Founder">
         </div>
@@ -1085,22 +438,18 @@
       <div class="donate-content">
         <div class="section-label">Make A Difference</div>
         <h2>Donate Now — Your Contribution Creates Huge Impact</h2>
-        <p>
-          Sanskar selects gifted students who have the potential to rise above the rest. Through your donation, you can turn their dreams of studying beyond their means into reality. Every rupee you give builds a foundation for a child's future.
-        </p>
-        <a href="contribute.html" class="btn-donate">→ Donate Now</a>
+        <p>Sanskar selects gifted students who have the potential to rise above the rest. Through your donation, you can turn their dreams of studying beyond their means into reality. Every rupee you give builds a foundation for a child's future.</p>
+        <a href="contribute.html" class="btn-donate">&#8594; Donate Now</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <div class="footer-section about">
         <h4>SANSKAR</h4>
-        <p>Together we can bring changes in the society,
-          also sometimes the small happiness is the key
-          to a reason for the bigger happiness.</p>
+        <p>Together we can bring changes in the society, also sometimes the small happiness is the key to a reason for the bigger happiness.</p>
       </div>
       <div class="footer-section links">
         <h4>Quick Links</h4>
@@ -1129,6 +478,5 @@
       });
     }
   </script>
-
 </body>
 </html>
