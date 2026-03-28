@@ -188,6 +188,15 @@
   font-size: 16px;
 }
 
+    .announcement-cta {
+      margin-right: 18px;
+      flex-shrink: 0;
+    }
+
+    .about-hero {
+      margin-top: 18px;
+    }
+
 
    .join-btn {
   background-color: #ffffff;
@@ -213,15 +222,26 @@
       .announcement-bar {
         flex-direction: column;
         align-items: center;
-        gap: 0;
+        gap: 6px;
+        padding: 10px 12px;
       }
 
       .announcement-bar p {
         margin: 0;
+        line-height: 1.4;
+      }
+
+      .announcement-cta {
+        margin-right: 0;
       }
 
       .join-btn {
         margin-top: 0;
+        margin-left: 0;
+      }
+
+      .about-hero {
+        margin-top: 78px;
       }
     }
 
@@ -1206,10 +1226,10 @@
 
   <div class="announcement-bar">
     <p>Become a part of the change – Join our mission and make a difference together!</p>
-    <a href="contribute.html"><button class="join-btn">Donate Now</button></a>
+    <a class="announcement-cta" href="contribute.html"><button class="join-btn">Donate Now</button></a>
   </div>
 
-  <div style="background-image: url('https://res.cloudinary.com/dnvdzy74e/image/upload/v1772950255/aboutus_banner_leod0m.png'); background-size: cover; background-position: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%); padding: 0; border-radius: 0; ">
+  <div class="about-hero" style="background-image: url('https://res.cloudinary.com/dnvdzy74e/image/upload/v1772950255/aboutus_banner_leod0m.png'); background-size: cover; background-position: center; width: 100vw; position: relative; left: 50%; transform: translateX(-50%); padding: 0; border-radius: 0; ">
     <div class="container col-xxl-8 px-4 py-3">
       <div class="row align-items-start g-5 py-3">
         <!-- Left side: About Sanskar -->
