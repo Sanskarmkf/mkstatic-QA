@@ -1,0 +1,102 @@
+name: Promote to Final Repo v2
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: "Branch to promote"
+        required: true
+        default: "main"
+
+      target_branch_name:
+        description: "Target branch in final repo (optional)"
+        required: false
+        default: "no-name"
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout the selected branch (IMPORTANT CHANGE)
+      - name: Checkout source branch
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.source_branch }}
+
+      # 2. Checkout final repo
+      - name: Checkout Sanskar-MKFoundation
+        uses: actions/checkout@v3
+        with:
+          repository: Sanskarmkf/Sanskar-MKFoundation
+          token: ${{ secrets.FINAL_REPOSITORY_TOKEN }}
+          path: Sanskar-MKFoundation
+
+      # 3. Setup Git
+      - name: Setup Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+      # 4. Copy folder
+      - name: Copy folder
+        run: |
+          mkdir -p Sanskar-MKFoundation/folderF1
+          cp -r folderF1/. Sanskar-MKFoundation/folderF1/
+
+      # 5. Force change
+      - name: Force change
+        run: |
+          echo "Run ${{ github.run_id }}" >> Sanskar-MKFoundation/folderF1/auto-log.txt
+
+      # 6. Detect default branch
+      - name: Detect default branch
+        id: detect
+        run: |
+          cd Sanskar-MKFoundation
+          DEFAULT=$(git remote show origin | grep "HEAD branch" | awk '{print $NF}')
+          echo "branch=$DEFAULT" >> $GITHUB_OUTPUT
+      
+      #7.  Decide PR branch name
+      - name: Determine PR branch name
+        id: branch_name
+        run: |
+          if [ "${{ github.event.inputs.target_branch_name }}" = "no-name" ]; then
+            echo "branch=no-name-${{ github.run_id }}" >> $GITHUB_OUTPUT
+          else
+            echo "branch=${{ github.event.inputs.target_branch_name }}" >> $GITHUB_OUTPUT
+          fi
+      # 8. Create PR
+      - name: Create PR in final repo
+        id: create_pr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.FINAL_REPOSITORY_TOKEN }}
+          path: Sanskar-MKFoundation
+          branch: ${{ steps.branch_name.outputs.branch }}
+          base: ${{ steps.detect.outputs.branch }}
+          add-paths: |
+            .
+          commit-message: "Auto update from ${{ github.event.inputs.source_branch }}"
+          title: "Auto PR from ${{ github.event.inputs.source_branch }}"
+          body: "Created manually via button"
+
+      - name: Send Email Notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "New PR Created"
+          body: |
+            A new PR has been created.
+
+            Source Branch: ${{ github.event.inputs.source_branch }}
+            PR Branch: ${{ steps.branch_name.outputs.branch }}
+
+            View PR:
+            ${{ steps.create_pr.outputs.pull-request-url }}
+
+          to: pranavm.24.beis@acharya.ac.in,
+          from: ${{ secrets.EMAIL_USERNAME }}
