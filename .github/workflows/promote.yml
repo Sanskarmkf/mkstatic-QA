@@ -79,5 +79,5 @@ jobs:
             PR Branch: ${{ steps.branch_name.outputs.branch }}
             View PR:
             ${{ steps.create_pr.outputs.pull-request-url }}
-          to: shubhamkokila123@gmail.com,madhavchy84@gmail.com
+          to: shubhamkokila123@gmail.com,madhavchy84@gmail.com,kumaramitthakur563@gmail.com
           from: ${{ secrets.EMAIL_USERNAME }}
