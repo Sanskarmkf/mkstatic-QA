@@ -6,7 +6,6 @@
     <title>Contribute - SANSKAR</title>
     <link rel="icon" type="image/png" href="assets\LOGO (1).png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3WM06Y74M"></script>
 <script>
@@ -16,15 +15,15 @@
 
   gtag('config', 'G-X3WM06Y74M');
 </script>
-    
+
 </head>
 <body>
 
-   
+
    <div class="top-bar">
         <div class="logo-text">
           <div class="logo">
-           <a href="index.html" style="text-decoration: none; color: inherit;"><img src="https://res.cloudinary.com/dnvdzy74e/image/upload/v1772950446/logo1_yvuibv.webp" alt="Logo" width="100"></a> 
+           <a href="index.html" style="text-decoration: none; color: inherit;"><img src="https://res.cloudinary.com/dnvdzy74e/image/upload/v1772950446/logo1_yvuibv.webp" alt="Logo" width="100"></a>
           </div>
           <span class="logo-text-content"><a href="index.html" style="text-decoration: none; color: inherit;">SANSKAR</a>
           </span>
@@ -37,7 +36,7 @@
           <nav class="top-nav" aria-label="Main Navigation">
             <ul>
 
-      
+
      <li><a href="home.html">Home</a></li>
 
         <li><a href="index.html">Our Work</a></li>
@@ -71,29 +70,29 @@
     </div>
     <div class="contact-form">
         <h1>Fill Out Your Details After Donating</h1>
-        <form action="https://script.google.com/macros/s/AKfycbywXDzlJB8kNCmR4Q7-QSAaHHCIUqp3qIiLlK3asiN3eO4HtPajD9nndNtMY2g8k69T6g/exec" id="donationForm" enctype="multipart/form-data" method="post">
+        <div id="form-status" style="display:none; margin-bottom:15px; padding:10px; border-radius:5px; text-align:center; font-weight:bold;"></div>
+        <form id="donationForm">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" required>
-    
+
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" required>
-    
+
             <label for="phone">Phone:</label>
             <input type="text" name="phone" id="phone" required>
-    
-            <label for="Amount">Amount:</label>
-            <input type="text" name="Amount" id="Amount" required>
-    
+
+            <label for="amount">Amount:</label>
+            <input type="text" name="amount" id="amount" required>
+
             <label for="payment-screenshot">Upload Payment Screenshot:</label>
             <input type="file" name="payment-screenshot" id="payment-screenshot" accept="image/*" required>
-    
 
             <button type="submit">Submit</button>
         </form>
     </div>
 </div>
 </div>
-    
+
     <!-- Footer Section -->
   <footer>
     <div class="footer-content">
@@ -126,26 +125,28 @@
   </footer>
 
    <script src="./toggle.js"></script>
-  
-  <style>
-    
+   <script src="./script.js"></script>
+</body>
 
-  
+  <style>
+
+
+
         /* General Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f0f0f0;
             }
-            
-         
-            
+
+
+
             body {
             font-family: 'Arial', sans-serif;
             background-color: #ffffff; /* White Background */
             color: #333; /* Dark Gray Text */
             }
-            
+
             .top-bar {
     position: fixed;
     top: 0px; /* Place it below the announcement bar */
@@ -167,7 +168,7 @@
     font-size: 16px;
     position: fixed;
     width: 100%; /* Ensure it spans full width */
-    top: 58px; 
+    top: 58px;
     z-index: 1001;
     }
             .join-btn {
@@ -182,7 +183,7 @@
             cursor: pointer;
             font-weight: bold;
             }
-            
+
             .join-btn:hover {
             background-color: #b7282e;
             color: #fff;
@@ -202,12 +203,12 @@
         /* Dark Gray */
         padding: 20px 40px;
       }
-    
+
       .logo-text {
         display: flex;
         align-items: center;
       }
-    
+
       .logo img {
         width: 65px;
         /* Adjust the size of the logo */
@@ -217,7 +218,7 @@
         /* Adjust padding around the logo */
         margin-left: -30px;
       }
-    
+
       .logo-text-content {
         color: white;
         font-size: 30px;
@@ -230,7 +231,7 @@
         margin-top: -20px;
         font-family: 'Playfair Display', serif; /* A popular serif font */
       }
-    
+
       .top-bar .logo img {
         width: 55px;
         /* Increase the width of the logo */
@@ -281,7 +282,7 @@ body, html {
     margin-top: 125px;
     text-align: center;
 
-    
+
 }
 
 .helping-hand h1 {
@@ -294,7 +295,7 @@ body, html {
 }
 
 .donate-card {
-    background-color: lightsalmon; 
+    background-color: lightsalmon;
     /* padding: 20px; */
     border-radius: 15px;
     height: 400px;
@@ -343,7 +344,7 @@ body, html {
     justify-content: space-between;
     align-items: flex-start;
     gap:  0%;
-    
+
 }
 
 .contact-info {
@@ -388,7 +389,7 @@ body, html {
 }
 .contact-form h1 {
     margin-bottom: 22px; /* Adjust the value as needed */
-    font-size: 40px; 
+    font-size: 40px;
     text-align: center;
 
     font-family: 'Playfair Display', serif; /* A popular serif font */
@@ -404,7 +405,7 @@ body, html {
     flex-direction: column;
 }
 
-.contact-form input, 
+.contact-form input,
 .contact-form textarea {
     margin-bottom: 15px;
     padding: 10px;
@@ -800,3 +801,6 @@ footer a:hover {
     overflow-x: hidden;
   }
 }
+
+</style>
+</html>
