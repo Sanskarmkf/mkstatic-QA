@@ -94,21 +94,20 @@
         </div>
         <div class="contact-form">
             <h1>Contact Form</h1>
-            <form
-                action="https://script.google.com/macros/s/AKfycbxYPp2aStWmY7gjMTdPzyHorX4Nj3o1NGA5_HxpRwcL-Du8om5RPrrJ0Y8uejgM6KV30w/exec"
-                autocomplete="off" method="post" name="google-sheet" method="post">
+            <div id="form-status" style="display:none; margin-bottom:15px; padding:10px; border-radius:5px; text-align:center; font-weight:bold;"></div>
+            <form id="contactForm" autocomplete="off">
 
                 <label for="name">Name:</label>
-                <input type="text" name="name" required>
+                <input type="text" name="name" id="name" required>
 
                 <label for="email">Email:</label>
-                <input type="email" name="email" required>
+                <input type="email" name="email" id="email" required>
 
                 <label for="phone">Phone:</label>
-                <input type="text" name="phone" required>
+                <input type="text" name="phone" id="phone" required>
 
                 <label for="address">Address:</label>
-                <input type="text" name="address" required>
+                <input type="text" name="address" id="address" required>
 
                 <button type="submit" name="submit">Submit</button>
             </form>
@@ -146,6 +145,7 @@
 
 
     <script src="./toggle.js"></script>
+    <script src="./contact.js"></script>
 
 </body>
 
