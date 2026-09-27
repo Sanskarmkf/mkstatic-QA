@@ -60,6 +60,7 @@
     <div class="container">
     <div class="helping-hand">
         <h1> Donate Today</h1>
+      <p class="support-heading">Support for Sanskar</p>
         <div class="donate-card">
             <img src="https://res.cloudinary.com/dnvdzy74e/image/upload/v1772950530/QR_CODE_uzwww3.webp" alt="QR Code for Donation" class="qr-code">
             <p class="scan-text">SCAN TO DONATE</p>
@@ -68,18 +69,47 @@
             <div class="underline"></div>
         </div>
     </div>
-    <div class="contact-form">
+      <div class="contact-form">
         <h1>Fill Out Your Details After Donating</h1>
+
         <div id="form-status" style="display:none; margin-bottom:15px; padding:10px; border-radius:5px; text-align:center; font-weight:bold;"></div>
+
         <form id="donationForm">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" required>
 
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required>
+            <input type="email" name="email" id="email">
 
-            <label for="phone">Phone:</label>
-            <input type="text" name="phone" id="phone" required>
+            <label for="month">Month:</label>
+            <select name="month" id="month" required>
+                <option value="" disabled selected>Select Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <label for="donation-cause">Donation Cause:</label>
+            <select name="donationCause" id="donation-cause" required>
+                <option value="" disabled selected>Select Donation Cause</option>
+                <option value="Support for child's education">Support for child's education</option>
+                <option value="Regular Monthly Donation">Regular Monthly Donation</option>
+                <option value="Kanyadaan Yojana">Kanyadaan Yojana</option>
+                <option value="other">Other</option>
+            </select>
+            <!-- Other Cause Input (Hidden by Default) -->
+            <div id="other-cause-container" style="display: none;">
+                <label for="other-cause">Please Specify Other Cause:</label>
+                <input type="text" name="other-cause" id="other-cause" placeholder="Enter your donation cause">
+            </div>
 
             <label for="amount">Amount:</label>
             <input type="text" name="amount" id="amount" required>
@@ -799,6 +829,190 @@ footer a:hover {
 
   body, html {
     overflow-x: hidden;
+  }
+}
+
+/* Contribution page layout and form polish */
+body {
+  background: #fffaf5;
+  color: #292929;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 132px 0 72px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 64px;
+}
+
+.helping-hand,
+.contact-form {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.helping-hand h1,
+.contact-form h1 {
+  margin: 0;
+  color: #2d2d2d;
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.12;
+}
+
+.helping-hand h1 {
+  text-align: left;
+}
+
+.support-heading {
+  margin: 12px 0 24px;
+  color: #d65f32;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.donate-card {
+  width: min(100%, 480px);
+  height: auto;
+  min-height: 430px;
+  margin: 0;
+  padding: 24px 24px 22px;
+  border: 1px solid #ffd0bb;
+  border-radius: 18px;
+  background: #ff9b72;
+  box-shadow: 0 14px 30px rgba(122, 61, 35, 0.16);
+}
+
+.qr-code {
+  width: min(100%, 300px);
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0 auto 18px;
+  padding: 10px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.scan-text {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.donate-card > p:not(.scan-text):not(.help-text) {
+  margin: 0;
+  color: #3c241c;
+  font-size: 1rem;
+}
+
+.contact-form {
+  padding: 28px 32px 32px;
+  border: 1px solid #f0ded4;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(71, 47, 35, 0.1);
+}
+
+.contact-form h1 {
+  margin-bottom: 24px;
+  text-align: left;
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
+}
+
+.contact-form form {
+  gap: 8px;
+}
+
+.contact-form label {
+  margin-top: 8px;
+  color: #4b403b;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  min-height: 46px;
+  margin: 0 0 8px;
+  padding: 11px 13px;
+  border: 1px solid #d8c9c1;
+  border-radius: 8px;
+  background: #fffdfb;
+  color: #292929;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #f07843;
+  box-shadow: 0 0 0 3px rgba(240, 120, 67, 0.16);
+}
+
+.contact-form input[type="file"] {
+  padding: 8px;
+  background: #fff8f3;
+}
+
+.contact-form button {
+  min-height: 48px;
+  margin-top: 12px;
+  border-radius: 8px;
+  background: #f47721;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #d95e12;
+  transform: translateY(-1px);
+}
+
+#other-cause-container {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(100% - 28px, 560px);
+    padding: 126px 0 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  .helping-hand h1,
+  .contact-form h1 {
+    text-align: center;
+  }
+
+  .support-heading {
+    margin-bottom: 18px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .donate-card {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .contact-form {
+    padding: 24px 18px 26px;
   }
 }
 
