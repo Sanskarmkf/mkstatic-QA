@@ -17,32 +17,35 @@ const GOOGLE_SCRIPT_URL =
 const donationForm =
     document.getElementById("donationForm");
 
-const submitButton =
-    donationForm.querySelector(
-        'button[type="submit"]'
-    );
+const submitButton = donationForm
+    ? donationForm.querySelector('button[type="submit"]')
+    : null;
 
 const statusBox =
     document.getElementById("form-status");
 
 
 // ==========================================
-// SHOW STATUS MESSAGE (replaces alert())
+// SHOW STATUS MESSAGE
 // ==========================================
 
 function showStatus(message, isSuccess) {
 
     if (!statusBox) {
-        // Fallback if the status div isn't on the page yet
         alert(message);
         return;
     }
 
     statusBox.style.display = "block";
     statusBox.textContent = message;
-    statusBox.style.backgroundColor = isSuccess ? "#d4edda" : "#f8d7da";
-    statusBox.style.color = isSuccess ? "#155724" : "#721c24";
-    statusBox.style.border = isSuccess ? "1px solid #c3e6cb" : "1px solid #f5c6cb";
+    statusBox.style.backgroundColor =
+        isSuccess ? "#d4edda" : "#f8d7da";
+    statusBox.style.color =
+        isSuccess ? "#155724" : "#721c24";
+    statusBox.style.border =
+        isSuccess
+            ? "1px solid #c3e6cb"
+            : "1px solid #f5c6cb";
 }
 
 
@@ -50,11 +53,33 @@ function showStatus(message, isSuccess) {
 // FORM SUBMISSION
 // ==========================================
 
+if (donationForm && submitButton) {
+const donationCauseSelect =
+    donationForm.elements.donationCause;
+
+const otherCauseContainer =
+    document.getElementById("other-cause-container");
+
+const otherCauseInput =
+    document.getElementById("other-cause");
+
+if (donationCauseSelect && otherCauseContainer && otherCauseInput) {
+    donationCauseSelect.addEventListener("change", function () {
+        const isOtherCause = donationCauseSelect.value === "other";
+        otherCauseContainer.style.display =
+            isOtherCause ? "block" : "none";
+        otherCauseInput.required = isOtherCause;
+
+        if (!isOtherCause) {
+            otherCauseInput.value = "";
+        }
+    });
+}
+
 donationForm.addEventListener(
     "submit",
     async function (event) {
 
-        // Prevent normal HTML form submission
         event.preventDefault();
 
 
@@ -63,33 +88,30 @@ donationForm.addEventListener(
         // ==========================================
 
         const name =
-            document
-                .getElementById("name")
-                .value
-                .trim();
+            donationForm.elements.name.value.trim();
 
         const email =
-            document
-                .getElementById("email")
-                .value
-                .trim();
+            donationForm.elements.email.value.trim();
 
-        const phone =
-            document
-                .getElementById("phone")
-                .value
-                .trim();
+        const month =
+            donationForm.elements.month.value;
+
+        const donationCause =
+            donationForm.elements.donationCause.value;
+
+        const otherCauseInput =
+            document.getElementById("other-cause");
+
+        const otherCause =
+            otherCauseInput
+                ? otherCauseInput.value.trim()
+                : "";
 
         const amount =
-            document
-                .getElementById("amount")
-                .value
-                .trim();
+            donationForm.elements.amount.value.trim();
 
         const screenshotInput =
-            document.getElementById(
-                "payment-screenshot"
-            );
+            donationForm.elements["payment-screenshot"];
 
         const screenshot =
             screenshotInput.files[0];
@@ -101,17 +123,16 @@ donationForm.addEventListener(
 
         if (
             !name ||
-            !email ||
-            !phone ||
+            !month ||
+            !donationCause ||
+            (donationCause === "other" && !otherCause) ||
             !amount ||
             !screenshot
         ) {
-
             showStatus(
                 "Please fill all fields and upload the payment screenshot.",
                 false
             );
-
             return;
         }
 
@@ -123,7 +144,7 @@ donationForm.addEventListener(
         const emailRegex =
             /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (!emailRegex.test(email)) {
+        if (email && !emailRegex.test(email)) {
 
             showStatus(
                 "Please enter a valid email address.",
@@ -135,40 +156,19 @@ donationForm.addEventListener(
 
 
         // ==========================================
-        // PHONE VALIDATION
-        // ==========================================
-
-        const phoneRegex =
-            /^[6-9]\d{9}$/;
-
-        if (!phoneRegex.test(phone)) {
-
-            showStatus(
-                "Please enter a valid 10-digit Indian phone number.",
-                false
-            );
-
-            return;
-        }
-
-
-        // ==========================================
         // AMOUNT VALIDATION
         // ==========================================
 
-        const numericAmount =
-            Number(amount);
+        const numericAmount = Number(amount);
 
         if (
             isNaN(numericAmount) ||
             numericAmount <= 0
         ) {
-
             showStatus(
                 "Please enter a valid donation amount.",
                 false
             );
-
             return;
         }
 
@@ -184,11 +184,7 @@ donationForm.addEventListener(
             "image/gif"
         ];
 
-        if (
-            !allowedTypes.includes(
-                screenshot.type
-            )
-        ) {
+        if (!allowedTypes.includes(screenshot.type)) {
 
             showStatus(
                 "Please upload a JPG, PNG, WEBP, or GIF image.",
@@ -204,13 +200,9 @@ donationForm.addEventListener(
         // Maximum = 5 MB
         // ==========================================
 
-        const maxFileSize =
-            5 * 1024 * 1024;
+        const maxFileSize = 5 * 1024 * 1024;
 
-        if (
-            screenshot.size >
-            maxFileSize
-        ) {
+        if (screenshot.size > maxFileSize) {
 
             showStatus(
                 "Payment screenshot must be smaller than 5 MB.",
@@ -230,10 +222,11 @@ donationForm.addEventListener(
         const originalButtonText =
             submitButton.textContent;
 
-        submitButton.textContent =
-            "Submitting...";
+        submitButton.textContent = "Submitting...";
 
-        statusBox.style.display = "none";
+        if (statusBox) {
+            statusBox.style.display = "none";
+        }
 
 
         try {
@@ -243,35 +236,38 @@ donationForm.addEventListener(
             // ==========================================
 
             const screenshotBase64 =
-                await convertFileToBase64(
-                    screenshot
-                );
+                await convertFileToBase64(screenshot);
 
 
             // ==========================================
             // CREATE FORM DATA
             // ==========================================
 
-            const formData =
-                new URLSearchParams();
+            const formData = new URLSearchParams();
 
 
-            // User details
+            // ==========================================
+            // USER DETAILS
+            // ==========================================
+
+            formData.append("name", name);
+            formData.append("email", email);
+
+            // Month dropdown
+            formData.append("month", month);
+
+            // Donation cause dropdown
+            formData.append("donationCause", donationCause);
+
+            // Custom cause when "Other" is selected
             formData.append(
-                "name",
-                name
+                "otherCause",
+                donationCause === "other"
+                    ? otherCause
+                    : ""
             );
 
-            formData.append(
-                "email",
-                email
-            );
-
-            formData.append(
-                "phone",
-                phone
-            );
-
+            // Donation amount
             formData.append(
                 "amount",
                 numericAmount.toString()
@@ -279,7 +275,7 @@ donationForm.addEventListener(
 
 
             // ==========================================
-            // IMPORTANT
+            // PAYMENT SCREENSHOT
             // This name MUST match Code.gs
             // ==========================================
 
@@ -290,31 +286,7 @@ donationForm.addEventListener(
 
 
             // ==========================================
-            // SEND ORIGINAL FILE INFORMATION
-            // ==========================================
-
-            formData.append(
-                "fileName",
-                screenshot.name
-            );
-
-            formData.append(
-                "mimeType",
-                screenshot.type
-            );
-
-
-            // ==========================================
             // SEND TO GOOGLE APPS SCRIPT
-            //
-            // NOTE: mode:"no-cors" was removed on purpose.
-            // Apps Script web apps deployed with
-            // "Execute as: Me" + "Who has access: Anyone"
-            // DO support normal cross-origin fetch for
-            // simple content types like this one, which
-            // means we can now actually read whether the
-            // save succeeded or failed instead of getting
-            // a fake "Thank you" every single time.
             // ==========================================
 
             const response = await fetch(
@@ -327,16 +299,21 @@ donationForm.addEventListener(
                             "application/x-www-form-urlencoded;charset=UTF-8"
                     },
 
-                    body:
-                        formData.toString()
+                    body: formData.toString()
                 }
             );
+
+            if (!response.ok) {
+                throw new Error(
+                    `Server returned HTTP ${response.status}`
+                );
+            }
 
             const result = await response.json();
 
 
             // ==========================================
-            // HANDLE REAL RESULT
+            // HANDLE SERVER RESPONSE
             // ==========================================
 
             if (result.success) {
@@ -348,12 +325,29 @@ donationForm.addEventListener(
 
                 donationForm.reset();
 
+                // Hide Other Cause field after reset
+                const otherCauseContainer =
+                    document.getElementById("other-cause-container");
+
+                if (otherCauseContainer) {
+                    otherCauseContainer.style.display = "none";
+                }
+
+                if (otherCauseInput) {
+                    otherCauseInput.required = false;
+                }
+
             } else {
 
-                console.error("Server reported failure:", result.message);
+                console.error(
+                    "Server reported failure:",
+                    result.message
+                );
 
                 showStatus(
-                    "Submission failed: " + (result.message || "Unknown error. Please try again or contact us."),
+                    "Submission failed: " +
+                    (result.message ||
+                        "Unknown error. Please try again or contact us."),
                     false
                 );
             }
@@ -381,14 +375,14 @@ donationForm.addEventListener(
             // ENABLE BUTTON AGAIN
             // ==========================================
 
-            submitButton.disabled =
-                false;
+            submitButton.disabled = false;
 
             submitButton.textContent =
                 originalButtonText;
         }
     }
 );
+}
 
 
 // ==========================================
@@ -400,29 +394,19 @@ function convertFileToBase64(file) {
     return new Promise(
         (resolve, reject) => {
 
-            const reader =
-                new FileReader();
+            const reader = new FileReader();
 
+            reader.onload = function () {
+                resolve(reader.result);
+            };
 
-            reader.onload =
-                function () {
-
-                    resolve(
-                        reader.result
-                    );
-                };
-
-
-            reader.onerror =
-                function () {
-
-                    reject(
-                        new Error(
-                            "Failed to read screenshot."
-                        )
-                    );
-                };
-
+            reader.onerror = function () {
+                reject(
+                    new Error(
+                        "Failed to read screenshot."
+                    )
+                );
+            };
 
             reader.readAsDataURL(file);
         }
