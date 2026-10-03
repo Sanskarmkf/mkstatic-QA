@@ -1,0 +1,10 @@
+name: PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  review:
+    uses: Sanskarmkf/central-repo-automated-review/.github/workflows/reusable-pr-review.yml@main
+    secrets: inherit
