@@ -24,6 +24,37 @@ const submitButton = donationForm
 const statusBox =
     document.getElementById("form-status");
 
+if (donationForm && statusBox) {
+    window.addEventListener("pageshow", function () {
+        donationForm.reset();
+        statusBox.style.display = "none";
+        statusBox.textContent = "";
+    });
+}
+
+const DEFAULT_FUNDRAISING_GOAL = 45000;
+const PRIVATE_DONATION_API_URL = (typeof window !== "undefined" && window.location && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"))
+    ? "http://localhost:3000/api/donation-summary?cause=Food%20Distribution"
+    : "/api/donation-summary?cause=Food%20Distribution";
+let excelDonationSummary = { totalReceived: 0, donationCount: 0 };
+
+if (typeof localStorage !== "undefined") {
+    const storedGoal = Number(localStorage.getItem("sanskarFundraisingGoal"));
+    if (!Number.isFinite(storedGoal) || storedGoal <= 0) {
+        localStorage.setItem("sanskarFundraisingGoal", String(DEFAULT_FUNDRAISING_GOAL));
+    }
+}
+
+window.setSanskarFundraisingGoal = function (amount) {
+    const parsedAmount = Number(amount);
+    if (!Number.isFinite(parsedAmount) || parsedAmount <= 0) {
+        return false;
+    }
+
+    localStorage.setItem("sanskarFundraisingGoal", String(parsedAmount));
+    updateDonationTracker();
+    return true;
+};
 
 // ==========================================
 // SHOW STATUS MESSAGE
@@ -318,6 +349,8 @@ donationForm.addEventListener(
 
             if (result.success) {
 
+                addDonationToTracker(numericAmount);
+
                 showStatus(
                     "Thank you! Your donation details have been submitted successfully.",
                     true
@@ -411,4 +444,145 @@ function convertFileToBase64(file) {
             reader.readAsDataURL(file);
         }
     );
+}
+
+function addDonationToTracker(amount) {
+    const storedAmount = Number(localStorage.getItem("sanskarDonationAmount")) || 0;
+    const storedCount = Number(localStorage.getItem("sanskarDonationCount")) || 0;
+
+    localStorage.setItem("sanskarDonationAmount", String(storedAmount + amount));
+    localStorage.setItem("sanskarDonationCount", String(storedCount + 1));
+    updateDonationTracker();
+}
+
+async function loadDonationSheetData() {
+    try {
+        const response = await fetch(PRIVATE_DONATION_API_URL, { cache: "no-store" });
+        if (!response.ok) {
+            throw new Error(`Donation workbook request failed with status ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (!data || !Number.isFinite(data.totalReceived) || !Number.isFinite(data.donationCount)) {
+            throw new Error("Donation workbook returned an invalid summary");
+        }
+
+        excelDonationSummary = {
+            totalReceived: data.totalReceived,
+            donationCount: data.donationCount,
+        };
+        const statusElement = document.getElementById("donation-data-status");
+        if (statusElement) {
+            statusElement.hidden = true;
+            statusElement.textContent = "";
+        }
+    } catch (error) {
+        console.warn("Unable to read donation workbook:", error);
+        const statusElement = document.getElementById("donation-data-status");
+        if (statusElement) {
+            statusElement.hidden = false;
+            statusElement.textContent = "Donation totals could not be updated. Please try again later.";
+        }
+        return;
+    }
+
+    updateDonationTracker();
+}
+
+if (typeof window !== "undefined") {
+    window.addEventListener("load", () => {
+        loadDonationSheetData();
+        setInterval(() => {
+            loadDonationSheetData();
+        }, 15000);
+    });
+}
+
+function updateDonationTracker() {
+    const goalElement = document.getElementById("fundraising-goal");
+    const receivedElement = document.getElementById("total-received");
+    const balanceElement = document.getElementById("remaining-balance");
+    const donationsElement = document.getElementById("total-donations");
+    const progressBar = document.getElementById("goal-progress-bar");
+    const progressText = document.getElementById("goal-progress-text");
+    const updatedElement = document.getElementById("donation-updated");
+
+    if (!goalElement || !receivedElement) {
+        return;
+    }
+
+    const fundraisingGoal = Number(localStorage.getItem("sanskarFundraisingGoal")) || DEFAULT_FUNDRAISING_GOAL;
+    const totalReceived = excelDonationSummary.totalReceived;
+    const remainingBalance = Math.max(fundraisingGoal - totalReceived, 0);
+
+    goalElement.textContent = `₹${fundraisingGoal.toLocaleString("en-IN")}`;
+    receivedElement.textContent = `₹${totalReceived.toLocaleString("en-IN")}`;
+    if (balanceElement) {
+        balanceElement.textContent = `₹${remainingBalance.toLocaleString("en-IN")}`;
+    }
+
+    if (donationsElement) {
+        donationsElement.textContent = String(excelDonationSummary.donationCount);
+    }
+
+    if (progressBar) {
+        const progressPercent = Math.min((totalReceived / fundraisingGoal) * 100, 100);
+        progressBar.style.width = `${progressPercent}%`;
+        progressBar.parentElement.setAttribute("aria-label", `${Math.round(progressPercent)} percent of fundraising goal reached`);
+        progressBar.parentElement.setAttribute("aria-valuenow", String(Math.round(progressPercent)));
+        if (progressText) {
+            progressText.textContent = `${Math.round(progressPercent)}% reached`;
+        }
+    }
+
+    if (updatedElement) {
+        const updatedAt = new Date();
+        updatedElement.dateTime = updatedAt.toISOString().slice(0, 10);
+        updatedElement.textContent = new Intl.DateTimeFormat("en-IN", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+        }).format(updatedAt);
+    }
+}
+
+// ==========================================
+// DONATION TABS
+// ==========================================
+
+const donationTabs = document.querySelectorAll(".donation-tab");
+const donationPanels = document.querySelectorAll(".donation-panel, .tracker-panel");
+
+if (donationTabs.length && donationPanels.length) {
+    updateDonationTracker();
+
+    const donateTab = document.getElementById("donate-tab");
+    const donatePanel = document.getElementById("donate-panel");
+
+    if (donateTab && donatePanel) {
+        donateTab.classList.add("active");
+        donateTab.setAttribute("aria-selected", "true");
+        donatePanel.hidden = false;
+        donationPanels.forEach((panel) => {
+            if (panel !== donatePanel) {
+                panel.hidden = true;
+            }
+        });
+    }
+
+donationTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        const selectedPanel = document.getElementById(tab.getAttribute("aria-controls"));
+
+        donationTabs.forEach((item) => {
+            const isSelected = item === tab;
+            item.classList.toggle("active", isSelected);
+            item.setAttribute("aria-selected", String(isSelected));
+        });
+
+        donationPanels.forEach((panel) => {
+            panel.hidden = panel !== selectedPanel;
+        });
+    });
+});
 }

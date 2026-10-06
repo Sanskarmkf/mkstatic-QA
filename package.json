@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "xlsx": "^0.18.5",
-    "exceljs": "^4.3.0"
+    "exceljs": "^4.3.0",
+    "express": "^5.2.1",
+    "xlsx": "^0.18.5"
   }
 }

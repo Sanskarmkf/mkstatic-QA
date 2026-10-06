@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contribute - SANSKAR</title>
     <link rel="icon" type="image/png" href="assets\LOGO (1).png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X3WM06Y74M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -57,7 +55,7 @@
         <p>Become a part of the change – Join our mission and make a difference together!</p>
         <a href="contribute.html"><button class="join-btn">Donate Now</button></a>
     </div>
-    <div class="container">
+    <div class="container donation-panel" id="donate-details" role="region" aria-label="Donation details">
     <div class="helping-hand">
         <h1> Donate Today</h1>
       <p class="support-heading">Support for Sanskar</p>
@@ -73,7 +71,6 @@
         <h1>Fill Out Your Details After Donating</h1>
 
         <div id="form-status" style="display:none; margin-bottom:15px; padding:10px; border-radius:5px; text-align:center; font-weight:bold;"></div>
-
         <form id="donationForm">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" required>
@@ -120,7 +117,6 @@
             <button type="submit">Submit</button>
         </form>
     </div>
-</div>
 </div>
 
     <!-- Footer Section -->
@@ -375,6 +371,223 @@ body, html {
     align-items: flex-start;
     gap:  0%;
 
+}
+
+.donation-panel[hidden],
+.tracker-panel[hidden] {
+  display: none !important;
+}
+
+.donation-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 128px auto 0;
+  padding: 0 20px;
+}
+
+.donation-tab {
+  border: 1px solid #333333;
+  border-radius: 999px;
+  padding: 12px 24px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.donation-tab.active,
+.donation-tab:hover,
+.donation-tab:focus-visible {
+  color: #ffffff;
+  background: #f39c12;
+  border-color: #f39c12;
+  outline: none;
+}
+
+.tracker-panel {
+  max-width: 1180px;
+  margin: 40px auto 80px;
+  padding: 0 24px;
+}
+
+.tracker-heading,
+.chart-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.tracker-heading h1,
+.chart-heading h2 {
+  margin: 0;
+  color: #333333;
+  font-family: 'Playfair Display', serif;
+}
+
+.tracker-heading h1 {
+  font-size: 44px;
+}
+
+.tracker-heading p:not(.tracker-kicker) {
+  margin: 6px 0 0;
+  color: #666666;
+}
+
+.tracker-kicker {
+  margin: 0 0 8px;
+  color: #d35400;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.tracker-updated,
+.chart-heading > span {
+  padding: 8px 12px;
+  color: #8a4b00;
+  background: #fff3df;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.tracker-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 30px 0 24px;
+}
+
+.tracker-card {
+  min-height: 132px;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-top: 4px solid #ffa500;
+  border-radius: 8px;
+  box-shadow: 0 5px 18px rgba(51, 51, 51, 0.08);
+}
+
+.tracker-card span,
+.tracker-card small {
+  display: block;
+}
+
+.tracker-card span {
+  color: #666666;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tracker-card strong {
+  display: block;
+  margin: 10px 0 4px;
+  color: #333333;
+  font-size: 27px;
+}
+
+.tracker-card small {
+  color: #888888;
+  font-size: 12px;
+}
+
+.tracker-card-goal {
+  grid-column: span 2;
+  background: #333333;
+  border-top-color: #ff764d;
+}
+
+.tracker-card-goal span,
+.tracker-card-goal strong,
+.tracker-card-goal small {
+  color: #ffffff;
+}
+
+.goal-progress {
+  height: 8px;
+  margin: 12px 0 6px;
+  overflow: hidden;
+  background: #595959;
+  border-radius: 8px;
+}
+
+.goal-progress span {
+  width: 60%;
+  height: 100%;
+  background: #ffa500;
+}
+
+.tracker-card-balance {
+  border-top-color: #4c9a68;
+}
+
+.donation-chart-card {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  box-shadow: 0 5px 18px rgba(51, 51, 51, 0.08);
+}
+
+.chart-heading h2 {
+  font-size: 27px;
+}
+
+.donation-chart {
+  display: flex;
+  height: 280px;
+  margin-top: 28px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.chart-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 12px 24px 0;
+  color: #888888;
+  font-size: 12px;
+}
+
+.chart-bars {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(12, minmax(20px, 1fr));
+  align-items: end;
+  gap: 12px;
+  padding: 0 0 0 12px;
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent 91px, #eeeeee 92px, transparent 93px);
+}
+
+.chart-bar-wrap {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.chart-bar {
+  display: block;
+  width: min(30px, 80%);
+  min-height: 8px;
+  background: #f39c12;
+  border-radius: 5px 5px 0 0;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.chart-bar:hover {
+  background: #d35400;
+  transform: translateY(-4px);
+}
+
+.chart-bar-wrap small {
+  color: #666666;
+  font-size: 11px;
 }
 
 .contact-info {
@@ -779,6 +992,45 @@ footer a:hover {
     justify-content: flex-start;
     flex-direction: column;
     padding: 10px;
+  }
+
+  .donation-tabs {
+    margin-top: 128px;
+  }
+
+  .donation-tab {
+    flex: 1;
+    padding: 11px 8px;
+  }
+
+  .tracker-panel {
+    margin-top: 30px;
+    padding: 0 16px;
+  }
+
+  .tracker-heading {
+    flex-direction: column;
+  }
+
+  .tracker-heading h1 {
+    font-size: 36px;
+  }
+
+  .tracker-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tracker-card-goal {
+    grid-column: span 2;
+  }
+
+  .donation-chart-card {
+    padding: 20px 12px;
+    overflow-x: auto;
+  }
+
+  .donation-chart {
+    min-width: 640px;
   }
 
   .helping-hand, .contact-form {
