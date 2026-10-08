@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const XLSX = require('xlsx');
+const { summarizeDonationRows } = require('./lib/donation-summary');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -23,40 +24,7 @@ function getDonationSummary(causeFilter = DEFAULT_CAUSE) {
   }
 
   const rows = XLSX.utils.sheet_to_json(donationSheet, { header: 1, range: 1, defval: '' });
-  const normalizedCause = String(causeFilter || DEFAULT_CAUSE).trim().toLowerCase();
-  let totalReceived = 0;
-  let donationCount = 0;
-
-  rows.forEach((row) => {
-    if (!Array.isArray(row) || row.length < 6) {
-      return;
-    }
-
-    const donationCause = String(row[5] || '').trim();
-    if (!donationCause || donationCause.toLowerCase() !== normalizedCause) {
-      return;
-    }
-
-    const amountValue = String(row[2] ?? '').trim();
-    const cleanedAmount = amountValue.replace(/[^0-9.-]/g, '');
-    if (!cleanedAmount || cleanedAmount === '-' || cleanedAmount === '.' || cleanedAmount === '-.') {
-      return;
-    }
-
-    const amount = Number(cleanedAmount);
-    if (!Number.isFinite(amount)) {
-      return;
-    }
-
-    totalReceived += amount;
-    donationCount += 1;
-  });
-
-  return {
-    totalReceived,
-    donationCount,
-    causeFilter: normalizedCause,
-  };
+  return summarizeDonationRows(rows, causeFilter);
 }
 
 app.get('/api/donation-summary', async (req, res) => {

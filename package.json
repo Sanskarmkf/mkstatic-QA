@@ -2,6 +2,7 @@
   "dependencies": {
     "exceljs": "^4.3.0",
     "express": "^5.2.1",
+    "googleapis": "^183.0.0",
     "xlsx": "^0.18.5"
   }
 }
