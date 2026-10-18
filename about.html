@@ -871,6 +871,35 @@ for growth, smiles, happiness, and quality education worldwide.</p>
 
     <script src="./toggle.js"></script>
     <script src="./script.js"></script>
+<script>
+  // ---- Highlight current page in navbar (added) ----
+  (function () {
+    // inject the orange style (same orange as the announcement bar)
+    const style = document.createElement("style");
+    style.textContent = `
+      .top-nav a.active,
+      .top-nav .dropdown.active > .dropdown-toggle {
+        color: #ffa500 !important;
+      }
+    `;
+    document.head.appendChild(style);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      let current = location.pathname.split("/").pop().toLowerCase();
+      if (!current) current = "index.html";
+      if (!current.endsWith(".html")) current += ".html";
+
+      document.querySelectorAll(".top-nav a[href]").forEach(link => {
+        const href = link.getAttribute("href").split("#")[0].split("/").pop().toLowerCase();
+        if (href === current) {
+          link.classList.add("active");
+          const dd = link.closest(".dropdown");
+          if (dd) dd.classList.add("active"); // colors "Our Work" / "About" label too
+        }
+      });
+    });
+  })();
+</script>
 </body>
 
 </html>
