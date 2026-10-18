@@ -214,9 +214,7 @@
       .footer-content { flex-direction: column; }
       .footer-section { flex: 1 1 100%; }
     }
-<<<<<<< Updated upstream
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-=======
 
     /* ===== DROPDOWN NAV ===== */
     /* Top bar gets a fixed height and the orange bar sits directly under it.
@@ -263,7 +261,6 @@
       .top-nav .dropdown:hover > .dropdown-menu { display: none; }
       .top-nav .dropdown.open > .dropdown-menu { display: flex; }
     }
->>>>>>> Stashed changes
   </style>
 </head>
 <body>
@@ -535,7 +532,6 @@
       paintSelection();
     }
 
-<<<<<<< Updated upstream
     function paintSelection() {
       const amt = '₹' + inr(state.amount);
       $$('.sel-amt').forEach(e => e.textContent = amt + (state.monthly ? ' / month' : ''));
@@ -594,7 +590,7 @@
 
     paint();
     if (CFG.dataUrl) fetch(CFG.dataUrl).then(r => r.json()).then(d => { Object.assign(CFG, d); paint(); }).catch(() => {});
-=======
+
     // Nav dropdowns (this page does not load toggle.js, so the code lives here)
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dd => {
@@ -620,7 +616,6 @@
         });
       }
     });
->>>>>>> Stashed changes
   </script>
 <script>
   // ---- Highlight current page in navbar (added) ----
