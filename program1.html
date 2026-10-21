@@ -30,18 +30,26 @@
     </button>
     <nav class="top-nav" aria-label="Main Navigation">
       <ul>
-
-        <li><a href="home.html">Home</a></li>
-        <li><a href="index.html">Our Work</a></li>
-        <li><a href="blog.html">Blogs</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Our Work</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Our Work</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="scholarship.html">Scholarship</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="career.html">Careers</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </li>
         <li><a href="contribute.html">Contribute</a></li>
-         <li><a href="contact.html">Contact</a></li>
-        <li><a href="aboutUs.html">About Us</a></li>
-        <li><a href="scholarship.html">Scholarship</a></li>
-        <li><a href="career.html">Careers</a></li>   
-
       </ul>
     </nav>
   </div>
@@ -113,6 +121,35 @@
   </footer>
   
   <script src="./toggle.js"></script>
+<script>
+  // ---- Highlight current page in navbar (added) ----
+  (function () {
+    // inject the orange style (same orange as the announcement bar)
+    const style = document.createElement("style");
+    style.textContent = `
+      .top-nav a.active,
+      .top-nav .dropdown.active > .dropdown-toggle {
+        color: #ffa500 !important;
+      }
+    `;
+    document.head.appendChild(style);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      let current = location.pathname.split("/").pop().toLowerCase();
+      if (!current) current = "index.html";
+      if (!current.endsWith(".html")) current += ".html";
+
+      document.querySelectorAll(".top-nav a[href]").forEach(link => {
+        const href = link.getAttribute("href").split("#")[0].split("/").pop().toLowerCase();
+        if (href === current) {
+          link.classList.add("active");
+          const dd = link.closest(".dropdown");
+          if (dd) dd.classList.add("active"); // colors "Our Work" / "About" label too
+        }
+      });
+    });
+  })();
+</script>
 </body>
 </html>
 <STYLE>
@@ -603,5 +640,50 @@ footer a:hover {
   }
 }
 
+/* ===== DROPDOWN NAV ===== */
+/* Top bar gets a fixed height and the orange bar sits directly under it.
+   If the orange bar is still covered or has a gap, change 70px in BOTH places. */
+.top-bar { height: 70px; padding-top: 0; padding-bottom: 0; }
+.announcement-bar { top: 70px; z-index: 999; }   /* z-index keeps dropdowns above the orange bar */
+
+.top-nav .dropdown { position: relative; }
+.top-nav .dropdown-toggle::after { content: " \25BE"; font-size: 12px; }
+
+.top-nav .dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 190px;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  background-color: #333;
+  border-top: 3px solid #f39c12;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 1002;
+}
+.top-nav .dropdown-menu li { margin: 0; }
+.top-nav .dropdown-menu li a { display: block; padding: 10px 20px; white-space: nowrap; }
+.top-nav .dropdown-menu li a:hover { background-color: #444; color: #f39c12; text-decoration: none; }
+
+.top-nav .dropdown:hover > .dropdown-menu,
+.top-nav .dropdown.open > .dropdown-menu { display: flex; }
+
+@media (max-width: 768px) {
+  .top-nav { overflow-y: auto; }
+  .top-nav .dropdown-menu {
+    position: static;
+    min-width: 0;
+    padding: 0 0 0 15px;
+    background: transparent;
+    box-shadow: none;
+    border-top: none;
+  }
+  .top-nav .dropdown:hover > .dropdown-menu { display: none; }
+  .top-nav .dropdown.open > .dropdown-menu { display: flex; }
+}
 
 </STYLE>
